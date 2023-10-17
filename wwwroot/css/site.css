@@ -1,1 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");/*# sourceMappingURL=site.css.map */
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+div.scrollmenu {
+  overflow: auto;
+  white-space: nowrap;
+}
+
+div.scrollmenu div {
+  display: inline-block;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}/*# sourceMappingURL=site.css.map */
