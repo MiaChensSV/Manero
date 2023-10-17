@@ -4,10 +4,42 @@ div.scrollmenu {
   white-space: nowrap;
 }
 
-div.scrollmenu div {
+div.col-6 a {
+  text-decoration: none;
+  color: black;
+}
+
+.scrollmenu div {
   display: inline-block;
   text-align: center;
   padding: 14px;
   text-decoration: none;
   border: none;
+}
+.scrollmenu div p {
+  padding: 3px 0px;
+  margin: 0;
+}
+
+#disc-container {
+  background-image: url(https://placehold.co/600x400);
+  padding: 20px 20px;
+  background-size: cover;
+  background-position: center;
+}
+
+.btn-shop {
+  background-color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 15px 25px;
+}
+
+.cs-item-bottom-left {
+  position: absolute;
+  bottom: 30px;
+  left: 58px;
+}
+.cs-item-bottom-left h3 {
+  font-size: 2.5rem;
 }/*# sourceMappingURL=site.css.map */
