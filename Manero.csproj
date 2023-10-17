@@ -15,11 +15,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Views\Partials\profile.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="compilerconfig.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="wwwroot\img\svg\" />
   </ItemGroup>
 
 </Project>

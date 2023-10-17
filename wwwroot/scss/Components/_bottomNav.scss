@@ -1,1 +1,15 @@
-﻿
+﻿.bottom-nav-container {
+	display: flex;
+	justify-content: center;
+	border-top: 1px solid $color-gray;
+
+	.navigation {
+		display: flex;
+		gap: 2.5rem;
+
+		.navigation-icon {
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+	}
+}
