@@ -33,6 +33,7 @@ div.col-6 a {
   border: none;
   border-radius: 30px;
   padding: 15px 25px;
+  opacity: 80%;
 }
 
 .cs-item-bottom-left {
