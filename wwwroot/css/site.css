@@ -43,6 +43,16 @@ div.col-6 a {
 }
 .cs-item-bottom-left h3 {
   font-size: 2.5rem;
+  font-family: "Mulish", sans-serif;
+}
+@media (min-width: 768px) {
+  .cs-item-bottom-left {
+    bottom: 100px;
+    left: 200px;
+  }
+  .cs-item-bottom-left h3 {
+    font-size: 5rem;
+  }
 }
 
 #carousel-container {
@@ -85,4 +95,25 @@ div.col-6 a {
 }
 #fa-bag:hover {
   color: #626262;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-transition: ease 0.5s;
+  transition: ease 0.5s;
+  background: rgb(180, 180, 180);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #626262;
 }/*# sourceMappingURL=site.css.map */

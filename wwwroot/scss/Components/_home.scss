@@ -45,7 +45,17 @@
     left: 58px;
     h3{
       font-size: 2.5rem;
+      font-family: $font-mulish;
     }
+
+      @media (min-width: 768px) {
+        bottom: 100px;
+        left: 200px;
+          h3{
+            font-size: 5rem;
+          }
+      }
+
   }
 
   #carousel-container{
@@ -89,3 +99,4 @@
       color: $color-gray;
     }
   }
+
