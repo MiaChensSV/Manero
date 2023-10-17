@@ -1,4 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+.bottom-nav-container {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #626262;
+}
+.bottom-nav-container .navigation {
+  display: flex;
+  gap: 2.5rem;
+}
+.bottom-nav-container .navigation .navigation-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
 div.scrollmenu {
   overflow: auto;
   white-space: nowrap;
