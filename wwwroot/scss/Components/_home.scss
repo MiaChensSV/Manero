@@ -47,3 +47,45 @@
       font-size: 2.5rem;
     }
   }
+
+  #carousel-container{
+    padding: 0;
+  }
+
+  .top-left {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: green;
+    border-top-left-radius: 5px;
+  }
+
+  .top-right {
+    position: absolute;
+    top: 25px;
+    right: 23px;
+  }
+
+  .top-right-under {
+    position: absolute;
+    top: 80px;
+    right: 25px;
+  }
+
+  #fa-heart{
+    transition: ease .5s;
+    font-size: 25px;
+    cursor: pointer;
+    &:hover{
+      color: $color-red;
+    }
+  }
+
+  #fa-bag{
+    transition: ease .5s;
+    font-size: 25px; 
+    cursor: pointer;   
+    &:hover{
+      color: $color-gray;
+    }
+  }

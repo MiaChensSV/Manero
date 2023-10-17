@@ -43,4 +43,46 @@ div.col-6 a {
 }
 .cs-item-bottom-left h3 {
   font-size: 2.5rem;
+}
+
+#carousel-container {
+  padding: 0;
+}
+
+.top-left {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background-color: green;
+  border-top-left-radius: 5px;
+}
+
+.top-right {
+  position: absolute;
+  top: 25px;
+  right: 23px;
+}
+
+.top-right-under {
+  position: absolute;
+  top: 80px;
+  right: 25px;
+}
+
+#fa-heart {
+  transition: ease 0.5s;
+  font-size: 25px;
+  cursor: pointer;
+}
+#fa-heart:hover {
+  color: #F4303C;
+}
+
+#fa-bag {
+  transition: ease 0.5s;
+  font-size: 25px;
+  cursor: pointer;
+}
+#fa-bag:hover {
+  color: #626262;
 }/*# sourceMappingURL=site.css.map */
