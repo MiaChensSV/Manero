@@ -1,0 +1,197 @@
+.payment-method {
+    font-family: $font-mulish;
+    font-size: 16px;
+
+    .container {
+        .cards {
+
+            .menu {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                margin: 20px;
+
+                h4 {
+                    flex: 1;
+                    font-weight: $font-weight-semibold;
+                }
+
+                .new-card {
+                    flex: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 14px;
+
+                    p {
+                        margin: 0;
+                    }
+
+                    i {
+                        font-size: 0.9rem;
+                        padding-left: 30px;
+                        color: $color-dark;
+                    }
+                }
+            }
+        }
+
+        .card-image {
+            height: 170px;
+            color: white;
+
+            .card-info {
+                margin-top: 15px;
+                margin-left: 20px;
+                width: 238px;
+                position: absolute;
+                z-index: 2;
+
+                .card-number {
+                    padding-top: 15px;
+                }
+
+                .name {
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+
+            .card-background {
+                position: absolute;
+                z-index: 1;
+            }
+        }
+
+        .payment-info {
+            margin-top: 30px;
+
+            .info {
+                border-bottom: 1px solid $color-blue;
+                margin-top: 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+
+                p {
+                    flex: 1;
+                    text-align: start;
+                }
+
+                .verify {
+                    flex: 2;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-right: 20px;
+
+                    .green {
+                        color: $color-green;
+                    }
+                }
+
+                .not-verify {
+                    flex: 2;
+                    text-align: end;
+                    margin-right: 20px;
+
+                    .green {
+                        color: $color-green;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.add-payment {
+    font-family: $font-mulish;
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+
+    .container {
+        .card-image {
+            height: 170px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+
+            .card-info {
+                margin-top: 15px;
+                margin-left: 20px;
+                width: 238px;
+                position: absolute;
+                z-index: 2;
+
+                .card-number {
+                    padding-top: 15px;
+                }
+
+                .name {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-right: 30px;
+                }
+            }
+
+            .card-background {
+                position: absolute;
+                z-index: 1;
+            }
+        }
+
+        .newcard-info {
+            display: flex;
+            justify-content: center;
+            text-align: start;
+
+            form {
+                padding-top: 30px;
+
+                .form-group {
+                    height: 50px;
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 30px;
+                    margin-bottom: 30px;
+                    width: 80%;
+                }
+
+                .validation {
+                    display: flex;
+                    flex-direction: row;
+
+                    .validate-date {
+                    }
+
+                    .validate-cvv {
+                    }
+                }
+
+                label {
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    font-size: 14px;
+                    font-weight: $font-weight-bold;
+                }
+
+                input {
+                    border: none;
+                    vertical-align: middle;
+                    margin-right: 15px;
+                }
+
+                .save-btn {
+                    margin-top: 16px;
+                    background-color: $color-dark;
+                    color: white;
+                    border-radius: 20px;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
