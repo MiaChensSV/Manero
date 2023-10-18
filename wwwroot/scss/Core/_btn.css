@@ -1,0 +1,19 @@
+﻿.btn {
+  display: block;
+  width: 20.9375rem;
+  height: 3.125rem;
+  background-color: #111111;
+  border: none;
+  border-radius: 25px;
+  color: white;
+}
+
+.btn:hover {
+  display: block;
+  width: 20.9375rem;
+  height: 3.125rem;
+  background-color: white;
+  border: 1px solid #111111;
+  border-radius: 25px;
+  color: black;
+}
