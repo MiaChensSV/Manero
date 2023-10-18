@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
   display: block;
   width: 20.9375rem;
@@ -23,11 +24,11 @@
   display: flex;
   justify-content: center;
   border-top: 1px solid #626262;
-  position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 4.5rem;
-
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .bottom-nav-container .navigation {
   display: flex;
@@ -230,11 +231,12 @@ div.col-6 a {
 
 .cs-item-bottom-left {
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   left: 58px;
+  text-shadow: 1px 1px 14px rgba(255, 255, 255, 0.589);
 }
 .cs-item-bottom-left h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Mulish", sans-serif;
 }
 @media (min-width: 768px) {
@@ -248,7 +250,7 @@ div.col-6 a {
 }
 
 #carousel-container {
-  padding: 0;
+  padding-top: 4rem;
 }
 
 .top-left {
@@ -289,7 +291,6 @@ div.col-6 a {
   color: #626262;
 }
 
-
 .bestseller-product-list {
   display: flex;
   flex-direction: row;
@@ -328,7 +329,7 @@ div.col-6 a {
   margin-top: 30rem;
 }
 
-.carousel {
+.onb-carousel {
   position: absolute;
   bottom: 20%;
   left: 50%;
@@ -345,6 +346,7 @@ div.col-6 a {
   text-align: center;
   width: 20rem;
   text-decoration: none;
+}
 
 .profile {
   font-family: "Mulish", sans-serif;
@@ -734,10 +736,14 @@ div.col-6 a {
 #burger {
   font-size: 30px;
   cursor: pointer;
+  transition: ease 0.3s;
+}
+#burger:hover {
+  color: gray;
 }
 
 .top-navigation {
-  background: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 15px 20px;
   width: 100%;
   position: fixed;
