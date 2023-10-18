@@ -399,6 +399,187 @@ div.col-6 a {
   justify-content: center;
 }
 
+.payment-method {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+}
+.payment-method .container .cards .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+.payment-method .container .cards .menu h4 {
+  flex: 1;
+  font-weight: 600;
+}
+.payment-method .container .cards .menu .new-card {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.payment-method .container .cards .menu .new-card p {
+  margin: 0;
+}
+.payment-method .container .cards .menu .new-card i {
+  font-size: 0.9rem;
+  padding-left: 30px;
+  color: #111111;
+}
+.payment-method .container .card-image {
+  height: 170px;
+  color: white;
+}
+.payment-method .container .card-image .card-info {
+  margin-top: 15px;
+  margin-left: 20px;
+  width: 238px;
+  position: absolute;
+  z-index: 2;
+}
+.payment-method .container .card-image .card-info .card-number {
+  padding-top: 15px;
+}
+.payment-method .container .card-image .card-info .name {
+  display: flex;
+  justify-content: space-between;
+}
+.payment-method .container .card-image .card-background {
+  position: absolute;
+  z-index: 1;
+}
+.payment-method .container .payment-info {
+  margin-top: 30px;
+}
+.payment-method .container .payment-info .info {
+  border-bottom: 1px solid #DBE3F5;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.payment-method .container .payment-info .info p {
+  flex: 1;
+  text-align: start;
+}
+.payment-method .container .payment-info .info .verify {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+.payment-method .container .payment-info .info .verify .green {
+  color: #00824B;
+}
+.payment-method .container .payment-info .info .not-verify {
+  flex: 2;
+  text-align: end;
+  margin-right: 20px;
+}
+.payment-method .container .payment-info .info .not-verify .green {
+  color: #00824B;
+}
+
+.add-payment {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.add-payment .container .card-image {
+  height: 170px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.add-payment .container .card-image .card-info {
+  margin-top: 15px;
+  margin-left: 20px;
+  width: 238px;
+  position: absolute;
+  z-index: 2;
+}
+.add-payment .container .card-image .card-info .card-number {
+  padding-top: 15px;
+}
+.add-payment .container .card-image .card-info .name {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+.add-payment .container .card-image .card-background {
+  position: absolute;
+  z-index: 1;
+}
+.add-payment .container .newcard-info {
+  display: flex;
+  justify-content: center;
+  text-align: start;
+}
+.add-payment .container .newcard-info form {
+  padding-top: 30px;
+}
+.add-payment .container .newcard-info form .form-group {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 80%;
+}
+.add-payment .container .newcard-info form .validation {
+  display: flex;
+  flex-direction: row;
+}
+.add-payment .container .newcard-info form label {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 14px;
+  font-weight: 700;
+}
+.add-payment .container .newcard-info form input {
+  border: none;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.add-payment .container .newcard-info form .save-btn {
+  margin-top: 16px;
+  background-color: #111111;
+  color: white;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-address {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.my-address .container .addresses .box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15px;
+  border-bottom: 1px solid #DBE3F5;
+  padding-top: 10px;
+}
+.my-address .container .addresses .box .icon {
+  margin-left: 10px;
+}
+.my-address .container .addresses .box .info {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.my-address .container .add {
+  text-align: center;
+  margin: 30px;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
