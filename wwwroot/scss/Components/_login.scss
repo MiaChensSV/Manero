@@ -10,7 +10,7 @@
     }
 }
 
-form > div {
+.singInContainer > form > div {
     width: 20.87488rem;
     height: 3.0625rem;
     flex-shrink: 0;
@@ -55,14 +55,7 @@ form > div {
     color: #626262;
 }
 
-.signInBtn {
-    display: block;
-    width: 20.9375rem;
-    height: 3.125rem;
-    background-color: #111111;
-    border: none;
-    border-radius: 25px;
-    color: white;
+#signInBtn {
     margin-top: 2rem;
 }
 
