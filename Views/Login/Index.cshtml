@@ -1,20 +1,21 @@
 ﻿    <div class="singInContainer">
-        <p class="goBackNav">
-            <a href="">
-                <svg xmlns="http://www.w3.org/2000/svg"
-                     width="8"
-                     height="15"
-                     viewBox="0 0 8 15"
-                     fill="none">
-                    <path d="M7 13.833L1 7.83301L7 1.83301"
-                          stroke="#111111"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round" />
-                </svg>
-            </a>
-            Sign in
-        </p>
+    <div class="goBackNav">
+        <a asp-controller="Home" asp-action="Index">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="8"
+                 height="15"
+                 viewBox="0 0 8 15"
+                 fill="none">
+                <path d="M7 13.833L1 7.83301L7 1.83301"
+                      stroke="#111111"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+            </svg>
+        </a>
+        <p class="goBackNavText">Sign in</p>
+        <p class="hiddenElement"></p>
+    </div>
 
         <h1>Welcome Back!</h1>
         <p>Sign in to continue</p>
@@ -53,7 +54,7 @@
 
             <input type="checkbox" name="checkbox" class="rememberCheckbox" />
             <label for="checkbox" class="checkboxText">Remember me</label>
-            <a href="">Forgot password?</a>
+        <a asp-controller="Login" asp-action="ForgotPass">Forgot password?</a>
 
         <input type="button" value="Sing in" class="btn" id="signInBtn" />
         </form>
