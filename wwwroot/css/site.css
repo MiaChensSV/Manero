@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
   display: block;
   width: 20.9375rem;
@@ -223,6 +223,10 @@ div.col-6 a {
   color: #626262;
 }
 
+#wislist-row {
+  border-bottom: 2px solid #DBE3F5;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -234,6 +238,7 @@ div.col-6 a {
 }
 
 ::-webkit-scrollbar-thumb {
+  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   background: rgb(180, 180, 180);
   border-radius: 10px;
@@ -241,4 +246,4 @@ div.col-6 a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #626262;
-}
+}/*# sourceMappingURL=site.css.map */
