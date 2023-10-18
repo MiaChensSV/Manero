@@ -1,27 +1,31 @@
-  #burger{
-    font-size: 30px;
-    cursor: pointer;
-    transition: ease .3s;
-    &:hover{
-      color:gray;
-    }
-}
-    
-  .top-navigation{
+.top-navigation{
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 15px 20px;
+    padding: 10px 35px;
     width:100%;
     position: fixed;
     top:0;
     left:0;
     z-index:9;
     margin-bottom: 10px;
+    button{
+      transition: ease .4s;
+      &:hover{
+        opacity: 50%;
+      }
+      span{
+        font-size: 30px;
+      }
+    }
   }
+
   
   .toggle {
     background:transparent;
     border:none;
     cursor:pointer; 
+    rotate: 90deg;
+    padding:0;
+    margin: 0;
   }
   
   .sidebar {

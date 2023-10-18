@@ -6,7 +6,7 @@
   div.col-6{
     a{
       text-decoration: none;
-      color: black;
+      color: $color-gray;
     }
   }
 
@@ -29,14 +29,19 @@
     padding: 20px 20px;
     background-size: cover;
     background-position: center;
+    min-width: 375px;
+    min-height: 150px;
   }
 
   .btn-shop{
-    background-color: white;
+    background-color:#fff;
     border: none;
     border-radius: 30px;
     padding: 15px 25px;
     opacity: 80%;
+  }
+  .home-heading{
+    font-family: $font-mulish;
   }
 
   .cs-item-bottom-left {
