@@ -15,6 +15,12 @@ public class AccountController : Controller
 
 		return View();
 	}
+
+    public IActionResult Edit()
+    {
+
+        return View();
+    }
 }
 
    
