@@ -1,0 +1,32 @@
+.onboardingContainer {
+background-color: #DBE3F5;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+overflow: hidden;
+}
+
+.backgroundCircle{
+    margin-top: 30rem;
+}
+
+.carousel{
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    width: 20rem;
+}
+
+.onboardingContainer > a{
+    position: absolute;
+    bottom: 12%;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    width: 20rem;
+    text-decoration: none;
+}
