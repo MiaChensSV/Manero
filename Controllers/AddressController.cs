@@ -2,22 +2,15 @@
 
 namespace Manero.Controllers
 {
-    public class LoginController : Controller
+    public class AddressController : Controller
     {
         public IActionResult Index()
         {
             return View();
         }
-
-        public IActionResult ForgotPass()
+        public IActionResult Add()
         {
             return View();
         }
-
-        public IActionResult Reset()
-        {
-            return View();
-        }
-        
     }
 }

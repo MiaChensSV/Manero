@@ -1,6 +1,7 @@
-﻿[
+[
   {
     "outputFile": "wwwroot/css/site.css",
+
     "inputFile": "wwwroot/css/site.scss"
   },
   {
@@ -10,5 +11,13 @@
   {
     "outputFile": "wwwroot/scss/Core/_btn.css",
     "inputFile": "wwwroot/scss/Core/_btn.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/Components/_onboarding.css",
+    "inputFile": "wwwroot/scss/Components/_onboarding.scss"
+
+    "inputFile": "wwwroot/css/site.scss",
+    "sourceMap": false,
+    "useNodeSass": false
   }
 ]
