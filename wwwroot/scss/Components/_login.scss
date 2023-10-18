@@ -1,0 +1,105 @@
+.singInContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Mulish", sans-serif;
+
+    > div {
+        display: flex;
+    }
+}
+
+form > div {
+    width: 20.87488rem;
+    height: 3.0625rem;
+    flex-shrink: 0;
+    position: relative;
+
+    > svg {
+        position: absolute;
+        z-index: 1;
+    }
+
+    > label {
+        position: absolute;
+        z-index: 2;
+        left: 5%;
+        top: -12%;
+        background-color: white;
+        padding: 0 10px 0 10px;
+        font-size: small;
+        color: #626262;
+    }
+
+    > input {
+        position: absolute;
+        z-index: 3;
+        width: 18rem;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1rem;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    margin: 1.3rem 0 1.3rem 0;
+}
+
+.checkboxText {
+    margin-right: 4rem;
+    color: #626262;
+}
+
+.signInBtn {
+    display: block;
+    width: 20.9375rem;
+    height: 3.125rem;
+    background-color: #111111;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    margin-top: 2rem;
+}
+
+.singInContainer > form > a:link,
+.singInContainer > form > a:visited,
+.singInContainer > form > a:hover,
+.singInContainer > form > a:active {
+    color: black;
+    text-decoration: none;
+}
+
+.singInContainer > p > a:link,
+.singInContainer > p > a:visited,
+.singInContainer > p > a:hover,
+.singInContainer > p > a:active {
+    color: black;
+    text-decoration: none;
+}
+
+.singInContainer > p {
+    color: #626262;
+}
+
+.singUpText {
+    margin-right: 6rem;
+}
+
+.goBackNav {
+    margin-top: 2rem;
+    margin-right: 8rem;
+    margin-bottom: 6.4rem;
+
+    > a {
+        margin-right: 7.5rem;
+    }
+}
+
+.loginOptions {
+    margin-top: 2.5rem;
+}
