@@ -6,5 +6,9 @@
   {
     "outputFile": "wwwroot/scss/Components/_login.css",
     "inputFile": "wwwroot/scss/Components/_login.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/Core/_btn.css",
+    "inputFile": "wwwroot/scss/Core/_btn.scss"
   }
 ]

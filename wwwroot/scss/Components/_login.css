@@ -9,18 +9,18 @@
   display: flex;
 }
 
-form > div {
+.singInContainer > form > div {
   width: 20.87488rem;
   height: 3.0625rem;
   flex-shrink: 0;
   position: relative;
   margin: 1.3rem 0 1.3rem 0;
 }
-form > div > svg {
+.singInContainer > form > div > svg {
   position: absolute;
   z-index: 1;
 }
-form > div > label {
+.singInContainer > form > div > label {
   position: absolute;
   z-index: 2;
   left: 5%;
@@ -30,7 +30,7 @@ form > div > label {
   font-size: small;
   color: #626262;
 }
-form > div > input {
+.singInContainer > form > div > input {
   position: absolute;
   z-index: 3;
   width: 18rem;
@@ -40,7 +40,7 @@ form > div > input {
   font-size: 1rem;
   border: none;
 }
-form > div > input:focus {
+.singInContainer > form > div > input:focus {
   outline: none;
 }
 
@@ -49,14 +49,7 @@ form > div > input:focus {
   color: #626262;
 }
 
-.signInBtn {
-  display: block;
-  width: 20.9375rem;
-  height: 3.125rem;
-  background-color: #111111;
-  border: none;
-  border-radius: 25px;
-  color: white;
+#signInBtn {
   margin-top: 2rem;
 }
 
