@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
   display: block;
   width: 20.9375rem;
@@ -43,7 +43,9 @@
 .singInContainer > div {
   display: flex;
 }
-
+.singInContainer > h1 {
+  margin-top: 6.4rem;
+}
 .singInContainer > form > div {
   width: 20.87488rem;
   height: 3.0625rem;
@@ -78,6 +80,41 @@
 .singInContainer > form > div > input:focus {
   outline: none;
 }
+.singInContainer > form > a:link {
+  color: #111111;
+  text-decoration: none;
+}
+.singInContainer > form > a:visited {
+  color: #111111;
+  text-decoration: none;
+}
+.singInContainer > form > a:hover {
+  color: #111111;
+  text-decoration: none;
+}
+.singInContainer > form > a:active {
+  color: #111111;
+  text-decoration: none;
+}
+.singInContainer > p {
+  color: #626262;
+}
+.singInContainer > p > a:link {
+  color: #111111;
+  text-decoration: none;
+}
+.singInContainer > p > a:visited {
+  color: #111111;
+  text-decoration: none;
+}
+.singInContainer > p > a:hover {
+  color: #111111;
+  text-decoration: none;
+}
+.singInContainer > p > a:active {
+  color: #111111;
+  text-decoration: none;
+}
 
 .checkboxText {
   margin-right: 4rem;
@@ -88,41 +125,61 @@
   margin-top: 2rem;
 }
 
-.singInContainer > form > a:link,
-.singInContainer > form > a:visited,
-.singInContainer > form > a:hover,
-.singInContainer > form > a:active {
-  color: black;
-  text-decoration: none;
-}
-
-.singInContainer > p > a:link,
-.singInContainer > p > a:visited,
-.singInContainer > p > a:hover,
-.singInContainer > p > a:active {
-  color: black;
-  text-decoration: none;
-}
-
-.singInContainer > p {
-  color: #626262;
-}
-
 .singUpText {
   margin-right: 6rem;
 }
 
 .goBackNav {
+  display: flex;
+  color: #111111 !important;
   margin-top: 2rem;
-  margin-right: 8rem;
-  margin-bottom: 6.4rem;
+  width: 90%;
 }
-.goBackNav > a {
-  margin-right: 7.5rem;
+
+.goBackNavText {
+  margin: auto;
+  padding: 0;
+}
+
+.hiddenElement {
+  margin: 0;
+  padding: 0;
+  width: 0.5rem;
 }
 
 .loginOptions {
   margin-top: 2.5rem;
+}
+
+.passwordInfoText {
+  margin-top: 2.4rem;
+  line-height: 1.5rem;
+  width: 20.9375rem;
+}
+
+.passwordResetedContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mulish", sans-serif;
+  text-align: center;
+  line-height: 1.5rem;
+}
+.passwordResetedContainer > p {
+  color: #626262;
+  margin-bottom: 2.3rem;
+}
+.passwordResetedContainer > h2 {
+  width: 16rem;
+  margin: 4rem 0 0 0;
+}
+.passwordResetedContainer > svg {
+  margin-top: 5rem;
+}
+
+.ResetPassText {
+  margin-top: 2.4rem;
 }
 
 div.scrollmenu {
@@ -234,6 +291,7 @@ div.col-6 a {
 }
 
 ::-webkit-scrollbar-thumb {
+  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   background: rgb(180, 180, 180);
   border-radius: 10px;
@@ -241,4 +299,4 @@ div.col-6 a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #626262;
-}
+}/*# sourceMappingURL=site.css.map */
