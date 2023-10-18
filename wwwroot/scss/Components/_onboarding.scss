@@ -21,11 +21,12 @@ overflow: hidden;
     width: 20rem;
 }
 
-.onboardingContainer > input{
+.onboardingContainer > a{
     position: absolute;
     bottom: 12%;
     left: 50%;
     transform: translate(-50%);
     text-align: center;
     width: 20rem;
+    text-decoration: none;
 }

@@ -10,5 +10,9 @@
   {
     "outputFile": "wwwroot/scss/Core/_btn.css",
     "inputFile": "wwwroot/scss/Core/_btn.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/Components/_onboarding.css",
+    "inputFile": "wwwroot/scss/Components/_onboarding.scss"
   }
 ]
