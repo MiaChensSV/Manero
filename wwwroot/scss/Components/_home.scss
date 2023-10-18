@@ -41,10 +41,11 @@
 
   .cs-item-bottom-left {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     left: 58px;
+    text-shadow: 1px 1px 14px rgba(255, 255, 255, 0.589);
     h3{
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-family: $font-mulish;
     }
 
@@ -59,7 +60,7 @@
   }
 
   #carousel-container{
-    padding: 0;
+    padding-top: 4rem;
   }
 
   .top-left {

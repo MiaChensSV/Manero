@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
   display: block;
   width: 20.9375rem;
@@ -23,11 +24,11 @@
   display: flex;
   justify-content: center;
   border-top: 1px solid #626262;
-  position: absolute;
-	bottom: 0;
-	width: 100%;
-	height: 4.5rem;
-
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 4.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .bottom-nav-container .navigation {
   display: flex;
@@ -230,11 +231,12 @@ div.col-6 a {
 
 .cs-item-bottom-left {
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   left: 58px;
+  text-shadow: 1px 1px 14px rgba(255, 255, 255, 0.589);
 }
 .cs-item-bottom-left h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Mulish", sans-serif;
 }
 @media (min-width: 768px) {
@@ -248,7 +250,7 @@ div.col-6 a {
 }
 
 #carousel-container {
-  padding: 0;
+  padding-top: 4rem;
 }
 
 .top-left {
@@ -289,7 +291,6 @@ div.col-6 a {
   color: #626262;
 }
 
-
 .bestseller-product-list {
   display: flex;
   flex-direction: row;
@@ -328,7 +329,7 @@ div.col-6 a {
   margin-top: 30rem;
 }
 
-.carousel {
+.onb-carousel {
   position: absolute;
   bottom: 20%;
   left: 50%;
@@ -345,6 +346,7 @@ div.col-6 a {
   text-align: center;
   width: 20rem;
   text-decoration: none;
+}
 
 .profile {
   font-family: "Mulish", sans-serif;
@@ -727,6 +729,95 @@ div.col-6 a {
   margin-right: 10px;
 }
 
+#wislist-row {
+  border-bottom: 2px solid #DBE3F5;
+}
+
+#burger {
+  font-size: 30px;
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+#burger:hover {
+  color: gray;
+}
+
+.top-navigation {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  margin-bottom: 10px;
+}
+
+.toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar {
+  margin-top: 64px;
+  background-color: #212529;
+  color: #fff;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  height: 100%;
+  transition: all 0.3s ease-out;
+  z-index: 200;
+}
+
+.sidebarshow {
+  left: 0;
+}
+
+.line {
+  padding-block: 1rem;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+.black-circle {
+  border: 1px solid grey;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+}
+
+.textarea {
+  width: 150px;
+  height: 50px;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid grey;
+  border-radius: 35px;
+  margin-bottom: 1rem;
+}
+
+.black-circle-arrow {
+  border: 1px solid grey;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: black;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -738,6 +829,7 @@ div.col-6 a {
 }
 
 ::-webkit-scrollbar-thumb {
+  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   background: rgb(180, 180, 180);
   border-radius: 10px;
@@ -745,4 +837,4 @@ div.col-6 a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #626262;
-}
+}/*# sourceMappingURL=site.css.map */
