@@ -243,6 +243,89 @@ div.col-6 a {
   justify-content: center;
 }
 
+.payment-method {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+}
+.payment-method .container .cards .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+.payment-method .container .cards .menu h4 {
+  flex: 1;
+  font-weight: 600;
+}
+.payment-method .container .cards .menu .new-card {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.payment-method .container .cards .menu .new-card p {
+  margin: 0;
+}
+.payment-method .container .cards .menu .new-card i {
+  font-size: 0.9rem;
+  padding-left: 30px;
+  color: #111111;
+}
+.payment-method .container .card-image {
+  height: 170px;
+  color: white;
+}
+.payment-method .container .card-image .card-info {
+  margin-top: 15px;
+  margin-left: 20px;
+  width: 238px;
+  position: absolute;
+  z-index: 2;
+}
+.payment-method .container .card-image .card-info .card-number {
+  padding-top: 15px;
+}
+.payment-method .container .card-image .card-info .name {
+  display: flex;
+  justify-content: space-between;
+}
+.payment-method .container .card-image .card-background {
+  position: absolute;
+  z-index: 1;
+}
+.payment-method .container .payment-info {
+  margin-top: 30px;
+}
+.payment-method .container .payment-info .info {
+  border-bottom: 1px solid #DBE3F5;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.payment-method .container .payment-info .info p {
+  flex: 1;
+  text-align: start;
+}
+.payment-method .container .payment-info .info .verify {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+.payment-method .container .payment-info .info .verify .green {
+  color: #00824B;
+}
+.payment-method .container .payment-info .info .not-verify {
+  flex: 2;
+  text-align: end;
+  margin-right: 20px;
+}
+.payment-method .container .payment-info .info .not-verify .green {
+  color: #00824B;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
