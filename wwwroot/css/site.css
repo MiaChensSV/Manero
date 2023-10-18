@@ -126,7 +126,11 @@
 }
 
 .singUpText {
+  margin-top: 1rem;
   margin-right: 6rem;
+}
+.singUpText > a {
+  font-weight: 600;
 }
 
 .goBackNav {
