@@ -11,8 +11,12 @@
 
 @import "../scss/Components/_bottomNav.scss";
 @import "../scss/Components/_login.scss";
-@import "../scss/Components/_home.scss";
-@import "../scss/Components/_wishlist.scss";
+@import "../scss/Components/home.scss";
+@import "../scss/Components/_productpage.scss";
+
+
+
+//GLOBAL CUSTOM COMPONENTS
 
 ::-webkit-scrollbar {
   width: 10px;
