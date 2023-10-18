@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
   display: block;
   width: 20.9375rem;
@@ -308,6 +308,39 @@ div.col-6 a {
   margin: 1rem;
 }
 
+.onboardingContainer {
+  background-color: #DBE3F5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.backgroundCircle {
+  margin-top: 30rem;
+}
+
+.carousel {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  width: 20rem;
+}
+
+.onboardingContainer > a {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  width: 20rem;
+  text-decoration: none;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
@@ -319,7 +352,6 @@ div.col-6 a {
 }
 
 ::-webkit-scrollbar-thumb {
-  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   background: rgb(180, 180, 180);
   border-radius: 10px;
@@ -327,4 +359,4 @@ div.col-6 a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #626262;
-}/*# sourceMappingURL=site.css.map */
+}
