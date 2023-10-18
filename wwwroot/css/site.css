@@ -326,6 +326,79 @@ div.col-6 a {
   color: #00824B;
 }
 
+.add-payment {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.add-payment .container .card-image {
+  height: 170px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.add-payment .container .card-image .card-info {
+  margin-top: 15px;
+  margin-left: 20px;
+  width: 238px;
+  position: absolute;
+  z-index: 2;
+}
+.add-payment .container .card-image .card-info .card-number {
+  padding-top: 15px;
+}
+.add-payment .container .card-image .card-info .name {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+.add-payment .container .card-image .card-background {
+  position: absolute;
+  z-index: 1;
+}
+.add-payment .container .newcard-info {
+  display: flex;
+  justify-content: center;
+  text-align: start;
+}
+.add-payment .container .newcard-info form {
+  padding-top: 30px;
+}
+.add-payment .container .newcard-info form .form-group {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 80%;
+}
+.add-payment .container .newcard-info form .validation {
+  display: flex;
+  flex-direction: row;
+}
+.add-payment .container .newcard-info form label {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 14px;
+  font-weight: 700;
+}
+.add-payment .container .newcard-info form input {
+  border: none;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.add-payment .container .newcard-info form .save-btn {
+  margin-top: 16px;
+  background-color: #111111;
+  color: white;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

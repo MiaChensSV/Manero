@@ -8,4 +8,8 @@ public class PaymentController : Controller
     {
         return View();
     }
+    public IActionResult AddPayment()
+    {
+        return View();
+    }
 }
