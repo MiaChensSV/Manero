@@ -1,12 +1,19 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Manero.Models.Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace Manero.Context
+namespace Manero.Context;
+
+public class DataContext : IdentityDbContext<AppIdentityUser>
 {
-    public class DataContext : IdentityDbContext
+    public DataContext(DbContextOptions<IdentityDbContext> options) : base(options)
     {
-        public DataContext(DbContextOptions options) : base(options)
-        {
-        }
+    }
+
+    public DbSet<ProductEntity> Products { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder builder)
+    {
+        builder.Entity<ProductEntity>().HasKey(fk=>new {fk.colorId,fk.sizeId});
     }
 }

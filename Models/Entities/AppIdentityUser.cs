@@ -54,7 +54,7 @@ public class ProductEntity
     {
         Created_Date = DateTime.Now;
         Modified_Date = DateTime.Now;
-        //Deleted_Date=?
+        Deleted_Date= DateTime.Now;
     }
 
     public int ProductId { get; set; }
@@ -77,12 +77,16 @@ public class ProductEntity
         set { _price = Math.Round(value, 2); }
     }
 
-    
+    public int Quantity { get; set; }
     public ICollection<ProductCategoryEntity> Categories { get; set; }=new HashSet<ProductCategoryEntity>();    
     public ICollection<ReviewEntity> Reviews { get; set; } = new HashSet<ReviewEntity>();
 
     public ICollection<ProductWishListEntity> Wishlists { get; set; }=new HashSet<ProductWishListEntity>();
     public ICollection<ProductTagEntity> Tags { get; set; } = new HashSet<ProductTagEntity>();
+    /*
+    public ICollection<ProductColorEntity> Color { get; set; }
+    public ICollection<ProductSizeEntity> Size { get; set; }
+    */
     public DateTime Created_Date{ get; set; }
     public DateTime Modified_Date { get; set; }
     public DateTime Deleted_Date { get; set; }
@@ -94,34 +98,49 @@ public class OrderStatusEntity
     public int StatusId { get;set; }
     public string StatusName { get; set; } = null!;
 }
-public class OrdersEntity
-{
-    public OrdersEntity()
-    {
-        Created_Date = DateTime.Now;
-        Modified_Date = DateTime.Now;
-    }
-    public int OrdersId { get; set; }   
-    public int UserId { get; set; }
-    [ForeignKey("UserId")]
-    public AppIdentityUser User { get; set; } = null!;
-    public int StatusId { get; set; }
-    [ForeignKey("StatusId")]
-    public OrderStatusEntity StatusName { get; set; } = null!;
-    public int PromocodeId { get; set; }
-    public PromocodesEntity Promocode { get; set; } = null!;
-    //shippingaddress connected to addressEntity?
-
-    [Column(TypeName = "money")]
-    public decimal DeliveryFee { get; set; }
-
-    [Column(TypeName = "money")]
-    public decimal Totalcost { get;set; }
-    public string? TrackingNumber { get;set; }
-    public DateTime Created_Date { get; set; }
-    public DateTime Modified_Date { get; set; }
-}
 public class OrderDetailEntity
 {
      
+}
+public class ProductColorEntity
+{
+    public int ColorId { get; set; }
+    public ColorEnttiy Color { get; set; } = null!;
+    public int ProductId { get; set; }
+    public ProductEntity Product { get; set; }=null!;
+}
+
+public class ColorEnttiy
+{
+    public int ColorId { get;set; }
+    public string ColorName { get; set; } = null!;
+    public ICollection<ProductColorEntity> Products { get; set; }=new HashSet<ProductColorEntity>();
+}
+public class ProductSizeEntity
+{
+    public int SizeId { get; set; }
+    public SizeEntity Size { get; set; } = null!;
+    public int ProductId { get; set; }
+    public ProductEntity Product { get; set; } = null!;
+}
+public class SizeEntity
+{
+    public int SizeId { get; set; }
+    public string SizeName { get; set; }=null!;
+}
+public class InventoryEntity
+{
+    public InventoryEntity()
+    {
+        Created_Date = DateTime.Now;
+        Modified_Date = DateTime.Now;
+        Deleted_Date=DateTime.Now;
+    }
+    public int ProductId { get; set; }
+    public int ColorId { get; set;}
+    public int SizeId { get; set; }
+    public int Quantity { get;set; }
+    public DateTime Created_Date { get; set; }
+    public DateTime Modified_Date { get; set; }
+    public DateTime Deleted_Date { get; set; }
 }

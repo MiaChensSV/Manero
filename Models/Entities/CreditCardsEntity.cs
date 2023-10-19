@@ -1,10 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Manero.Models.Entities;
-
+[PrimaryKey(nameof(CardNumber),nameof(CreditCardName))]
 public class CreditCardsEntity
 {
-    public int CreditCardId { get; set; }
     public string CreditCardName { get; set; } = null!;
     public int CardNumber { get;set; }
     public DateTime ExpiratationDate { get; set; }
