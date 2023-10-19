@@ -1,0 +1,51 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="add-payment">
+    <div class="container">
+        <div class="card-image">
+            <div class="card-info">
+                <img src="/images/visa.png" alt="visa card" />
+                <p class="card-number">7741 6588 2123 6644</p>
+                <div class="name">
+                    <p>Kristin</p>
+                    <P>EXP.END</P>
+                </div>
+            </div>
+            <div class="card-background">
+                <img src="/images/blue-card.png" alt="blue-card" />
+
+            </div>
+        </div>
+
+        <div class="newcard-info">
+            <form>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label for="name">NAME</label>
+                    <input value="Kristin Watson" />
+
+                </div>
+                <div class="form-group">
+                    <label for="card-number">CARD NUMBER</label>
+                    <input value="7741 6588 2123 6644" />
+  
+                </div>
+                <div class="form-group validation">
+                    <div class="validate-date">
+                        <label for="date">MM/YY</label>
+                        <input value="12/21" />
+                    </div>
+                    <div class="validate-cvv">
+                        <label for="cvv">CVV</label>
+                        <input value="***" />
+                    </div>
+                </div>
+
+                <div class="form-group save-btn" href="/"> Save Card</div>
+            </form>
+        </div>
+    </div>
+</div>
