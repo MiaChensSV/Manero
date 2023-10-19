@@ -1,6 +1,7 @@
 using Manero.Context;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Manero
 {
@@ -13,7 +14,8 @@ namespace Manero
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             //Add repositories 
-            builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
+
 
             var app = builder.Build();
 
