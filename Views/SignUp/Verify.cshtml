@@ -1,0 +1,29 @@
+    <div class="singInContainer">
+    <div class="goBackNav">
+        <a asp-controller="SignUp" asp-action="Index">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="8"
+                 height="15"
+                 viewBox="0 0 8 15"
+                 fill="none">
+                <path d="M7 13.833L1 7.83301L7 1.83301"
+                      stroke="#111111"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+            </svg>
+        </a>
+        <p class="goBackNavText">Verify your phone number</p>
+        <p class="hiddenElement"></p>
+    </div>
+
+        <p class="ResetPassText">Enter your phone number and confirm.</p>
+
+        <form action="">
+            <div class="">
+                <label for="phone">Phone Number</label>
+                <input name="phone" type="text" id="phone" class="countryPhone"/> 
+            </div>
+        <a asp-controller="SignUp" asp-action="Otp"><input type="button" value="Confirm" class="btn"/></a>
+        </form>
+    </div>
