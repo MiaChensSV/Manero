@@ -1,0 +1,27 @@
+#shipping-form {
+    .radio-option {
+        margin-bottom: 10px;
+
+        label {
+            flex: 1;
+        }
+    }
+
+    .toggle-switch {
+        margin-bottom: 20px;
+    }
+}
+ a{
+     text-decoration:none;
+ }
+
+ .heading{
+     display:grind;
+     place-items: center;
+ }
+
+.line {
+    width: 100%;
+    height: 0;
+    border-top: 3px solid #E4EAF8;
+}

@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
   display: block;
@@ -463,6 +463,53 @@ div.col-6 a {
   text-decoration: none;
 }
 
+.countryPhone {
+  width: 20.87488rem;
+  height: 3.0625rem;
+  border-radius: 25px;
+  border: 1px solid #dbe3f5;
+  padding-left: 8rem !important;
+}
+.countryPhone:focus {
+  outline: none;
+}
+
+.iti__selected-flag {
+  background-color: white !important;
+  border-right: 1px solid #dbe3f5 !important;
+  width: 6rem;
+  height: 1rem;
+}
+
+.iti__flag-container {
+  margin: 0.5rem 0 0.5rem 1.6rem;
+}
+
+#inputs > input {
+  width: 3.75rem;
+  height: 3.75rem;
+  text-align: center;
+  border: 1px solid #DBE3F5;
+  border-radius: 100%;
+  margin: 0 0.25rem;
+}
+#inputs > input:focus {
+  background-color: #DBE3F5;
+  outline: none;
+}
+
+.inputSection {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+#verifyBtn {
+  margin-top: 2.5rem !important;
+  margin: auto;
+}
+
 .profile {
   font-family: "Mulish", sans-serif;
   font-size: 16px;
@@ -592,6 +639,51 @@ div.col-6 a {
   border-radius: 20px;
   align-items: center;
   justify-content: center;
+}
+
+.signOutConfirmationConatiner {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+.signOutConfirmationConatiner .confirmationText {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 14.75rem;
+  height: 3.125rem;
+}
+.signOutConfirmationConatiner .confirmationText > h1 {
+  font-size: 22px !important;
+}
+.signOutConfirmationConatiner > a {
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-decoration: none;
+}
+.signOutConfirmationConatiner > a > input {
+  width: 8.75rem;
+  height: 3.125rem;
+}
+.signOutConfirmationConatiner > p {
+  position: absolute;
+  bottom: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+.signOutConfirmationConatiner > p > a {
+  color: #111111;
+  text-decoration: none;
 }
 
 .payment-method {
@@ -944,6 +1036,7 @@ div.col-6 a {
 }
 
 ::-webkit-scrollbar-thumb {
+  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   background: rgb(180, 180, 180);
   border-radius: 10px;
@@ -951,4 +1044,4 @@ div.col-6 a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #626262;
-}
+}/*# sourceMappingURL=site.css.map */
