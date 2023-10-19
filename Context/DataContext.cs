@@ -14,6 +14,6 @@ public class DataContext : IdentityDbContext<AppIdentityUser>
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
-        builder.Entity<ProductEntity>().HasKey(fk=>new {fk.colorId,fk.sizeId});
+        builder.Entity<ProductColorEntity>().HasKey(fk=>new {fk.ProductId,fk.ColorId});
     }
 }

@@ -84,8 +84,8 @@ public class ProductEntity
     public ICollection<ProductWishListEntity> Wishlists { get; set; }=new HashSet<ProductWishListEntity>();
     public ICollection<ProductTagEntity> Tags { get; set; } = new HashSet<ProductTagEntity>();
     /*
-    public ICollection<ProductColorEntity> Color { get; set; }
-    public ICollection<ProductSizeEntity> Size { get; set; }
+    public ICollection<ProductColorEntity> Colors { get; set; }
+    public ICollection<ProductSizeEntity> Sizes { get; set; }
     */
     public DateTime Created_Date{ get; set; }
     public DateTime Modified_Date { get; set; }
