@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
   display: block;
   width: 20.9375rem;
@@ -23,10 +24,11 @@
   display: flex;
   justify-content: center;
   border-top: 1px solid #626262;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   height: 4.5rem;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 .bottom-nav-container .navigation {
   display: flex;
@@ -229,11 +231,12 @@ div.col-6 a {
 
 .cs-item-bottom-left {
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   left: 58px;
+  text-shadow: 1px 1px 14px rgba(255, 255, 255, 0.589);
 }
 .cs-item-bottom-left h3 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-family: "Mulish", sans-serif;
 }
 @media (min-width: 768px) {
@@ -247,7 +250,7 @@ div.col-6 a {
 }
 
 #carousel-container {
-  padding: 0;
+  padding-top: 4rem;
 }
 
 .top-left {
@@ -288,6 +291,15 @@ div.col-6 a {
   color: #626262;
 }
 
+#cart-section {
+  border-bottom: 2px solid #dbe3f5;
+}
+
+.order-container {
+  display: flex;
+  border: 1px solid red;
+}
+
 .bestseller-product-list {
   display: flex;
   flex-direction: row;
@@ -326,7 +338,7 @@ div.col-6 a {
   margin-top: 30rem;
 }
 
-.carousel {
+.onb-carousel {
   position: absolute;
   bottom: 20%;
   left: 50%;
@@ -343,6 +355,476 @@ div.col-6 a {
   text-align: center;
   width: 20rem;
   text-decoration: none;
+}
+
+.profile {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+}
+.profile .container .profile-person {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  height: 280px;
+}
+.profile .container .profile-person .image {
+  position: relative;
+}
+.profile .container .profile-person .image img {
+  width: 120px;
+  height: auto;
+  margin: 20px;
+  border: 5px solid #DBE3F5;
+  border-radius: 60px;
+}
+.profile .container .profile-person .icon {
+  position: absolute;
+  bottom: 30px;
+  right: 15px;
+  font-size: 18px;
+  background-color: #DBE3F5;
+  border-radius: 20px;
+  width: 32px;
+  height: 32px;
+  top: 60%;
+}
+.profile .container .profile-person .icon i {
+  font-size: 0.8em;
+}
+.profile .container .profile-person .user-name {
+  font-size: 20px;
+  font-weight: 700;
+}
+.profile .container .profile-person .email {
+  font-size: 14px;
+  font-weight: 400;
+}
+.profile .container .profile-info {
+  align-items: center;
+  text-align: center;
+}
+.profile .container .profile-info .info {
+  border-top: 1px solid #DBE3F5;
+  padding-top: 23px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.profile .container .profile-info .info i {
+  padding-left: 36px;
+  padding-right: 36px;
+}
+
+.edit {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+}
+.edit .container .profile-person {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  padding-top: 30px;
+  height: 280px;
+}
+.edit .container .profile-person .image {
+  position: relative;
+}
+.edit .container .profile-person .image img {
+  width: 120px;
+  height: auto;
+  margin: 20px;
+  border: 5px solid #DBE3F5;
+  border-radius: 60px;
+}
+.edit .container .profile-person .icon {
+  position: absolute;
+  bottom: 30px;
+  right: 15px;
+  font-size: 18px;
+  background-color: #DBE3F5;
+  border-radius: 20px;
+  width: 32px;
+  height: 32px;
+  top: 60%;
+}
+.edit .container .profile-person .icon i {
+  font-size: 0.8em;
+}
+.edit .container .profile-info {
+  align-items: center;
+  text-align: center;
+}
+.edit .container .profile-info .form-group {
+  border: 1px solid #DBE3F5;
+  border-radius: 20px;
+  height: 50px;
+  display: flex;
+  margin: 10px;
+}
+.edit .container .profile-info label {
+  flex: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 14px;
+  font-weight: 600;
+}
+.edit .container .profile-info input {
+  flex: 2;
+  border: none;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.edit .container .profile-info .profile-btn {
+  margin-top: 16px;
+  background-color: #111111;
+  color: white;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.payment-method {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+}
+.payment-method .container .cards .menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px;
+}
+.payment-method .container .cards .menu h4 {
+  flex: 1;
+  font-weight: 600;
+}
+.payment-method .container .cards .menu .new-card {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+}
+.payment-method .container .cards .menu .new-card p {
+  margin: 0;
+}
+.payment-method .container .cards .menu .new-card i {
+  font-size: 0.9rem;
+  padding-left: 30px;
+  color: #111111;
+}
+.payment-method .container .card-image {
+  height: 170px;
+  color: white;
+}
+.payment-method .container .card-image .card-info {
+  margin-top: 15px;
+  margin-left: 20px;
+  width: 238px;
+  position: absolute;
+  z-index: 2;
+}
+.payment-method .container .card-image .card-info .card-number {
+  padding-top: 15px;
+}
+.payment-method .container .card-image .card-info .name {
+  display: flex;
+  justify-content: space-between;
+}
+.payment-method .container .card-image .card-background {
+  position: absolute;
+  z-index: 1;
+}
+.payment-method .container .payment-info {
+  margin-top: 30px;
+}
+.payment-method .container .payment-info .info {
+  border-bottom: 1px solid #DBE3F5;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.payment-method .container .payment-info .info p {
+  flex: 1;
+  text-align: start;
+}
+.payment-method .container .payment-info .info .verify {
+  flex: 2;
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+}
+.payment-method .container .payment-info .info .verify .green {
+  color: #00824B;
+}
+.payment-method .container .payment-info .info .not-verify {
+  flex: 2;
+  text-align: end;
+  margin-right: 20px;
+}
+.payment-method .container .payment-info .info .not-verify .green {
+  color: #00824B;
+}
+
+.add-payment {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.add-payment .container .card-image {
+  height: 170px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+.add-payment .container .card-image .card-info {
+  margin-top: 15px;
+  margin-left: 20px;
+  width: 238px;
+  position: absolute;
+  z-index: 2;
+}
+.add-payment .container .card-image .card-info .card-number {
+  padding-top: 15px;
+}
+.add-payment .container .card-image .card-info .name {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+.add-payment .container .card-image .card-background {
+  position: absolute;
+  z-index: 1;
+}
+.add-payment .container .newcard-info {
+  display: flex;
+  justify-content: center;
+  text-align: start;
+}
+.add-payment .container .newcard-info form {
+  padding-top: 30px;
+}
+.add-payment .container .newcard-info form .form-group {
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 80%;
+}
+.add-payment .container .newcard-info form .validation {
+  display: flex;
+  flex-direction: row;
+}
+.add-payment .container .newcard-info form label {
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 14px;
+  font-weight: 700;
+}
+.add-payment .container .newcard-info form input {
+  border: none;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.add-payment .container .newcard-info form .save-btn {
+  margin-top: 16px;
+  background-color: #111111;
+  color: white;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-address {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.my-address .container .addresses .box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15px;
+  border-bottom: 1px solid #DBE3F5;
+  padding-top: 10px;
+}
+.my-address .container .addresses .box .icon {
+  margin-left: 10px;
+}
+.my-address .container .addresses .box .info {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.my-address .container .add {
+  text-align: center;
+  margin: 30px;
+}
+
+.add-address {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.add-address .container .newaddress-info {
+  align-items: center;
+  text-align: center;
+}
+.add-address .container .newaddress-info .form-group {
+  border: 1px solid #DBE3F5;
+  border-radius: 20px;
+  height: 50px;
+  display: flex;
+  margin: 10px;
+}
+.add-address .container .newaddress-info label {
+  flex: 1;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 14px;
+  font-weight: 600;
+}
+.add-address .container .newaddress-info input {
+  flex: 2;
+  border: none;
+  vertical-align: middle;
+  margin-right: 15px;
+}
+.add-address .container .newaddress-info .form-check {
+  text-align: start;
+  align-items: center;
+  align-self: center;
+  margin-left: 10px;
+}
+.add-address .container .newaddress-info .form-check-input {
+  border: 1px solid #DBE3F5;
+}
+.add-address .container .newaddress-info .save-btn {
+  margin-top: 16px;
+  background-color: #111111;
+  color: white;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-orders {
+  font-family: "Mulish", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+.my-orders .container .box {
+  display: flex;
+  flex-direction: column;
+  margin: 15px;
+  border-bottom: 1px solid #DBE3F5;
+  padding-top: 10px;
+}
+.my-orders .container .box .two-column {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.my-orders .container .box i {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+#wislist-row {
+  border-bottom: 2px solid #DBE3F5;
+}
+
+#burger {
+  font-size: 30px;
+  cursor: pointer;
+  transition: ease 0.3s;
+}
+#burger:hover {
+  color: gray;
+}
+
+.top-navigation {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  margin-bottom: 10px;
+}
+
+.toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.sidebar {
+  margin-top: 64px;
+  background-color: #212529;
+  color: #fff;
+  width: 300px;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  height: 100%;
+  transition: all 0.3s ease-out;
+  z-index: 200;
+}
+
+.sidebarshow {
+  left: 0;
+}
+
+.line {
+  padding-block: 1rem;
+  border-bottom: 3px solid rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+}
+
+.black-circle {
+  border: 1px solid grey;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: #fff;
+}
+
+.textarea {
+  width: 150px;
+  height: 50px;
+  padding: 10px;
+  font-size: 14px;
+  border: 2px solid grey;
+  border-radius: 35px;
+  margin-bottom: 1rem;
+}
+
+.black-circle-arrow {
+  border: 1px solid grey;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  color: black;
 }
 
 ::-webkit-scrollbar {
