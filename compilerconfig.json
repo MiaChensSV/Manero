@@ -10,5 +10,13 @@
   {
     "outputFile": "wwwroot/scss/Core/_btn.css",
     "inputFile": "wwwroot/scss/Core/_btn.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/Components/_checkout.css",
+    "inputFile": "wwwroot/scss/Components/_checkout.scss"
+  },
+  {
+    "outputFile": "wwwroot/scss/Components/_shippingDetails.css",
+    "inputFile": "wwwroot/scss/Components/_shippingDetails.scss"
   }
 ]

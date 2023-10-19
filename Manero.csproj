@@ -28,7 +28,6 @@
     <Folder Include="ViewModels\" />
     <Folder Include="Services\" />
     <Folder Include="Repository\" />
-    <Folder Include="wwwroot\scss\Components\" />
   </ItemGroup>
 
   <ItemGroup>
