@@ -8,5 +8,16 @@ namespace Manero.Controllers
         {
             return View();
         }
+
+        public IActionResult ForgotPass()
+        {
+            return View();
+        }
+
+        public IActionResult Reset()
+        {
+            return View();
+        }
+        
     }
 }

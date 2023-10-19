@@ -28,7 +28,7 @@ namespace Manero
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Onboarding}/{action=Index}/{id?}");
 
             app.Run();
         }
