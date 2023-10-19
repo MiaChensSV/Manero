@@ -8,5 +8,15 @@ namespace Manero.Controllers
         {
             return View();
         }
+
+        public IActionResult Verify()
+        {
+            return View();
+        }
+
+        public IActionResult Otp()
+        {
+            return View();
+        }
     }
 }

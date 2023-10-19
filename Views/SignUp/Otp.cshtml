@@ -1,0 +1,35 @@
+    <div class="singInContainer">
+    <div class="goBackNav">
+        <a asp-controller="SignUp" asp-action="Verify">
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="8"
+                 height="15"
+                 viewBox="0 0 8 15"
+                 fill="none">
+                <path d="M7 13.833L1 7.83301L7 1.83301"
+                      stroke="#111111"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+            </svg>
+        </a>
+        <p class="goBackNavText">Verify your phone number</p>
+        <p class="hiddenElement"></p>
+    </div>
+
+        <p class="ResetPassText">Enter your OTP code here.</p>
+
+        <form action="">
+        <section class="inputSection">
+  <div id='inputs'>
+    <input id='input1' type='text' maxLength="1" />
+    <input id='input2' type='text' maxLength="1" />
+    <input id='input3' type='text' maxLength="1" />
+    <input id='input4' type='text' maxLength="1" />
+    <input id='input5' type='text' maxLength="1" />
+  </div>
+  </section>
+  <p class="singUpText">Didn't receive the OTP? <a>Resend.</a></p>
+        <a asp-controller="Home" asp-action="Index"> <input type="button" value="Verify" class="btn" id='verifyBtn'/></a>
+        </form>
+    </div>
