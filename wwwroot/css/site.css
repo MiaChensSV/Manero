@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
   display: block;
@@ -829,7 +829,6 @@ div.col-6 a {
 }
 
 ::-webkit-scrollbar-thumb {
-  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   background: rgb(180, 180, 180);
   border-radius: 10px;
@@ -837,4 +836,4 @@ div.col-6 a {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #626262;
-}/*# sourceMappingURL=site.css.map */
+}
