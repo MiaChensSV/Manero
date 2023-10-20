@@ -74,7 +74,9 @@ body {
     height: 200px;
     border: 5px solid green;
     border-radius: 50%;
-    background-color: #f0f0f0;
+    background-image: url('/images/ellipse.png');
+    background-color: #DBE3F5;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -134,9 +136,12 @@ body {
 .circleFailed-MG3-117 {
     width: 200px;
     height: 200px;
+    background-position: center;
+    background-image: url('/images/ellipse.png');
+    background-color: #DBE3F5;
+    background-size: cover;
     border: 5px solid red;
     border-radius: 50%;
-    background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
     justify-content: center;
