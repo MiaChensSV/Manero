@@ -9,3 +9,4 @@
         public ICollection<UserAddressEntity> Users { get; set; } = new HashSet<UserAddressEntity>();
     }
 }
+

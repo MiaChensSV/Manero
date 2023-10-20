@@ -2,9 +2,9 @@
 
 namespace Manero.Models.Entities;
 
-public class OrdersEntity
+public class OrderEntity
 {
-    public OrdersEntity()
+    public OrderEntity()
     {
         Created_Date = DateTime.Now;
         Modified_Date = DateTime.Now;
@@ -20,6 +20,7 @@ public class OrdersEntity
     public PromocodesEntity Promocode { get; set; } = null!;
 
     public string ShippingAddress { get; set; } = null!;
+    public ICollection<OrderDetailEntity> OrderDetailItems { get; set; }=new HashSet<OrderDetailEntity>();
 
     [Column(TypeName = "money")]
     public decimal DeliveryFee { get; set; }
