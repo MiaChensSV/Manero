@@ -26,7 +26,7 @@ public class OrderEntity
     public decimal DeliveryFee { get; set; }
 
     [Column(TypeName = "money")]
-    public decimal Totalcost { get;set; }
+    public decimal TotalCost { get;set; }
     public string? TrackingNumber { get;set; }
     public DateTime Created_Date { get; set; }
     public DateTime Modified_Date { get; set; }
