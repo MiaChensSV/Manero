@@ -1,0 +1,37 @@
+﻿<section class="container"> 
+    <a href="#"> <i class="fa-solid fa-chevron-left" style="color: #242424;"></i> </a> <h1 class="text-center">  Shipping Details</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2971.9638144952646!2d-87.73596452535661!3d41.850605667137344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e3252476a61bb%3A0xd5946d0fcffa9f9c!2sS%20Kirkland%20Ave%2C%20Chicago%2C%20IL%2060623%2C%20USA!5e0!3m2!1ssv!2sse!4v1697635279491!5m2!1ssv!2sse"
+        width="100%" height="auto" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+    <form id="shipping-form">
+        <div class="radio-option">
+            <h2 class="font-weight-light">Home</h2>
+            <div class="d-flex justify-content-between">
+                <label for="home">8000 S Kirkland Ave, Chicago...</label>
+                <input type="radio" id="home" name="address" value="home">
+            </div>
+        </div>
+        <hr class="line" />
+        <div class="radio-option">
+            <h2 class="font-weight-light">Work</h2>
+            <div class="d-flex justify-content-between">
+                <label for="work">8000 S Kirkland Ave, Chicago...</label>
+                <input type="radio" id="work" name="address" value="work">
+            </div>
+        </div>
+        <hr class="line" />
+        <div class="radio-option">
+            <h2 class="font-weight-light">Other</h2>
+            <div class="comment-container d-flex justify-content-between">
+                <label for="other">Enter an address</label>
+                <input type="text" id="textbox" placeholder="Add new address" name="textbox">
+                <input type="radio" id="other" name="address" value="other">
+            </div>
+        </div>
+        <hr class="line" />
+        <div class="toggle-switch">
+            <input type="checkbox" id="current-location" name="current-location">
+            <label for="current-location">Use current location</label>
+        </div>
+    </form>
+</section>
