@@ -1,0 +1,23 @@
+﻿.bestseller-product-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.filter-sort-wrapper-product-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.product-list-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+}
+
+.card-product-list {
+    margin: 1rem;
+}

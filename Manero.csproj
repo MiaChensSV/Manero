@@ -23,13 +23,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
     <Folder Include="Models\Entities\" />
     <Folder Include="Models\Dtos\" />
+    <Folder Include="Models\Schemas\" />
     <Folder Include="ViewModels\" />
     <Folder Include="Services\" />
     <Folder Include="Repository\" />
-    <Folder Include="wwwroot\scss\Components\" />
   </ItemGroup>
 
   <ItemGroup>

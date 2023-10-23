@@ -1,0 +1,178 @@
+.singInContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-mulish;
+
+    > div {
+        display: flex;
+    }
+
+    > h1 {
+        margin-top: 6.4rem;
+    }
+
+    > form {
+        > div {
+            width: 20.87488rem;
+            height: 3.0625rem;
+            flex-shrink: 0;
+            position: relative;
+            margin: 1.3rem 0 1.3rem 0;
+
+            > svg {
+                position: absolute;
+                z-index: 1;
+            }
+
+            > label {
+                position: absolute;
+                z-index: 2;
+                left: 5%;
+                top: -12%;
+                background-color: white;
+                padding: 0 10px 0 10px;
+                font-size: small;
+                color: $color-gray;
+            }
+
+            > input {
+                position: absolute;
+                z-index: 3;
+                width: 18rem;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-size: 1rem;
+                border: none;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        > a {
+            &:link {
+                color: $color-dark;
+                text-decoration: none;
+            }
+
+            &:visited {
+                color: $color-dark;
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: $color-dark;
+                text-decoration: none;
+            }
+
+            &:active {
+                color: $color-dark;
+                text-decoration: none;
+            }
+        }
+    }
+
+    > p {
+        > a {
+            &:link {
+                color: $color-dark;
+                text-decoration: none;
+            }
+
+            &:visited {
+                color: $color-dark;
+                text-decoration: none;
+            }
+
+            &:hover {
+                color: $color-dark;
+                text-decoration: none;
+            }
+
+            &:active {
+                color: $color-dark;
+                text-decoration: none;
+            }
+        }
+
+        color: $color-gray;
+    }
+}
+
+.checkboxText {
+    margin-right: 4rem;
+    color: $color-gray;
+}
+
+#signInBtn {
+    margin-top: 2rem;
+}
+
+.singUpText {
+    margin-top: 1rem;
+    margin-right: 6rem;
+
+    > a {
+        font-weight: $font-weight-semibold;
+    }
+}
+
+.goBackNav {
+    display: flex;
+    color: $color-dark !important;
+    margin-top: 2rem;
+    width: 90%;
+}
+
+.goBackNavText {
+    margin: auto;
+    padding: 0;
+}
+
+.hiddenElement {
+    margin: 0;
+    padding: 0;
+    width: 0.5rem;
+}
+
+.loginOptions {
+    margin-top: 2.5rem;
+}
+
+.passwordInfoText {
+    margin-top: 2.4rem;
+    line-height: 1.5rem;
+    width: 20.9375rem;
+}
+
+.passwordResetedContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-mulish;
+    text-align: center;
+    line-height: 1.5rem;
+
+    > p {
+        color: $color-gray;
+        margin-bottom: 2.3rem;
+    }
+
+    > h2 {
+        width: 16rem;
+        margin: 4rem 0 0 0;
+    }
+
+    > svg {
+        margin-top: 5rem;
+    }
+}
+
+.ResetPassText{
+    margin-top: 2.4rem;
+}
