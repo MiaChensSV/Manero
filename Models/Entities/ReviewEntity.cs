@@ -13,7 +13,7 @@ public class ReviewEntity
     [ForeignKey("ProductId")]
     public ProductModelEntity Product { get; set; } = null!;
     public string? ReviewText { get;set; }
-    [Column(TypeName = "decimal(1,2)")]
+    [Column(TypeName = "decimal(3,2)")]
     public decimal Rating { get; set; }
 
 }

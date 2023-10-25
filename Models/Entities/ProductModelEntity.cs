@@ -11,6 +11,7 @@ public class ProductModelEntity
     public string ProductDescription { get; set; } = null!;
     public ICollection<ProductDetailEntity> Products { get; set; } = new HashSet<ProductDetailEntity>();
     public ICollection<ProductCategoryEntity> Categories { get; set; } = new HashSet<ProductCategoryEntity>();
-
+    public ICollection<ReviewEntity> Reviews { get; set; } = new HashSet<ReviewEntity>();
+    public ICollection<ProductTagEntity> Tags { get; set; } = new HashSet<ProductTagEntity>();
 }
 

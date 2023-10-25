@@ -7,8 +7,6 @@ namespace Manero.Models.Entities;
 [PrimaryKey(nameof(ArticleNumber))]
 public class ProductDetailEntity
 {
-    private decimal _price = 0;
-    private decimal _discountedprice = 0;
 
     public ProductDetailEntity()
     {
@@ -30,27 +28,17 @@ public class ProductDetailEntity
     public ProductColorEntity Color { get; set; } = null!;
     public string ProductTitle { get; set; } = null!;
     public string? ProductImageUrl { get; set; }
-
-    [Column(TypeName = "money")]
-    public decimal Price
-    {
-        get { return _price; }
-        set { _price = Math.Round(value, 2); }
-    }
-
-    [Column(TypeName = "money")]
+    [Column(TypeName = "decimal(7,2)")]
+    public decimal Price{get; set; }
+    [Column(TypeName = "decimal(7,2)")]
     [Display(Name = "Sales Price")]
-    public decimal DiscountedPrice
-    {
-        get { return _discountedprice; }
-        set { _price = Math.Round(value, 2); }
-    }
+    public decimal DiscountedPrice { get; set; }
+ 
     public string? ProductDetailDescription { get; set; }
     public int Quantity { get;set; }
-    public ICollection<ReviewEntity> Reviews { get; set; } = new HashSet<ReviewEntity>();
 
     public ICollection<ProductWishListEntity> Wishlists { get; set; } = new HashSet<ProductWishListEntity>();
-    public ICollection<ProductTagEntity> Tags { get; set; } = new HashSet<ProductTagEntity>();
+
 
     public DateTime Created_Date{ get; set; }
     public DateTime Modified_Date { get; set; }
