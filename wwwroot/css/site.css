@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 @import "../scss/Components/_shippingDetails.css";
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
@@ -870,10 +870,18 @@ div.col-6 a {
   padding: 10px 35px;
   width: 100%;
   position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   top: 0;
   left: 0;
   z-index: 9;
   margin-bottom: 10px;
+}
+.top-navigation div img {
+  width: 26px;
+  height: auto;
+  margin-top: 10px;
 }
 .top-navigation button {
   transition: ease 0.4s;
@@ -1072,6 +1080,7 @@ h2 {
 }
 
 ::-webkit-scrollbar-thumb {
+  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   background: rgb(180, 180, 180);
   border-radius: 10px;
@@ -1079,4 +1088,4 @@ h2 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #626262;
-}
+}/*# sourceMappingURL=site.css.map */

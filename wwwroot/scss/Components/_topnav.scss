@@ -3,10 +3,20 @@
     padding: 10px 35px;
     width:100%;
     position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     top:0;
     left:0;
     z-index:9;
     margin-bottom: 10px;
+    div{
+      img{  
+        width: 26px;
+        height: auto;
+        margin-top: 10px;
+      }
+    }
     button{
       transition: ease .4s;
       &:hover{
