@@ -5,7 +5,7 @@ namespace Manero.Models.Entities;
 public class ProductTagEntity
 {
     public int ProductId { get;set; }
-    public ProductEntity Product { get; set; } = null!;
+    public ProductModelEntity Product { get; set; } = null!;
     public int TagId { get; set; }
     public TagEntity Tag { get; set; } = null!;
 }
