@@ -1,5 +1,7 @@
-﻿namespace Manero.Models.Entities;
+﻿using Microsoft.EntityFrameworkCore;
 
+namespace Manero.Models.Entities;
+[PrimaryKey(nameof(StatusId))]
 public class OrderStatusEntity
 {
     public int StatusId { get; set; }

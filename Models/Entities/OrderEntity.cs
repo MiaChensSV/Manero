@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Manero.Models.Entities;
+[PrimaryKey(nameof(OrdersId))]
 
 public class OrderEntity
 {
@@ -10,7 +12,7 @@ public class OrderEntity
         Modified_Date = DateTime.Now;
     }
     public int OrdersId { get; set; }   
-    public int UserId { get; set; }
+    public string UserId { get; set; } = null!;
     [ForeignKey("UserId")]
     public AppIdentityUser User { get; set; } = null!;
     public int StatusId { get; set; }

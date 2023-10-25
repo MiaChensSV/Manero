@@ -17,8 +17,8 @@ public class ProductDetailEntity
         Deleted_Date= DateTime.Now;
     }
     public string ArticleNumber { get; set; } = null!;
-    public string ModelNumber { get;set; } = null!;
-    [ForeignKey("ModelNumber")]
+    public int ProductId { get;set; } 
+    [ForeignKey("ProductId")]
     public ProductEntity ProductModel { get; set; } = null!;
 
     public int SizeId { get;set; }
@@ -45,7 +45,7 @@ public class ProductDetailEntity
         get { return _discountedprice; }
         set { _price = Math.Round(value, 2); }
     }
-
+    public string? ProductDetailDescription { get; set; }
     public int Quantity { get;set; }
     public ICollection<ReviewEntity> Reviews { get; set; } = new HashSet<ReviewEntity>();
 

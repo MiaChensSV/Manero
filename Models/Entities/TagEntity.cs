@@ -1,4 +1,7 @@
-﻿namespace Manero.Models.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace Manero.Models.Entities;
+[PrimaryKey(nameof(TagId))]
 
 public class TagEntity
 {

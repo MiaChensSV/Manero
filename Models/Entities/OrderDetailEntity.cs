@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.EntityFrameworkCore;
 
 namespace Manero.Models.Entities;
-
+[PrimaryKey(nameof(OrderItemId))]
 public class OrderDetailEntity
 {
     public OrderDetailEntity()
@@ -21,6 +22,7 @@ public class OrderDetailEntity
     public string ArticleNumber { get; set; } = null!;
     public ProductDetailEntity Product { get; set; }=null!;
     public int Quantity { get; set; }
+    [Column(TypeName = "money")]
     public decimal Price
     {
         get { return _price; }

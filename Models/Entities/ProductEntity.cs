@@ -1,4 +1,8 @@
-﻿namespace Manero.Models.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Drawing;
+
+namespace Manero.Models.Entities;
+[PrimaryKey(nameof(ProductId))]
 
 public class ProductEntity
 {
