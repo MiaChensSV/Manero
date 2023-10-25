@@ -12,7 +12,7 @@ public class DataContext : IdentityDbContext<AppIdentityUser>
     {
     }
 
-    public DbSet<ProductEntity> Products { get; set; }
+    public DbSet<ProductModelEntity> ProductModels { get; set; }
     public DbSet<UserAddressEntity> AppUserAddress { get; set; }
     public DbSet<AddressEntity> Addresses { get; set; }
     public DbSet<PromocodesEntity> Promocodes { get; set; }

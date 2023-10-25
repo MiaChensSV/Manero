@@ -11,7 +11,7 @@ public class ReviewEntity
     public AppIdentityUser User { get; set; } = null!;
     public int ProductId { get; set; } 
     [ForeignKey("ProductId")]
-    public ProductEntity Product { get; set; } = null!;
+    public ProductModelEntity Product { get; set; } = null!;
     public string? ReviewText { get;set; }
     [Column(TypeName = "decimal(1,2)")]
     public decimal Rating { get; set; }

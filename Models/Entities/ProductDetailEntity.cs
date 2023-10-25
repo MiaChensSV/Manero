@@ -14,12 +14,12 @@ public class ProductDetailEntity
     {
         Created_Date = DateTime.Now;
         Modified_Date = DateTime.Now;
-        Deleted_Date= DateTime.Now;
+        Deleted_Date = DateTime.Now;
     }
     public string ArticleNumber { get; set; } = null!;
     public int ProductId { get;set; } 
     [ForeignKey("ProductId")]
-    public ProductEntity ProductModel { get; set; } = null!;
+    public ProductModelEntity ProductModel { get; set; } = null!;
 
     public int SizeId { get;set; }
     [ForeignKey("SizeId")]

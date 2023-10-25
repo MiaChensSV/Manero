@@ -4,7 +4,7 @@ using System.Drawing;
 namespace Manero.Models.Entities;
 [PrimaryKey(nameof(ProductId))]
 
-public class ProductEntity
+public class ProductModelEntity
 {
     public int ProductId { get;set; }
     public string ModelNumber { get; set; } = null!;
