@@ -26,6 +26,19 @@ public class AccountController : Controller
 
         return View();
     }
+
+    public IActionResult Wishlist()
+    {
+
+        return View();
+    }
+
+    public IActionResult SignOutUser()
+    {
+
+        return View();
+    }
+
 }
 
    

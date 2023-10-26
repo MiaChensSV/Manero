@@ -1,0 +1,161 @@
+﻿<div class="filtersContainer">
+    <div class="goBackNav">
+        <a asp-controller="Products" asp-action="Index">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
+                <path d="M7 13.833L1 7.83301L7 1.83301" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+            </svg>
+        </a>
+        <p class="goBackNavText">Filter</p>
+        <p class="hiddenElement"></p>
+    </div>
+    <form>
+        <p>Size</p>
+        <div class="sizesFilter">
+            <label class="containerSizes">
+                <p>XS</p>
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="containerSizes">
+                <p>S</p>
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="containerSizes">
+                <p>M</p>
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="containerSizes">
+                <p>L</p>
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="containerSizes">
+                <p>XL</p>
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+            <label class="containerSizes">
+                <p>XXL</p>
+                <input type="checkbox">
+                <span class="checkmark"></span>
+            </label>
+        </div>
+
+        <div class="colorsFilter">
+            <p>Color</p>
+            <label class="containerColors">
+                <input type="checkbox">
+                <span class="red"></span>
+            </label>
+            <label class="containerColors">
+                <input type="checkbox">
+                <span class="blue"></span>
+            </label>
+            <label class="containerColors">
+                <input type="checkbox">
+                <span class="beige"></span>
+            </label>
+            <label class="containerColors">
+                <input type="checkbox">
+                <span class="darkblue"></span>
+            </label>
+            <label class="containerColors">
+                <input type="checkbox">
+                <span class="black"></span>
+            </label>
+            <p class="hiddenElement"></p>
+        </div>
+        <p>Price</p>
+        <div class="form_control">
+            <div class="form_control_container">
+                <div class="form_control_container__time"></div>
+                <input class="form_control_container__time__input" type="number" id="fromInput" value="50" min="50"
+                       max="2000" />
+            </div>
+            <div class="form_control_container">
+                <div class="form_control_container__time"></div>
+                <input class="form_control_container__time__input" type="number" id="toInput" value="1500" min="50"
+                       max="2000" />
+            </div>
+        </div>
+        <div class="range_container">
+            <div class="sliders_control">
+                <input id="fromSlider" type="range" value="50" min="50" max="2000" />
+                <input id="toSlider" type="range" value="1500" min="50" max="2000" />
+            </div>
+        </div>
+        <div class="checkboxesCate">
+            <div class="cateContainer">
+                <input type="checkbox" name="sale" id="sale">
+                <label for="sale" class="saleTxt">Sale</label>
+            </div>
+            <div class="cateContainer">
+                <input type="checkbox" name="new" id="new">
+                <label for="new" class="newTxt">New</label>
+            </div>
+            <div class="cateContainer">
+                <input type="checkbox" name="Top" id="Top">
+                <label for="Top" class="topTxt">Top</label>
+            </div>
+
+        </div>
+        <p>Tags</p>
+        <div class="tagsContainer">
+            <label class="containerSizes">
+                <input type="checkbox">
+                <span class="checkmark">
+                    <p>Men</p>
+                </span>
+            </label>
+            <label class="containerSizes">
+                <input type="checkbox">
+                <span class="checkmark">
+                    <p>Women</p>
+                </span>
+            </label>
+            <label class="containerSizes">
+                <input type="checkbox">
+                <span class="checkmark">
+                    <p>Kids</p>
+                </span>
+            </label>
+            <label class="containerSizes">
+                <input type="checkbox">
+                <span class="checkmark">
+                    <p>Accessories</p>
+                </span>
+            </label>
+            <label class="containerSizes">
+                <input type="checkbox">
+                <span class="checkmark">
+                    <p>Dresses</p>
+                </span>
+            </label>
+            <label class="containerSizes">
+                <input type="checkbox">
+                <span class="checkmark">
+                    <p>Pants</p>
+                </span>
+            </label>
+            <label class="containerSizes">
+                <input type="checkbox">
+                <span class="checkmark">
+                    <p>Shoes</p>
+                </span>
+            </label>
+            <label class="containerSizes">
+                <input type="checkbox">
+                <span class="checkmark">
+                    <p>T-Shirts</p>
+                </span>
+            </label>
+        </div>
+        <div>
+            <a asp-controller="Products" asp-action="Index"><input type="button" value="Apply Filters" class="btn" /></a>
+        </div>
+    </form>
+</div>
+

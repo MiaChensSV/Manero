@@ -5,15 +5,18 @@
 }
 <div class="payment-method">
     <div class="container">
-        <div class="cards">
+        <a asp-controller="Payment" asp-action="AddPayment">
+            <div class="cards">
             <div class="menu">
                 <h4>Cards</h4>
-                <div class="new-card">
+          
+                     <div class="new-card">
                     <p>Add a new card</p>
                     <i class="fa-light fa-plus"></i>
                 </div>
             </div>
-        </div>
+            </div>
+        </a>
         <div class="card-image">
             <div class="card-info">
                 <img src="/images/visa.png" alt="visa card" />
@@ -45,3 +48,4 @@
         </div>
     </div>
 </div>
+        <partial name="../Shared/_BottomNav.cshtml" />
