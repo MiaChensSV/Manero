@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 @import "../scss/Components/_shippingDetails.css";
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
-@import "../scss/Components/categories.css";
 .btn {
   display: block;
   width: 20.9375rem;
@@ -343,12 +342,20 @@ div.col-6 a {
   padding: 0 5px;
 }
 
+.bestseller-title {
+  font-size: 1rem;
+}
+
 .bestseller-product-list {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
   margin-top: 1rem;
+}
+
+.img-noradius {
+  border-radius: 0;
 }
 
 .filter-sort-wrapper-product-list {
@@ -361,10 +368,26 @@ div.col-6 a {
 .product-list-wrapper {
   display: grid;
   grid-template-columns: 2fr 2fr;
+  margin-bottom: 4rem;
 }
 
 .card-product-list {
   margin: 1rem;
+  border: none;
+}
+
+.product-list-heart {
+  font-size: 5px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.product-list-bag {
+  font-size: 5px;
+  position: absolute;
+  top: 50px;
+  right: 10px;
 }
 
 .onboardingContainer {
@@ -872,6 +895,94 @@ div.col-6 a {
 .my-orders .container .box i {
   margin-left: 10px;
   margin-right: 10px;
+}
+
+.categories-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 2px solid rgb(219, 227, 245);
+}
+
+#shoppingbag-categories {
+  transition: ease 0.5s;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+#search-categories {
+  font-size: 15px;
+  margin-left: 3rem;
+}
+
+.search-category {
+  border-radius: 1rem;
+  border: none;
+  height: 40px;
+  font-size: 0.7;
+  margin-left: 0.1rem;
+  font-weight: 400;
+}
+
+.categories-choose-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.view-category {
+  color: black;
+  text-decoration: none;
+  font-size: 0.8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.4rem;
+}
+
+.view-category:hover {
+  border-radius: 2rem;
+  background-color: rgb(219, 227, 245);
+  cursor: pointer;
+}
+
+.category-boxes-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-boxes-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-bottom: 0.1rem;
+}
+
+.category-box {
+  padding-top: 8rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgb(23, 28, 49);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.category-box-wide {
+  padding-top: 6rem;
+  padding-left: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgb(23, 28, 49);
+  color: white;
+  margin-bottom: 0.1rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.margin-category-box {
+  margin-right: 0.1rem;
 }
 
 #wislist-row {

@@ -1,9 +1,17 @@
-﻿.bestseller-product-list {
+﻿.bestseller-title {
+    font-size: 1rem;
+}
+
+.bestseller-product-list {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
     margin-top: 1rem;
+}
+
+.img-noradius {
+    border-radius: 0;
 }
 
 .filter-sort-wrapper-product-list {
@@ -16,8 +24,24 @@
 .product-list-wrapper {
     display: grid;
     grid-template-columns: 2fr 2fr;
+    margin-bottom: 4rem;
 }
 
 .card-product-list {
     margin: 1rem;
+    border: none;
+}
+
+.product-list-heart {
+    font-size: 5px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.product-list-bag {
+    font-size: 5px;
+    position: absolute;
+    top: 50px;
+    right: 10px;
 }
