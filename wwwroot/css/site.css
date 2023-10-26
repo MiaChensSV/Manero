@@ -22,6 +22,23 @@
   color: black;
 }
 
+a:link {
+  color: #111111;
+  text-decoration: none;
+}
+a:visited {
+  color: #111111;
+  text-decoration: none;
+}
+a:hover {
+  color: #111111;
+  text-decoration: none;
+}
+a:active {
+  color: #111111;
+  text-decoration: none;
+}
+
 .bottom-nav-container {
   display: flex;
   justify-content: center;
@@ -548,6 +565,7 @@ div.col-6 a {
 .profile {
   font-family: "Mulish", sans-serif;
   font-size: 16px;
+  margin-top: 2rem;
 }
 .profile .container .profile-person {
   display: flex;
@@ -697,7 +715,7 @@ div.col-6 a {
 .signOutConfirmationConatiner .confirmationText > h1 {
   font-size: 22px !important;
 }
-.signOutConfirmationConatiner > a {
+.signOutConfirmationConatiner > .signOutBtn {
   position: absolute;
   bottom: 40%;
   left: 50%;
@@ -705,18 +723,18 @@ div.col-6 a {
   text-align: center;
   text-decoration: none;
 }
-.signOutConfirmationConatiner > a > input {
+.signOutConfirmationConatiner > .signOutBtn > input {
   width: 8.75rem;
   height: 3.125rem;
 }
-.signOutConfirmationConatiner > p {
+.signOutConfirmationConatiner > .signOutCancleBtn {
   position: absolute;
   bottom: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
 }
-.signOutConfirmationConatiner > p > a {
+.signOutConfirmationConatiner > .signOutCancleBtn > a {
   color: #111111;
   text-decoration: none;
 }

@@ -56,7 +56,7 @@
             <label for="checkbox" class="checkboxText">Remember me</label>
         <a asp-controller="Login" asp-action="ForgotPass">Forgot password?</a>
 
-        <input type="button" value="Sing in" class="btn" id="signInBtn" />
+        <a asp-controller="Home" asp-action="Index"><input type="button" value="Sign in" class="btn" id="signInBtn" /></a>
         </form>
         <p class="singUpText">Don't have an account? <a asp-controller="SignUp" asp-action="Index">Sign up.</a></p>
         <div class="loginOptions">

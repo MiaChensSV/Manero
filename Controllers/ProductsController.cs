@@ -18,5 +18,10 @@ namespace Manero.Controllers
         {
             return View();
         }
+
+        public IActionResult FilterProduct()
+        {
+            return View();
+        }
     }
 }

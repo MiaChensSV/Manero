@@ -3,6 +3,7 @@
 .profile {
   font-family: $font-mulish;
   font-size: 16px;
+  margin-top: 2rem;
 
   .container {
     .profile-person {
@@ -177,7 +178,7 @@
     }
   }
 
-  > a {
+  > .signOutBtn {
     position: absolute;
     bottom: 40%;
     left: 50%;
@@ -189,7 +190,7 @@
       height: 3.125rem;
     }
   }
-  > p {
+  > .signOutCancleBtn {
     position: absolute;
     bottom: 35%;
     left: 50%;
