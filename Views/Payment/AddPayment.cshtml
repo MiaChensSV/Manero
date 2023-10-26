@@ -3,22 +3,23 @@
 *@
 @{
 }
-<div class="container">
-    <div class="add-payment">
-        <div class="card-image">
-            <div class="card-info">
-                <img src="/images/visa.png" alt="visa card" />
-                <p class="card-number">7741 6588 2123 6644</p>
-                <div class="name">
-                    <p>Kristin</p>
-                    <P>EXP.END</P>
+<div class="add-payment">
+    <div class="container">
+        <a asp-controller="Payment" asp-action="AddPayment">
+            <div class="card-image">
+                <div class="card-info">
+                    <img src="/images/visa.png" alt="visa card" />
+                    <p class="card-number">7741 6588 2123 6644</p>
+                    <div class="name">
+                        <p>Kristin</p>
+                        <P>EXP.END</P>
+                    </div>
+                </div>
+                <div class="card-background">
+                    <img src="/images/blue-card.png" alt="blue-card" />
                 </div>
             </div>
-            <div class="card-background">
-                <img src="/images/blue-card.png" alt="blue-card" />
-
-            </div>
-        </div>
+        </a>
 
         <div class="newcard-info">
             <form>
