@@ -1,0 +1,127 @@
+#cart-order-container {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #dbe3f5;
+
+    .cart-section {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 0.5rem;
+
+        .cart-product-stock {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: auto;
+            padding-right: 1rem;
+            gap: 1rem;
+
+            .cart-stock-input {
+                font-family: $font-mulish;
+                font-size: 10px;
+                text-align: center;
+                width: 1rem;
+                background: none;
+                color: inherit;
+                border: none;
+                outline: inherit;
+            }
+
+            .cart-product-stock-btn {
+                font-family: $font-mulish;
+                font-weight: $font-weight-bold;
+                background: none;
+                color: inherit;
+                border: none;
+                padding: 0;
+                cursor: pointer;
+                outline: inherit;
+            }
+        }
+
+        #cart-product-text {
+            color: dimgrey;
+            font-size: smaller;
+            font-weight: $font-weight-regular;
+            font-family: $font-mulish;
+        }
+    }
+}
+
+#cart-total-cost-section {
+    display: flex;
+    gap: 1rem;
+    border-bottom: 2px solid #dbe3f5;
+
+    #cart-subtotal-section {
+        display: flex;
+        gap: 0.25rem;
+        flex-direction: column;
+        padding-left: 1rem;
+
+        #cart-subtotal-text {
+            font-family: $font-mulish;
+            font-size: smaller;
+            color: dimgray;
+        }
+    }
+
+    .cart-price {
+        display: flex;
+        flex-direction: column;
+        margin-left: auto;
+        padding-right: 1rem;
+        gap: 0.25rem;
+    }
+
+    .cart-subtotal-price,
+    .cart-subtotal-discount,
+    .cart-delivery-text {
+        font-family: $font-mulish;
+        font-size: smaller;
+        margin-bottom: 0;
+
+        .cart-delivery-text {
+            color: green;
+        }
+    }
+}
+
+#cart-total-price-section {
+    display: flex;
+    gap: 1rem;
+
+    #cart-total-text-section {
+        display: flex;
+        gap: 0.25rem;
+        flex-direction: column;
+        padding-left: 1rem;
+    }
+
+    #cart-totalt-text,
+    #cart-total-price {
+        font-family: $font-mulish;
+    }
+
+    #cart-totalt-text {
+        padding-left: 1rem;
+    }
+
+    #cart-total-price {
+        margin-left: auto;
+        margin-right: 1rem;
+    }
+
+    .cart-total-price {
+        margin-left: auto;
+        margin-bottom: 5rem;
+    }
+}
+
+.order-container {
+    display: flex;
+    justify-content: center;
+}
