@@ -8,6 +8,9 @@
 }
     
   .top-navigation{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 15px 20px;
     width:100%;
@@ -16,6 +19,12 @@
     left:0;
     z-index:9;
     margin-bottom: 10px;
+    div{
+      img{
+        width: 30px;
+      }
+    }
+
   }
   
   .toggle {
