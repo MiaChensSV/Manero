@@ -39,6 +39,12 @@ public class AccountController : Controller
         return View();
     }
 
+    public IActionResult PromoCode()
+    {
+
+        return View();
+    }
+
 }
 
    

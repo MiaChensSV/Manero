@@ -1475,6 +1475,51 @@ h2 {
   padding: 0.5rem 1.3rem;
 }
 
+.promoCodeEmptyContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+.promoCodeEmptyContainer .promo-code-h2 {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 13rem;
+}
+.promoCodeEmptyContainer .promocodeContainer {
+  width: 20.87488rem;
+  height: 3.0625rem;
+  flex-shrink: 0;
+  position: relative;
+  margin: 1.3rem 0 1.3rem 0;
+}
+.promoCodeEmptyContainer .promocodeContainer > svg {
+  position: absolute;
+  z-index: 1;
+}
+.promoCodeEmptyContainer .promocodeContainer > label {
+  position: absolute;
+  z-index: 2;
+  left: 5%;
+  top: -12%;
+  background-color: white;
+  padding: 0 10px 0 10px;
+  font-size: small;
+  color: #626262;
+}
+.promoCodeEmptyContainer .promocodeContainer .promocodeInput {
+  position: absolute;
+  z-index: 3;
+  width: 18rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  border: none;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;
