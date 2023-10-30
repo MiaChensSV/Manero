@@ -18,13 +18,17 @@ namespace Manero
             //Add repositories 
 
             builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
-           
+
             //test i localdb
             //builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("sql")));
+            builder.Services.AddIdentity<AppIdentityUser, IdentityRole>()
+                .AddEntityFrameworkStores<DataContext>()
+                .AddDefaultTokenProviders();
+
 
             var app = builder.Build();
 
-           
+
             app.UseHsts();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
