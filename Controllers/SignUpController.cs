@@ -16,20 +16,19 @@ namespace Manero.Controllers
             _signInManager = signInManager;
         }
 
-        [HttpGet] public IActionResult Index() 
-        { 
-            return View(); 
-        }
+
 
         [HttpPost]
-        public async Task<IActionResult> Register(SignUpViewModel model)
+        public async Task<IActionResult> Index(SignUpViewModel model)
         {
             if (ModelState.IsValid)
             {
                 var user = new AppIdentityUser
                 {
-                    UserName = model.UserName,
+                    UserName = model.Email,
                     Email = model.Email,
+                    FirstName = model.FirstName,
+                    LastName = model.LastName
                 };
 
                 var result = await _userManager.CreateAsync(user, model.Password);
@@ -47,12 +46,19 @@ namespace Manero.Controllers
                         ModelState.AddModelError(string.Empty, error.Description);
                     }
                 }
+
+
             }
 
             return View(model);
         }
 
-    }
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
 
+    }
 
 }

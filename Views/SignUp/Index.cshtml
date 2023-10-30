@@ -22,10 +22,10 @@
 
         <h1>Sign Up</h1>
 
-    <form method="POST">
+    <form asp-controller="SignUp" asp-action="Index" method="post">
             <div class="">
-                <label for="name">Name</label>
-            <input type="text" name="name" asp-for="UserName" class="emailInput" />
+            <label for="firstName" asp-for="FirstName">First Name</label>
+            <input type="text" name="firstName" asp-for="FirstName" class="emailInput" />
                 <svg xmlns="http://www.w3.org/2000/svg"
                      width="335"
                      height="51"
@@ -38,8 +38,23 @@
                           stroke-linejoin="round" />
                 </svg>
             </div>
+        <div class="">
+            <label for="lastName" asp-for="LastName">Last Name</label>
+            <input type="text" name="lastName" asp-for="LastName" class="emailInput" />
+            <svg xmlns="http://www.w3.org/2000/svg"
+                 width="335"
+                 height="51"
+                 viewBox="0 0 335 51"
+                 fill="none">
+                <path d="M25.4252 1.33301H309.573C316.184 1.33301 322.524 3.91425 327.198 8.50889C331.872 13.1035 334.498 19.3352 334.498 25.833C334.498 32.3308 331.872 38.5625 327.198 43.1571C322.524 47.7518 316.184 50.333 309.573 50.333H25.4252C18.8147 50.333 12.4748 47.7518 7.80044 43.1571C3.12605 38.5625 0.5 32.3308 0.5 25.833C0.5 19.3352 3.12605 13.1035 7.80044 8.50889C12.4748 3.91425 18.8147 1.33301 25.4252 1.33301Z"
+                      stroke="#DBE3F5"
+                      stroke-width="0.988468"
+                      stroke-linecap="round"
+                      stroke-linejoin="round" />
+            </svg>
+        </div>
                         <div class="">
-                <label for="email">Email</label>
+            <label for="email" asp-for="Email">Email</label>
             <input type="email" name="email" asp-for="Email" class="emailInput" />
                 <svg xmlns="http://www.w3.org/2000/svg"
                      width="335"
@@ -54,7 +69,7 @@
                 </svg>
             </div>
             <div class="">
-                <label for="password">Password</label>
+            <label for="password" asp-for="Password">Password</label>
             <input type="password" name="password" asp-for="Password" />
                 <svg xmlns="http://www.w3.org/2000/svg"
                      width="335"
@@ -69,7 +84,7 @@
                 </svg>
             </div>
             <div class="">
-                <label for="confirmPassword">Confirm Password</label>
+            <label for="confirmPassword" asp-for="ConfirmPassword">Confirm Password</label>
             <input type="password" name="confirmPassword" asp-for="ConfirmPassword" />
                 <svg xmlns="http://www.w3.org/2000/svg"
                      width="335"
