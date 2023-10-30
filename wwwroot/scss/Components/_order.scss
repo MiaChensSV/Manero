@@ -1,0 +1,26 @@
+.my-orders {
+    font-family: $font-mulish;
+    font-size: 16px;
+    font-weight: $font-weight-regular;
+
+    .container {
+        .box {
+            display: flex;
+            flex-direction: column;
+            margin: 15px;
+            border-bottom: 1px solid $color-blue;
+            padding-top: 10px;
+
+            .two-column {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+
+            i {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

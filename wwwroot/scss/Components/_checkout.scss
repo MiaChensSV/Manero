@@ -1,0 +1,36 @@
+.line {
+    width: 100%;
+    height: 0;
+    border-top: 3px solid #E4EAF8;
+}
+.btn-container{
+    display:grid;
+    place-items:center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.comment-container {
+    position: relative;
+   
+   
+
+    input[type="text"] {
+        border: 1px solid gray;
+        border-radius: 25px;
+        position: relative;
+        width: 200px;
+        margin: 10px;
+        line-height: 5rem;
+    }
+
+    label {
+        position: absolute;
+        top: 0.2ex;
+        z-index: 1;
+        left: 1em;
+        background-color: white;
+        padding: 0 5px;
+    }
+
+    
+}

@@ -1,0 +1,27 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace Manero.Controllers
+{
+    public class ProductsController : Controller
+    {
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Details()
+        {
+            return View();
+        }
+
+        public IActionResult Reviews() 
+        {
+            return View();
+        }
+
+        public IActionResult FilterProduct()
+        {
+            return View();
+        }
+    }
+}

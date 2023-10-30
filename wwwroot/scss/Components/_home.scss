@@ -1,0 +1,103 @@
+  div.scrollmenu {
+    overflow: auto;
+    white-space: nowrap;
+  }
+ 
+  div.col-6{
+    a{
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  .scrollmenu {
+    div{
+      display: inline-block;
+      text-align: center;
+      padding: 14px;
+      text-decoration: none;
+      border: none;
+      p{
+        padding: 3px 0px;
+        margin: 0;
+      }
+    }
+  }
+  
+  #disc-container{
+    background-image:url(https://placehold.co/600x400) ;
+    padding: 20px 20px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .btn-shop{
+    background-color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 25px;
+    opacity: 80%;
+  }
+
+  .cs-item-bottom-left {
+    position: absolute;
+    bottom: 20px;
+    left: 58px;
+    text-shadow: 1px 1px 14px rgba(255, 255, 255, 0.589);
+    h3{
+      font-size: 2rem;
+      font-family: $font-mulish;
+    }
+
+      @media (min-width: 768px) {
+        bottom: 100px;
+        left: 200px;
+          h3{
+            font-size: 5rem;
+          }
+      }
+
+  }
+
+  #carousel-container{
+    padding-top: 4rem;
+  }
+
+  .top-left {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: green;
+    border-top-left-radius: 5px;
+  }
+
+  .top-right {
+    position: absolute;
+    top: 25px;
+    right: 23px;
+  }
+
+  .top-right-under {
+    position: absolute;
+    top: 80px;
+    right: 25px;
+  }
+
+  #fa-heart{
+    transition: ease .5s;
+    font-size: 25px;
+    cursor: pointer;
+    &:hover{
+      color: $color-red;
+    }
+  }
+
+  #fa-bag{
+    transition: ease .5s;
+    font-size: 25px; 
+    cursor: pointer;   
+    &:hover{
+      color: $color-gray;
+    }
+  }
+
