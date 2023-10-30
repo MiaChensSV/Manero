@@ -1,16 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Manero.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using Manero.Models.Repository;
+using Manero.Models.Entities;
 
-namespace Manero.Controllers
+namespace Manero.Controllers;
+
+public class AddressController : Controller
 {
-    public class AddressController : Controller
+    private readonly AddressRepository _addressRepository;
+    private readonly AppIdentityUser _user;
+
+    public AddressController(AddressRepository addressRepository,  AppIdentityUser user)
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
-        public IActionResult Add()
-        {
-            return View();
-        }
+        _addressRepository = addressRepository;
+        _user = user;
     }
+
+   
 }

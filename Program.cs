@@ -1,9 +1,6 @@
 using Manero.Context;
-using Manero.Models.Entities;
-using Manero.Repository;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Manero.Models.Repository;
 
 namespace Manero
 {
@@ -15,6 +12,7 @@ namespace Manero
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<AddressRepository>();
             //Add repositories 
 
             builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
