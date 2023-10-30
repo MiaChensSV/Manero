@@ -1,4 +1,7 @@
-    <div class="singInContainer">
+@model Manero.ViewModels.SignUpViewModel
+
+  
+ <div class="singInContainer">
     <div class="goBackNav">
         <a asp-controller="Login" asp-action="Index">
             <svg xmlns="http://www.w3.org/2000/svg"
@@ -19,10 +22,10 @@
 
         <h1>Sign Up</h1>
 
-        <form action="">
+    <form method="POST">
             <div class="">
                 <label for="name">Name</label>
-                <input type="text" name="name" class="emailInput" />
+            <input type="text" name="name" asp-for="UserName" class="emailInput" />
                 <svg xmlns="http://www.w3.org/2000/svg"
                      width="335"
                      height="51"
@@ -37,7 +40,7 @@
             </div>
                         <div class="">
                 <label for="email">Email</label>
-                <input type="email" name="email" class="emailInput" />
+            <input type="email" name="email" asp-for="Email" class="emailInput" />
                 <svg xmlns="http://www.w3.org/2000/svg"
                      width="335"
                      height="51"
@@ -52,7 +55,7 @@
             </div>
             <div class="">
                 <label for="password">Password</label>
-                <input type="password" name="password" />
+            <input type="password" name="password" asp-for="Password" />
                 <svg xmlns="http://www.w3.org/2000/svg"
                      width="335"
                      height="51"
@@ -67,7 +70,7 @@
             </div>
             <div class="">
                 <label for="confirmPassword">Confirm Password</label>
-                <input type="password" name="confirmPassword" />
+            <input type="password" name="confirmPassword" asp-for="ConfirmPassword" />
                 <svg xmlns="http://www.w3.org/2000/svg"
                      width="335"
                      height="51"
@@ -79,8 +82,9 @@
                           stroke-linecap="round"
                           stroke-linejoin="round" />
                 </svg>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
             </div>
-        <a asp-controller="SignUp" asp-action="Verify"><input type="button" value="Sing up" class="btn" id="signInBtn" /></a>
+        <input type="submit" value="Sing up" class="btn" id="signInBtn"/>
         </form>
         <p class="singUpText">Already have an account? <a asp-controller="Login" asp-action="Index">Sign in.</a></p>
         <div class="loginOptions">

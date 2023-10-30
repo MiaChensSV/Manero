@@ -1,22 +1,58 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Manero.Models.Entities;
+using Manero.ViewModels;
 
 namespace Manero.Controllers
 {
     public class SignUpController : Controller
     {
-        public IActionResult Index()
+        private readonly UserManager<AppIdentityUser> _userManager;
+        private readonly SignInManager<AppIdentityUser> _signInManager;
+
+        public SignUpController(UserManager<AppIdentityUser> userManager, SignInManager<AppIdentityUser> signInManager)
         {
-            return View();
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
-        public IActionResult Verify()
-        {
-            return View();
+        [HttpGet] public IActionResult Index() 
+        { 
+            return View(); 
         }
 
-        public IActionResult Otp()
+        [HttpPost]
+        public async Task<IActionResult> Register(SignUpViewModel model)
         {
-            return View();
+            if (ModelState.IsValid)
+            {
+                var user = new AppIdentityUser
+                {
+                    UserName = model.UserName,
+                    Email = model.Email,
+                };
+
+                var result = await _userManager.CreateAsync(user, model.Password);
+
+                if (result.Succeeded)
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+
+                    return RedirectToAction("Index", "Home");
+                }
+                else
+                {
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
+                }
+            }
+
+            return View(model);
         }
+
     }
+
+
 }
