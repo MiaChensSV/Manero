@@ -1,6 +1,7 @@
 using Manero.Context;
 using Manero.Models.Entities;
 using Manero.Repository;
+using Manero.Repository.PromoCodeRepo;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -16,6 +17,7 @@ namespace Manero
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             //Add repositories 
+            builder.Services.AddScoped<GetUserPromoCodeRepo>();
 
             builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
 

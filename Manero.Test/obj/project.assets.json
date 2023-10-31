@@ -5523,11 +5523,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thoma\\Source\\Repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj",
+      "projectUniqueName": "D:\\repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj",
       "projectName": "Manero.Test",
-      "projectPath": "C:\\Users\\thoma\\Source\\Repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj",
+      "projectPath": "D:\\repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj",
       "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thoma\\Source\\Repos\\MiaChensSV\\Manero\\Manero.Test\\obj\\",
+      "outputPath": "D:\\repos\\MiaChensSV\\Manero\\Manero.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
