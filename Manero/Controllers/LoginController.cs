@@ -1,23 +1,60 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Manero.Models.Entities;
+using Manero.ViewModels;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Manero.Controllers
 {
     public class LoginController : Controller
     {
-        public IActionResult Index()
+
+        private readonly UserManager<AppIdentityUser> _userManager;
+        private readonly SignInManager<AppIdentityUser> _signInManager;
+
+        public LoginController(UserManager<AppIdentityUser> userManager, SignInManager<AppIdentityUser> signInManager)
         {
-            return View();
+            _userManager = userManager;
+            _signInManager = signInManager;
         }
 
-        public IActionResult ForgotPass()
+        [HttpPost]
+        public async Task<IActionResult> Index([Bind("Email,Password,RememberMe")] LoginViewModel model, string returnUrl = null)
         {
-            return View();
+            model.ReturnUrl = returnUrl;
+
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await _userManager.FindByEmailAsync(model.Email);
+            if (user == null)
+            {
+                ModelState.AddModelError("", "You have entered an invalid username or password!");
+                return View(model);
+            }
+
+
+            var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, lockoutOnFailure: false);
+            if (!result.Succeeded)
+            {
+                ModelState.AddModelError("", "You have entered an invalid username or password!");
+                return View(model);
+            }
+
+            if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
+            {
+                return Redirect(model.ReturnUrl);
+            }
+
+            return RedirectToAction("Index", "Home");
         }
 
-        public IActionResult Reset()
+        [HttpGet]
+        public IActionResult Index(string returnUrl = null)
         {
-            return View();
+            return View(new LoginViewModel { ReturnUrl = returnUrl });
         }
-        
+
     }
 }
