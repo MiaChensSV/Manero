@@ -1,12 +1,31 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Manero.Repository;
+using Manero.Services;
+using Manero.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Manero.Controllers
 {
     public class ProductsController : Controller
     {
-        public IActionResult Index()
+        private readonly ProductService _productService;
+
+        public ProductsController(ProductService productService)
         {
-            return View();
+            _productService = productService;
+        }
+
+        public async Task <IActionResult> Index()
+        {
+            var viewModel = new AllProductsViewModel
+            {
+                
+                    Title = "Bestsellers",
+                    AllProducts = await _productService.GetAllProductsAsync()
+ 
+
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult Details()
