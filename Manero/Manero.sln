@@ -5,6 +5,8 @@ VisualStudioVersion = 17.7.34018.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Manero", "Manero.csproj", "{7823D80B-2D67-4FB0-92C4-AD734AB1934A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manero.Test", "..\Manero.Test\Manero.Test.csproj", "{10E6E391-DD7B-42E9-8369-FA84BFB03AEA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{7823D80B-2D67-4FB0-92C4-AD734AB1934A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7823D80B-2D67-4FB0-92C4-AD734AB1934A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7823D80B-2D67-4FB0-92C4-AD734AB1934A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10E6E391-DD7B-42E9-8369-FA84BFB03AEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10E6E391-DD7B-42E9-8369-FA84BFB03AEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10E6E391-DD7B-42E9-8369-FA84BFB03AEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10E6E391-DD7B-42E9-8369-FA84BFB03AEA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
