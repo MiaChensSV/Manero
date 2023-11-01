@@ -9,6 +9,7 @@ namespace Manero.Controllers
             return View();
         }
 
+        [HttpGet("product/{id}")] 
         public IActionResult Details()
         {
             return View();
