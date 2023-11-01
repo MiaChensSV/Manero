@@ -37,41 +37,38 @@ public class GetUserPromoCodeRepo : GeneralRepo<PromocodesEntity>
 
 		try
 		{
-			// 1. Kontrollera om promocoden existerar.
 			var promoCodeEntity = await _context.Promocodes
 				.Where(x => x.PromocodeTitle == promoCodeTitle)
 				.FirstOrDefaultAsync();
 
 			if (promoCodeEntity == null)
 			{
-				return false; // Promocode finns inte.
+				return false; 
 			}
 
-			// 2. Kontrollera om användaren redan har den promocoden.
-			var existingUserPromo = await _context.UserPromocodes
+			var existingUserPromoCode = await _context.UserPromocodes
 				.Where(x => x.UserId == userId && x.PromocodeId == promoCodeEntity.PromocodeId)
 				.FirstOrDefaultAsync();
 
-			if (existingUserPromo != null)
+			if (existingUserPromoCode != null)
 			{
-				return false; // Användaren har redan denna promocode.
+				return false; 
 			}
 
-			// 3. Lägg till en ny post för att koppla användaren med promocoden.
-			var newUserPromo = new UserPromocodesEntity
+			var newUserPromoCode = new UserPromocodesEntity
 			{
 				UserId = userId,
 				PromocodeId = promoCodeEntity.PromocodeId
 			};
 
-			_context.UserPromocodes.Add(newUserPromo);
+			_context.UserPromocodes.Add(newUserPromoCode);
 			await _context.SaveChangesAsync();
 
 			await transaction.CommitAsync();
 
-			return true; // Allt gick bra.
+			return true; 
 		}
-		catch (Exception ex)
+		catch
 		{
 			await transaction.RollbackAsync();
 			throw; 

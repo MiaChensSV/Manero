@@ -2,6 +2,7 @@
   "profiles": {
     "Manero": {
       "commandName": "Project",
+      "commandLineArgs": "dotnet watch",
       "launchBrowser": true,
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"

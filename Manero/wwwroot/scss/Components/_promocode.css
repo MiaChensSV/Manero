@@ -1,0 +1,114 @@
+﻿.promoCodeEmptyContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.promoCodeEmptyContainer .promo-code-h2 {
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+  width: 13rem;
+}
+.promoCodeEmptyContainer .promocodeContainer {
+  width: 20.87488rem;
+  height: 3.0625rem;
+  flex-shrink: 0;
+  position: relative;
+  margin: 1.3rem 0 1.3rem 0;
+}
+.promoCodeEmptyContainer .promocodeContainer > svg {
+  position: absolute;
+  z-index: 1;
+}
+.promoCodeEmptyContainer .promocodeContainer > label {
+  position: absolute;
+  z-index: 2;
+  left: 5%;
+  top: -10%;
+  background-color: white;
+  padding: 0 10px 0 10px;
+  font-size: small;
+  color: #111111;
+}
+.promoCodeEmptyContainer .promocodeContainer .promocodeInput {
+  position: absolute;
+  z-index: 3;
+  width: 18rem;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1rem;
+  border: none;
+}
+
+.promoCodeCurrentContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.promocode-btn-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  height: 5rem;
+  width: 100%;
+  margin-top: 1rem;
+  border-bottom: 1px solid #dbe3f5;
+}
+
+.promocode-btn {
+  display: block;
+  height: 1.75rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #dbe3f5;
+  border: none;
+  border-radius: 25px;
+  color: #111111;
+  font-family: "Mulish", sans-serif;
+}
+
+#promocode-btn-active {
+  background-color: #111111;
+  color: #ffffff;
+}
+
+.promocode-card-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.promocode-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dbe3f5;
+}
+
+.promocode-card-text {
+  position: relative;
+  right: 2rem;
+  z-index: 2;
+}
+
+.promocode-discount-text-25 {
+  color: #e9d928;
+}
+
+.promocode-copy-btn {
+  background-color: #ffffff;
+  border: none;
+  position: absolute;
+  right: 2rem;
+  z-index: 1;
+}

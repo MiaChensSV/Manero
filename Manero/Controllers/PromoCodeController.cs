@@ -54,7 +54,7 @@ namespace Manero.Controllers
 			}
 			else
 			{
-				return RedirectToAction("PromoCodeCurrent", "PromoCode");
+				return RedirectToAction("PromoCodesCurrent", "PromoCode");
 			}
 
 		}
