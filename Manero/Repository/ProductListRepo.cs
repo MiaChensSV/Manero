@@ -1,6 +1,7 @@
 ﻿using Manero.Context;
 using Manero.Models.Entities;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using System.Linq.Expressions;
 
 namespace Manero.Repository
@@ -26,15 +27,25 @@ namespace Manero.Repository
 
         }
 
-       
-        public override Task<IEnumerable<ProductDetailEntity>> GetAllAsync(Expression<Func<ProductDetailEntity, bool>> expression)
+       //Denna funkar ej, null!
+        public async override Task<ProductDetailEntity> GetAsync(Expression<Func<ProductDetailEntity, bool>> expression)
         {
-            return base.GetAllAsync(expression);
+            var product = await _dataContext.ProductDetail
+                .Include(p => p.ProductModel)
+                .ThenInclude(p => p.Reviews)
+                .FirstOrDefaultAsync(expression);
+
+            return product!;
         }
 
-        public override Task<ProductDetailEntity> GetAsync(Expression<Func<ProductDetailEntity, bool>> expression)
+        public async override Task<ProductDetailEntity> GetAsync()
         {
-            return base.GetAsync(expression);
+            var product = await _dataContext.ProductDetail
+                .Include(p => p.ProductModel)
+                .ThenInclude(p => p.Reviews)
+                .FirstOrDefaultAsync();
+
+            return product!;
         }
     }
 }

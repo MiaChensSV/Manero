@@ -23,14 +23,6 @@ namespace Manero.Repository
 
         }
 
-        public override Task<ReviewEntity> GetAsync(Expression<Func<ReviewEntity, bool>> expression)
-        {
-            return base.GetAsync(expression);
-        }
-
-        public override Task<bool> DeleteAsync(Expression<Func<ReviewEntity, bool>> expression)
-        {
-            return base.DeleteAsync(expression);
-        }
+        
     }
 }
