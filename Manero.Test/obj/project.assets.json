@@ -5523,11 +5523,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj",
+      "projectUniqueName": "C:\\Users\\thoma\\source\\repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj",
       "projectName": "Manero.Test",
-      "projectPath": "D:\\repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj",
+      "projectPath": "C:\\Users\\thoma\\source\\repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj",
       "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-      "outputPath": "D:\\repos\\MiaChensSV\\Manero\\Manero.Test\\obj\\",
+      "outputPath": "C:\\Users\\thoma\\source\\repos\\MiaChensSV\\Manero\\Manero.Test\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5593,7 +5593,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
