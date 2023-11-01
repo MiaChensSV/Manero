@@ -1,21 +1,23 @@
 ﻿using Manero.Models.Entities;
-using Manero.Models.Repository;
+using Manero.Services;
 using Manero.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Security.Claims;
 
 namespace Manero.Controllers;
 
 public class AccountController : Controller
 {
 
-    private readonly AddressRepository _addressRepository;
-    private readonly AppIdentityUser _user;
+    private readonly AddressService _addressService;
+    private readonly UserManager<AppIdentityUser> _userManger;
 
-    public AccountController(AddressRepository addressRepository, AppIdentityUser user)
+
+    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManger)
     {
-        _addressRepository = addressRepository;
-        _user = user;
+        _addressService = addressService;
+        _userManger = userManger;
     }
 
     public IActionResult Index()
@@ -64,17 +66,15 @@ public class AccountController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult>AddAddress(AddressViewModel addressView, AppIdentityUser user)
+    public async Task<IActionResult> AddAddress(AddressViewModel addressView)
     {
         if (ModelState.IsValid)
         {
 
-            
+            var getAddress = await _addressService.GetOrCreateAsync(addressView);
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            // Check if address already exist, else add it to Database
-            // Create relation beteween user and addresses
-
-            await _addressRepository.AddAsync(addressView);
+            await _addressService.AddAddressAsync(userId, getAddress);
         }
 
         return View();
@@ -82,6 +82,6 @@ public class AccountController : Controller
 
 }
 
-   
+
 
 
