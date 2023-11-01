@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<div class="my-address">
+    <div class="container">
+        <div class="addresses">
+            <div class="box">
+                <div class="icon"><i class="fa-regular fa-house"></i></div>
+                <div class="info">
+                    <h4>Home</h4>
+                    <p>8000 S Kirkland Ave, Chicago...</p>
+                </div>
+                <div class="icon"><i class="fa-light fa-pen"></i></div>
+            </div>
+            <div class="box">
+                <div class="icon"><i class="fa-regular fa-suitcase"></i></div>
+                <div class="info">
+                    <h4>Work</h4>
+                    <p>8000 S Kirkland Ave, Chicago...</p>
+                </div>
+                <div class="icon"><i class="fa-light fa-pen"></i></div>
+            </div>
+            <div class="box">
+                <div class="icon"><i class="fa-regular fa-location-dot"></i></div>
+                <div class="info">
+                    <h4>Other</h4>
+                    <p>8000 S Kirkland Ave, Chicago...</p>
+                </div>
+                <div class="icon"><i class="fa-light fa-pen"></i></div>
+            </div>
+        </div>
+        <a asp-controller="Address" asp-action="Add">
+            <div class="add">
+                <i class="fa-regular fa-plus"></i>
+                <p>Add a new address</p>
+            </div>
+        </a>
+    </div>
+</div>
