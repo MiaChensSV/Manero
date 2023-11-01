@@ -33,12 +33,13 @@ namespace Manero.Services
         }
 
         // Creates a relation between the user and the address table
-        public async Task AddAddressAsync(string user, AddressEntity addressEntity)
+        public async Task AddAddressAsync(string user, AddressEntity addressEntity, string locationName)
         {
             await _userAddressRepository.AddAsync(new UserAddressEntity
             {
                 UserId = user,
-                AddressId = addressEntity.AddressId
+                AddressId = addressEntity.AddressId,
+                LocationName = locationName
             });
         }
     }

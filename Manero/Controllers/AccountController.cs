@@ -1,8 +1,10 @@
 ﻿using Manero.Models.Entities;
+using Manero.Models.Repository;
 using Manero.Services;
 using Manero.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.CompilerServices;
 using System.Security.Claims;
 
 namespace Manero.Controllers;
@@ -12,12 +14,14 @@ public class AccountController : Controller
 
     private readonly AddressService _addressService;
     private readonly UserManager<AppIdentityUser> _userManger;
+    private readonly UserAddressRepository _userAddressRepository;
 
 
-    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManger)
+    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManger, UserAddressRepository userAddressRepository)
     {
         _addressService = addressService;
         _userManger = userManger;
+        _userAddressRepository = userAddressRepository;
     }
 
     public IActionResult Index()
@@ -54,10 +58,29 @@ public class AccountController : Controller
         return View();
     }
 
-    public IActionResult MyAddress()
+
+
+    public async Task<IActionResult> MyAddress(UserAddressesViewModel model)
     {
-        return View();
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+
+        //if (userId != null)
+        //{
+        //    var addresses = await _userAddressRepository.GetAllAddressesAsync(userId);
+
+        //    return View(addresses);
+        //}
+
+        var viewModel = new UserAddressesViewModel
+        {
+            UserAddresses = await _userAddressRepository.GetAllAddressesAsync(userId)
+        };
+
+            return View(viewModel);
     }
+
+
 
 
     public IActionResult AddAddress()
@@ -70,11 +93,22 @@ public class AccountController : Controller
     {
         if (ModelState.IsValid)
         {
+            try
+            {
+                var getAddress = await _addressService.GetOrCreateAsync(addressView);
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var getAddress = await _addressService.GetOrCreateAsync(addressView);
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (userId != null)
+                {
+                    await _addressService.AddAddressAsync(userId, getAddress, addressView.LocationName!);
+                }
 
-            await _addressService.AddAddressAsync(userId, getAddress);
+            }catch
+            {
+                ModelState.AddModelError("","This address is already saved on your profile.");
+            }
+
+
         }
 
         return View();

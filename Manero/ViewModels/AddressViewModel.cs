@@ -13,6 +13,7 @@ namespace Manero.ViewModels
         [Required(ErrorMessage = "This field is required")]
         public string City { get; set; } = null!;
         [Required(ErrorMessage = "This field is required")]
+        public string? LocationName { get; set; }
         public string Country { get; set; } = null!;
 
         public static implicit operator AddressEntity(AddressViewModel model)
@@ -25,5 +26,6 @@ namespace Manero.ViewModels
                 Country = model.Country,
             };
         }
+
     }
 }
