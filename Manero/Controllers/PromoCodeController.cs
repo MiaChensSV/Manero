@@ -1,4 +1,4 @@
-using Manero.Repository.PromoCodeRepo;
+using Manero.Repository;
 using Microsoft.AspNetCore.Mvc;
 using MySqlX.XDevAPI.Common;
 using Org.BouncyCastle.Crypto;
@@ -6,11 +6,11 @@ using System.Security.Claims;
 
 namespace Manero.Controllers
 {
-	public class PromoCodeController : Controller
+    public class PromoCodeController : Controller
 	{
-		private readonly GetUserPromoCodeRepo _repo;
+		private readonly PromoCodeRepo _repo;
 
-		public PromoCodeController(GetUserPromoCodeRepo repo)
+		public PromoCodeController(PromoCodeRepo repo)
 		{
 			_repo = repo;
 		}
