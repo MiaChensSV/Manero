@@ -74,7 +74,7 @@ public class GetUserPromoCodeRepo : GeneralRepo<PromocodesEntity>
 		catch (Exception ex)
 		{
 			await transaction.RollbackAsync();
-			throw; // eller logga felet och returnera false.
+			throw; 
 		}
 	}
 
