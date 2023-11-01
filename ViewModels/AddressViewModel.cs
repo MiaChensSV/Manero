@@ -5,25 +5,26 @@ namespace Manero.ViewModels;
 
 public class AddressViewModel
 {
-    [Required (ErrorMessage = "This field is requeird")]
+    [Required(ErrorMessage = "This field is requeird")]
     public string StreetName { get; set; } = null!;
+    
     [Required(ErrorMessage = "This field is requeird")]
     public string PostalCode { get; set; } = null!;
+    
     [Required(ErrorMessage = "This field is requeird")]
     public string City { get; set; } = null!;
+    
     [Required(ErrorMessage = "This field is requeird")]
     public string Country { get; set; } = null!;
 
     public static implicit operator AddressEntity(AddressViewModel model)
     {
-
         return new AddressEntity
         {
-            City = model.City,
-            Country = model.Country,
             StreetName = model.StreetName,
             PostalCode = model.PostalCode,
-                    
+            City = model.City,
+            Country = model.Country,
         };
     }
 }
