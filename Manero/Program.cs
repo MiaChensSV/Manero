@@ -27,10 +27,11 @@ namespace Manero
                 .AddDefaultTokenProviders();
 
             //Repositories
-            builder.Services.AddScoped<ProductRepo>();
+            builder.Services.AddScoped<ProductListRepo>();
+            builder.Services.AddScoped<ReviewProductListRepo>();
 
             //Services
-            builder.Services.AddScoped<ProductService>();
+            builder.Services.AddScoped<ProductListService>();
 
             var app = builder.Build();
 

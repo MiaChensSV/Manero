@@ -5,6 +5,7 @@ namespace Manero.ViewModels
     public class AllProductsViewModel
     {
         public string Title { get; set; } = null!;
-        public IEnumerable<Product> AllProducts { get; set; } = new List<Product>();
+        public IEnumerable<ProductProductList> AllProducts { get; set; } = new List<ProductProductList>();
+        public IEnumerable<ReviewProductList> AllReviews { get; set; } = new List<ReviewProductList>(); 
     }
 }

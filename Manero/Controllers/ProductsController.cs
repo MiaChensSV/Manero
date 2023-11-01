@@ -7,9 +7,9 @@ namespace Manero.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly ProductService _productService;
+        private readonly ProductListService _productService;
 
-        public ProductsController(ProductService productService)
+        public ProductsController(ProductListService productService)
         {
             _productService = productService;
         }
@@ -18,9 +18,10 @@ namespace Manero.Controllers
         {
             var viewModel = new AllProductsViewModel
             {
-                
-                    Title = "Bestsellers",
-                    AllProducts = await _productService.GetAllProductsAsync()
+
+                Title = "Bestsellers",
+                AllProducts = await _productService.GetAllProductsAsync(),
+                AllReviews = await _productService.GetAllReviewssAsync()
  
 
             };

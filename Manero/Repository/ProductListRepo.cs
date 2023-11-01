@@ -5,10 +5,10 @@ using System.Linq.Expressions;
 
 namespace Manero.Repository
 {
-    public class ProductRepo : GeneralRepo<ProductDetailEntity>
+    public class ProductListRepo : GeneralRepo<ProductDetailEntity>
     {
         private readonly DataContext _dataContext;
-        public ProductRepo(DataContext dataContext) : base(dataContext)
+        public ProductListRepo(DataContext dataContext) : base(dataContext)
         {
             _dataContext= dataContext;
         }
@@ -17,13 +17,16 @@ namespace Manero.Repository
         {
             var products = await _dataContext.ProductDetail
                 .Include(p => p.ProductModel)
-                .ThenInclude(p => p.Products)
+                .ThenInclude(p => p.Reviews)
+                 
+
                 .ToListAsync();
 
             return products;
 
         }
 
+       
         public override Task<IEnumerable<ProductDetailEntity>> GetAllAsync(Expression<Func<ProductDetailEntity, bool>> expression)
         {
             return base.GetAllAsync(expression);
