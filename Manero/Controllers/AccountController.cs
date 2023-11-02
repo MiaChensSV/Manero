@@ -1,11 +1,9 @@
 ﻿using Manero.Models.Entities;
 using Manero.Models.Repository;
-using Manero.Repository;
 using Manero.Services;
 using Manero.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.CompilerServices;
 using System.Security.Claims;
 
 namespace Manero.Controllers;
@@ -17,14 +15,16 @@ public class AccountController : Controller
     private readonly UserManager<AppIdentityUser> _userManger;
     private readonly UserAddressRepository _userAddressRepository;
     private readonly CreditCardService _creditCardService;
+    private readonly CreditCardRepository _creditCardsRepository;
 
 
-    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManger, UserAddressRepository userAddressRepository, CreditCardService creditCardService)
+    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManger, UserAddressRepository userAddressRepository, CreditCardService creditCardService, CreditCardRepository creditCardsRepository)
     {
         _addressService = addressService;
         _userManger = userManger;
         _userAddressRepository = userAddressRepository;
         _creditCardService = creditCardService;
+        _creditCardsRepository = creditCardsRepository;
     }
 
     public IActionResult Index()
@@ -64,8 +64,20 @@ public class AccountController : Controller
 
 
 
-    public IActionResult PaymentMethods()
+    public async Task<IActionResult> PaymentMethods()
     {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+
+        if (userId != null)
+        {
+            var viewModel = new CreditCardViewModel
+            {
+                CreditCards = await _creditCardsRepository.GetAllCreditCardsAsync(userId)
+            };
+
+            return View(viewModel);
+        }
         return View();
     }
 
@@ -82,7 +94,7 @@ public class AccountController : Controller
         {
             try
             {
-                
+
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
                 if (userId != null)
                 {
@@ -142,9 +154,10 @@ public class AccountController : Controller
                     return RedirectToAction("MyAddress", "Account");
                 }
 
-            }catch
+            }
+            catch
             {
-                ModelState.AddModelError("","This address is already saved on your profile.");
+                ModelState.AddModelError("", "This address is already saved on your profile.");
             }
 
 

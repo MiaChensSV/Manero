@@ -1,4 +1,10 @@
-﻿<div class="payment-method">
+﻿@{
+    ViewData["Title"] = "CreditCards";
+}
+
+@model CreditCardViewModel
+
+<div class="payment-method">
     <div class="container">
             <div class="cards">
                 <div class="menu">
@@ -9,20 +15,26 @@
                     </div>
                 </div>
             </div>
-        <div class="card-image">
-            <div class="card-info">
-                <img src="/images/visa.png" alt="visa card" />
-                <p class="card-number">7741 6588 2123 6644</p>
-                <div class="name">
-                    <p>Kristin</p>
-                    <P>EXP.END</P>
+
+          
+        @foreach(var item in Model.CreditCards)
+        {
+            <div class="card-image">
+                <div class="card-info">
+                    <img src="/images/visa.png" alt="visa card" />
+                    <p class="card-number">@item.CardNumber</p>
+                    <div class="name">
+                        <p>@item.CreditCardName</p>
+                        <P>@item.ExpireDate</P>
+                    </div>
+                </div>
+                <div class="card-background">
+                    <img src="/images/purple-card.png" alt="purple-card" />
+
                 </div>
             </div>
-            <div class="card-background">
-                <img src="/images/purple-card.png" alt="purple-card" />
-
-            </div>
-        </div>
+        }
+      
 
         <div class="payment-info">
             <div class="info">
