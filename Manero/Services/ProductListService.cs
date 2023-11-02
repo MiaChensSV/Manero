@@ -10,7 +10,7 @@ namespace Manero.Services
     {
         private readonly ProductListRepo _productRepo;
         private readonly ReviewProductListRepo _reviewRepo;
-
+       
         public ProductListService(ProductListRepo productRepo, ReviewProductListRepo reviewRepo)
         {
             _productRepo = productRepo;
@@ -59,17 +59,17 @@ namespace Manero.Services
             }
             return reviewList;
         }
-
-        public async Task<IEnumerable<WishListItem>> AddProductToWishList(string articleNumber)
+        /*
+        public async Task<IEnumerable<WishList>> AddProductToWishList(string articleNumber)
         {
             var product = await _productRepo.GetAsync(p => p.ArticleNumber == articleNumber);
 
-            var wishList = new List<WishListItem>();
+            var wishList = new List<WishList>();
             foreach (var item in wishList)
             {
 
                
-                wishList.Add(new WishListItem
+                wishList.Add(new WishList
                 {
                     ArticleNumber = item.ArticleNumber,
                     ProductName = item.ProductName,
@@ -82,7 +82,7 @@ namespace Manero.Services
             }
             return wishList;
         }
-
+        */
         //Funkar inte, eller bara get som är kass
         public async Task<ProductProductList> GetProductByArticleNumberAsync(string articleNumber)
         {
@@ -94,13 +94,17 @@ namespace Manero.Services
             {
                 ArticleNumber = product.ArticleNumber,
                 ProductName = product.ProductTitle,
-              
                 Price = product.Price,
-                Image = product.ProductImageUrl
+                Image = product.ProductImageUrl,
+              
 
             };
+
+            
+
             return productDetails!;
         }
+
     }
    
 

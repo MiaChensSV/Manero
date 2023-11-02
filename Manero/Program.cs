@@ -30,6 +30,7 @@ namespace Manero
             builder.Services.AddScoped<ProductListRepo>();
             builder.Services.AddScoped<ReviewProductListRepo>();
 
+
             //Services
             builder.Services.AddScoped<ProductListService>();
 
