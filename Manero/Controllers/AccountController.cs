@@ -1,5 +1,6 @@
 ﻿using Manero.Models.Entities;
 using Manero.Models.Repository;
+using Manero.Repository;
 using Manero.Services;
 using Manero.ViewModels;
 using Microsoft.AspNetCore.Identity;
@@ -15,13 +16,15 @@ public class AccountController : Controller
     private readonly AddressService _addressService;
     private readonly UserManager<AppIdentityUser> _userManger;
     private readonly UserAddressRepository _userAddressRepository;
+    private readonly CreditCardService _creditCardService;
 
 
-    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManger, UserAddressRepository userAddressRepository)
+    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManger, UserAddressRepository userAddressRepository, CreditCardService creditCardService)
     {
         _addressService = addressService;
         _userManger = userManger;
         _userAddressRepository = userAddressRepository;
+        _creditCardService = creditCardService;
     }
 
     public IActionResult Index()
@@ -60,28 +63,63 @@ public class AccountController : Controller
 
 
 
-    public async Task<IActionResult> MyAddress(UserAddressesViewModel model)
+
+    public IActionResult PaymentMethods()
     {
-        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        return View();
+    }
 
+    public IActionResult AddCreditCard()
+    {
+        return View();
+    }
 
-        //if (userId != null)
-        //{
-        //    var addresses = await _userAddressRepository.GetAllAddressesAsync(userId);
+    [HttpPost]
+    public async Task<IActionResult> AddCreditCard(AddCreditCardViewModel model)
+    {
 
-        //    return View(addresses);
-        //}
-
-        var viewModel = new UserAddressesViewModel
+        if (ModelState.IsValid)
         {
-            UserAddresses = await _userAddressRepository.GetAllAddressesAsync(userId)
-        };
+            try
+            {
+                
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+                if (userId != null)
+                {
+                    await _creditCardService.GetOrCreateAsync(model, userId);
+                    return RedirectToAction("PaymentMethods", "Account");
+                }
+            }
+            catch
+            {
+                ModelState.AddModelError("", "Could not save you creditcard to profile.");
+            }
+        }
 
-            return View(viewModel);
+        return View();
     }
 
 
 
+    // Gets all user addresses by userID.
+
+    public async Task<IActionResult> MyAddress()
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+
+        if (userId != null)
+        {
+            var viewModel = new UserAddressesViewModel
+            {
+                UserAddresses = await _userAddressRepository.GetAllAddressesAsync(userId)
+            };
+
+            return View(viewModel);
+        }
+
+        return View();
+    }
 
     public IActionResult AddAddress()
     {
@@ -101,6 +139,7 @@ public class AccountController : Controller
                 if (userId != null)
                 {
                     await _addressService.AddAddressAsync(userId, getAddress, addressView.LocationName!);
+                    return RedirectToAction("MyAddress", "Account");
                 }
 
             }catch

@@ -16,10 +16,12 @@ namespace Manero
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<AddressService>();
+            builder.Services.AddScoped<CreditCardService>();
             //Add repositories 
 
             builder.Services.AddScoped<AddressRepository>();
             builder.Services.AddScoped<UserAddressRepository>();
+            builder.Services.AddScoped<CreditCardRepository>();
 
             builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
 

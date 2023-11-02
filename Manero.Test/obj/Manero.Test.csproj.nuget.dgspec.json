@@ -14,7 +14,7 @@
         "outputPath": "C:\\Users\\ahlin\\Desktop\\Manero\\Manero.Test\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "D:\\VisualStudio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
           "C:\\Users\\ahlin\\AppData\\Roaming\\NuGet\\NuGet.Config",

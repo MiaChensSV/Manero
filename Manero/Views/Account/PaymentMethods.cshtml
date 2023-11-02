@@ -1,22 +1,14 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
-<div class="payment-method">
+﻿<div class="payment-method">
     <div class="container">
-        <a asp-controller="Payment" asp-action="AddPayment">
             <div class="cards">
-            <div class="menu">
-                <h4>Cards</h4>
-          
-                     <div class="new-card">
-                    <p>Add a new card</p>
-                    <i class="fa-light fa-plus"></i>
+                <div class="menu">
+                    <h4>Cards</h4>
+                    <div class="new-card">
+                        <a asp-controller="account" asp-action="addcreditcard"><p>Add a new card</p>
+                        </a><i class="fa-light fa-plus"></i>
+                    </div>
                 </div>
             </div>
-            </div>
-        </a>
         <div class="card-image">
             <div class="card-info">
                 <img src="/images/visa.png" alt="visa card" />
@@ -48,4 +40,4 @@
         </div>
     </div>
 </div>
-        <partial name="../Shared/_BottomNav.cshtml" />
+<partial name="../Shared/_BottomNav.cshtml" />
