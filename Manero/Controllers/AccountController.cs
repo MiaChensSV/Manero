@@ -1,5 +1,6 @@
 ﻿using Manero.Models.Entities;
 using Manero.Models.Repository;
+using Manero.Repository;
 using Manero.Services;
 using Manero.ViewModels;
 using Microsoft.AspNetCore.Identity;
@@ -16,15 +17,16 @@ public class AccountController : Controller
     private readonly UserAddressRepository _userAddressRepository;
     private readonly CreditCardService _creditCardService;
     private readonly CreditCardRepository _creditCardsRepository;
+    private readonly UserRepository _userRepository;
 
-
-    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManger, UserAddressRepository userAddressRepository, CreditCardService creditCardService, CreditCardRepository creditCardsRepository)
+    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManger, UserAddressRepository userAddressRepository, CreditCardService creditCardService, CreditCardRepository creditCardsRepository, UserRepository userRepository)
     {
         _addressService = addressService;
         _userManger = userManger;
         _userAddressRepository = userAddressRepository;
         _creditCardService = creditCardService;
         _creditCardsRepository = creditCardsRepository;
+        _userRepository = userRepository;
     }
 
     public IActionResult Index()
@@ -34,6 +36,20 @@ public class AccountController : Controller
 
     public IActionResult Edit()
     {
+        return View();
+    }
+    [HttpPost]
+    public async Task<IActionResult> Edit(EditUserViewModel viewModel)
+    {
+        if (ModelState.IsValid)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var newUser = await _userManger.FindByIdAsync(userId);
+
+
+        }
+
         return View();
     }
 

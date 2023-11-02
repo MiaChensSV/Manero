@@ -20,15 +20,15 @@ namespace Manero.Repository
             return entity;
         }
 
+        public virtual async Task<TEntity> GetAsync()
+        {
+            var _entity = await _context.Set<TEntity>().FirstOrDefaultAsync();
+            return _entity!;
+        }
         public virtual async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression)
         {
             var _entity = await _context.Set<TEntity>().FirstOrDefaultAsync(expression);
             return _entity!;
-        }
-
-        public virtual async Task<IEnumerable<TEntity>> GetAllAsync()
-        {
-            return await _context.Set<TEntity>().ToListAsync();
         }
 
         public virtual async Task<IEnumerable<TEntity>> GetAllAsync(Expression<Func<TEntity, bool>> expression)
