@@ -1,8 +1,8 @@
 using Manero.Context;
 using Manero.Models.Entities;
-using Manero.Repository;
+using Manero.Models.Repository;
+using Manero.Services;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Manero
@@ -15,8 +15,20 @@ namespace Manero
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
-            //Add repositories 
+            builder.Services.AddScoped<CartService>();
+            //Added httpcontext for managing seesion and cart
+          
 
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+            builder.Services.AddHttpContextAccessor();
+
+            //Add repositories 
+            builder.Services.AddScoped<CartRepo>();
             builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             //test i localdb
@@ -27,14 +39,16 @@ namespace Manero
 
 
             var app = builder.Build();
+            
+
 
 
             app.UseHsts();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
-
+             
             app.UseAuthorization();
 
             app.MapControllerRoute(

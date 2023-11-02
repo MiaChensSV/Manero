@@ -22,7 +22,6 @@
     <Folder Include="Migrations\" />
     <Folder Include="Models\Dtos\" />
     <Folder Include="Models\Schemas\" />
-    <Folder Include="Services\" />
     <Folder Include="Repository\" />
   </ItemGroup>
 
@@ -39,6 +38,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Mysql.EntityFrameworkCore" Version="7.0.5" />
+    <PackageReference Include="Stripe.net" Version="43.0.0" />
   </ItemGroup>
 
 </Project>
