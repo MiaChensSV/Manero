@@ -5518,23 +5518,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Erlan\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\ahlin\\.nuget\\packages\\": {},
+    "D:\\VisualStudio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj",
+      "projectUniqueName": "C:\\Users\\ahlin\\Desktop\\Manero\\Manero.Test\\Manero.Test.csproj",
       "projectName": "Manero.Test",
-      "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj",
-      "packagesPath": "C:\\Users\\Erlan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\obj\\",
+      "projectPath": "C:\\Users\\ahlin\\Desktop\\Manero\\Manero.Test\\Manero.Test.csproj",
+      "packagesPath": "C:\\Users\\ahlin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ahlin\\Desktop\\Manero\\Manero.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        "D:\\VisualStudio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Erlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ahlin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -5599,7 +5599,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   }

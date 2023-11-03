@@ -162,12 +162,6 @@
                 .validation {
                     display: flex;
                     flex-direction: row;
-
-                    .validate-date {
-                    }
-
-                    .validate-cvv {
-                    }
                 }
 
                 label {
@@ -178,7 +172,8 @@
                 }
 
                 input {
-                    border: none;
+                    border: 1px solid black;
+                    border-radius: 5px;
                     vertical-align: middle;
                     margin-right: 15px;
                 }

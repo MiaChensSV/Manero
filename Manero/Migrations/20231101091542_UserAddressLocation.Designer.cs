@@ -3,6 +3,7 @@ using System;
 using Manero.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Manero.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20231101091542_UserAddressLocation")]
+    partial class UserAddressLocation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -147,20 +150,19 @@ namespace Manero.Migrations
 
             modelBuilder.Entity("Manero.Models.Entities.CreditCardsEntity", b =>
                 {
-                    b.Property<string>("CardNumber")
-                        .HasColumnType("varchar(255)");
+                    b.Property<int>("CardNumber")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Property<string>("CVV")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<int>("CVV")
+                        .HasColumnType("int");
 
                     b.Property<string>("CreditCardName")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("ExpireDate")
-                        .IsRequired()
-                        .HasColumnType("longtext");
+                    b.Property<DateTime>("ExpireDate")
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("UserId")
                         .IsRequired()
