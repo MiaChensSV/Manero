@@ -5,6 +5,7 @@ using Manero.Services;
 using Manero.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.ConstrainedExecution;
 using System.Security.Claims;
 
 namespace Manero.Controllers;
@@ -13,16 +14,16 @@ public class AccountController : Controller
 {
 
     private readonly AddressService _addressService;
-    private readonly UserManager<AppIdentityUser> _userManger;
+    private readonly UserManager<AppIdentityUser> _userManager;
     private readonly UserAddressRepository _userAddressRepository;
     private readonly CreditCardService _creditCardService;
     private readonly CreditCardRepository _creditCardsRepository;
     private readonly UserRepository _userRepository;
 
-    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManger, UserAddressRepository userAddressRepository, CreditCardService creditCardService, CreditCardRepository creditCardsRepository, UserRepository userRepository)
+    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManager, UserAddressRepository userAddressRepository, CreditCardService creditCardService, CreditCardRepository creditCardsRepository, UserRepository userRepository)
     {
         _addressService = addressService;
-        _userManger = userManger;
+        _userManager = userManager;
         _userAddressRepository = userAddressRepository;
         _creditCardService = creditCardService;
         _creditCardsRepository = creditCardsRepository;
@@ -38,26 +39,49 @@ public class AccountController : Controller
     {
         return View();
     }
+    
     [HttpPost]
-    public async Task<IActionResult> Edit(EditUserViewModel viewModel)
+    public async Task<IActionResult> Edit(EditUserViewModel model)
     {
-        if (ModelState.IsValid)
+        AppIdentityUser user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+        if (user != null)
         {
-            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-
-            if (userId != null)
+            if (ModelState.IsValid)
             {
-                var newUser = await _userRepository.GetUserAsync(userId);
-                {
-
-                }
+                user.Email = model.Email;
+                user.PhoneNumber = model.PhoneNumber;
+                user.FirstName = model.FirstName;
+                user.LastName = model.LastName;
+            }
+            else 
+            {
+                ModelState.AddModelError("","Somethin went wrong");
             }
 
-
+            if (!string.IsNullOrEmpty(model.Email))
+            {
+                IdentityResult result = await _userManager.UpdateAsync(user);
+                if (result.Succeeded)
+                    return RedirectToAction("Index");
+                else
+                {
+                    return View();
+                }
+              
+            }
         }
-
-        return View();
+        return View(user);
     }
+
+   
+
+
+
+
+
+
+
+
 
     public IActionResult Orders()
     {
@@ -189,6 +213,7 @@ public class AccountController : Controller
     }
 
 }
+
 
 
 
