@@ -40,9 +40,15 @@
                
             <p class="text-start">@product.ProductName</p>
             <p class="text-start">@product.Price</p>
-                <i class="fa-regular top-right fa-heart product-list-heart" id="fa-heart"></i>
-            <i class="fa-solid top-right-under fa-bag-shopping product-list-bag" id="fa-bag"></i>
-        </div>
+                <a asp-controller="Account" asp-action="Wishlist"><i class="fa-regular top-right fa-heart product-list-heart" id="fa-heart"></i></a>
+              <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                    <input type="hidden" name="articleNumber" value="@product.ArticleNumber" />
+                    <button type="submit" class="icon-button">
+                        <i class="fa-solid top-right-under fa-bag-shopping product-list-bag" id="fa-bag"></i>
+                    </button>
+            </form>
+                    
+            </div>
         </div>
     }
    

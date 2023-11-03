@@ -21,13 +21,13 @@ namespace Manero.Services
                 );
 
             entity ??= await _creditCardRepository.AddAsync(new CreditCardsEntity
-                {
-                    UserId = user,
-                    CardNumber = model.CardNumber,
-                    CVV = model.CVV,
-                    ExpireDate = model.ExpireDate,
-                    CreditCardName = model.CreditCardName,
-                });
+            {
+                UserId = user,
+                CardNumber = model.CardNumber,
+                CVV = model.CVV,
+                ExpireDate = model.ExpireDate,
+                CreditCardName = model.CreditCardName,
+            });
 
             return entity!;
 
