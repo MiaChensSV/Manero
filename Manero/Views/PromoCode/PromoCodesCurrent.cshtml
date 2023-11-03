@@ -22,33 +22,34 @@
 				   class="promocode-btn" />
 		</a>
 	</div>
-	<div class="promocode-card-section">
-		@foreach (var item in Model)
-		{
-			<div class="promocode-card">
-				<div class="promocode-card-text">
-					<h6 class="promocode-text">@item.PromocodeTitle</h6>
-					<p>@item.PromocodeDescription</p>
-					@if (item.PromocodePercentage == 15)
-					{
-						<img src="../images/15%_off.png" />
-					}
-					else if (item.PromocodePercentage == 30)
-					{
-						<img src="../images/30%_off.png" />
-					}
-					else if (item.PromocodePercentage == 50)
-					{
-						<img src="../images/50%_off.png" />
-					}
-				</div>
-				<button class="promocode-copy-btn">
-					<svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M10 7.83301H19C19.5304 7.83301 20.0391 8.04372 20.4142 8.41879C20.7893 8.79387 21 9.30257 21 9.83301V18.833C21 19.3634 20.7893 19.8722 20.4142 20.2472C20.0391 20.6223 19.5304 20.833 19 20.833H10C9.46957 20.833 8.96086 20.6223 8.58578 20.2472C8.21071 19.8722 8 19.3634 8 18.833V9.83301C8 9.30257 8.21071 8.79387 8.58578 8.41879C8.96086 8.04372 9.46957 7.83301 10 7.83301Z" stroke="#626262" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-						<path d="M4 13.833H3C2.46957 13.833 1.96086 13.6223 1.58578 13.2472C1.21071 12.8722 1 12.3634 1 11.833V2.83301C1 2.30257 1.21071 1.79387 1.58578 1.41879C1.96086 1.04372 2.46957 0.833008 3 0.833008H12C12.5304 0.833008 13.0391 1.04372 13.4142 1.41879C13.7893 1.79387 14 2.30257 14 2.83301V3.83301" stroke="#626262" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-					</svg>
-				</button>
-			</div>
-		}
-	</div>
+    <div class="promocode-card-section">
+        @foreach (var item in Model)
+        {
+            <div class="promocode-card">
+                <div class="promocode-card-text">
+                    <h6 class="promocode-text promoCodeCopy">@item.PromocodeTitle</h6>
+                    <p>@item.PromocodeDescription</p>
+                    @if (item.PromocodePercentage == 15)
+                    {
+                        <img src="../images/15%_off.png" />
+                    }
+                    else if (item.PromocodePercentage == 30)
+                    {
+                        <img src="../images/30%_off.png" />
+                    }
+                    else if (item.PromocodePercentage == 50)
+                    {
+                        <img src="../images/50%_off.png" />
+                    }
+                </div>
+                <button class="promocode-copy-btn" onclick="copyPromoCodeToClipboard(this)">
+                    <svg width="20" height="20" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 7.83301H19C19.5304 7.83301 20.0391 8.04372 20.4142 8.41879C20.7893 8.79387 21 9.30257 21 9.83301V18.833C21 19.3634 20.7893 19.8722 20.4142 20.2472C20.0391 20.6223 19.5304 20.833 19 20.833H10C9.46957 20.833 8.96086 20.6223 8.58578 20.2472C8.21071 19.8722 8 19.3634 8 18.833V9.83301C8 9.30257 8.21071 8.79387 8.58578 8.41879C8.96086 8.04372 9.46957 7.83301 10 7.83301Z" stroke="#626262" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M4 13.833H3C2.46957 13.833 1.96086 13.6223 1.58578 13.2472C1.21071 12.8722 1 12.3634 1 11.833V2.83301C1 2.30257 1.21071 1.79387 1.58578 1.41879C1.96086 1.04372 2.46957 0.833008 3 0.833008H12C12.5304 0.833008 13.0391 1.04372 13.4142 1.41879C13.7893 1.79387 14 2.30257 14 2.83301V3.83301" stroke="#626262" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+        }
+    </div>
+
 </div>
