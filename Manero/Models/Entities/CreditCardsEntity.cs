@@ -7,9 +7,9 @@ public class CreditCardsEntity
 {
   
     public string CreditCardName { get; set; } = null!;
-    public int CardNumber { get;set; }
-    public DateTime ExpireDate { get; set; }
-    public int CVV { get; set; }
+    public string CardNumber { get;set; } = null!;
+    public string ExpireDate { get; set; } = null!;
+    public string CVV { get; set; } = null!;
 
     public string UserId { get; set; } = null!;
     [ForeignKey("UserId")]

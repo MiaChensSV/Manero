@@ -790,7 +790,8 @@ div.col-6 a {
   font-weight: 700;
 }
 .add-payment .container .newcard-info form input {
-  border: none;
+  border: 1px solid black;
+  border-radius: 5px;
   vertical-align: middle;
   margin-right: 15px;
 }
@@ -1247,7 +1248,8 @@ h2 {
 }
 .filtersContainer input[type=range] {
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   height: 2px;
   width: 100%;
   position: absolute;
@@ -1275,7 +1277,6 @@ h2 {
   margin: auto;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .sizesFilter .containerSizes input {
@@ -1334,7 +1335,6 @@ h2 {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   margin: 1rem 0.5rem 1rem 0.5rem;
 }
@@ -1442,7 +1442,6 @@ h2 {
   margin: 0.25rem;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .tagsContainer .containerSizes input {
@@ -1603,6 +1602,7 @@ h2 {
 }
 
 ::-webkit-scrollbar-thumb {
+  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   background: rgb(180, 180, 180);
   border-radius: 10px;
@@ -1610,4 +1610,4 @@ h2 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #626262;
-}
+}/*# sourceMappingURL=site.css.map */
