@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Manero.Models.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace Manero.ViewModels
 {
