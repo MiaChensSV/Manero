@@ -14,44 +14,44 @@
 
     <div class="container">
         <div class="categories-choose-wrapper">
-            <a class="view-category">Men</a>
-            <a class="view-category">Women</a>
-            <a class="view-category">kids</a>
-            <a class="view-category">accessories</a>
+        <a asp-controller="ShopByTags" asp-action="ProductListByTagNameMen" class="view-category">Men</a>
+        <a asp-controller="ShopByTags" asp-action="ProductListByTagNameWomen" class="view-category">Women</a>
+            <a asp-controller="ShopByTags" asp-action="ProductListByTagNameKids" class="view-category">kids</a>
+        <a asp-controller="ShopByTags" asp-action="ProductListByTagNameAccessories" class="view-category">accessories</a>
         </div>
     
 
     <div class="category-boxes-wrapper">
         <div class="category-boxes-pair">
 
-            <a>
+            <a asp-controller="ShopByTags" asp-action="ProductListByTagNameDresses">
                 <div class="category-box margin-category-box">
                     <span class="category-name">Dresses</span>
                 </div>
             </a>
 
-            <a>
+            <a asp-controller="ShopByTags" asp-action="ProductListByTagNamePants">
                 <div class="category-box margin-category-box">
-                    <span class="category-name">Pants</span>
+                     <span class="category-name">Pants</span>
                 </div>
             </a>
 
         </div>
 
-        <a>
+        <a asp-controller="ShopByTags" asp-action="ProductListByTagNameAccessories">
             <div class="category-box-wide">
-                <span class="category-name">Accessories</span>
+                 <span class="category-name">Accessories</span>
             </div>
         </a>
 
         <div class="category-boxes-pair">
-            <a>
+            <a asp-controller="ShopByTags" asp-action="ProductListByTagNameShoes">
                 <div class="category-box margin-category-box">
                     <span class="category-name">Shoes</span>
                 </div>
             </a>
 
-            <a>
+            <a asp-controller="ShopByTags" asp-action="ProductListByTagNameTShirts">
                 <div class="category-box">
                     <span class="category-name">T-Shirts</span>
                 </div>

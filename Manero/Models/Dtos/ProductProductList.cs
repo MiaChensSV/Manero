@@ -10,7 +10,8 @@
         public string? Image { get; set; }
         public decimal? Price { get; set; }
         public string? Rating { get; set; }
-        
+        public List<string> Tags { get; set; } = new List<string>();
+
 
     }
 }

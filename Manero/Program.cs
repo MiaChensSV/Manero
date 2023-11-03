@@ -45,6 +45,7 @@ namespace Manero
             builder.Services.AddScoped<ProductListRepo>();
             builder.Services.AddScoped<ReviewProductListRepo>();
             builder.Services.AddScoped<CartRepo>();
+            builder.Services.AddScoped<ShopByTagsRepo>();
 
 
             //Services

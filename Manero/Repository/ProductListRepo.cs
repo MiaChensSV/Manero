@@ -25,6 +25,7 @@ namespace Manero.Repository
 
         }
 
+      
 
         public async override Task<ProductDetailEntity> GetAsync()
         {
@@ -35,5 +36,7 @@ namespace Manero.Repository
 
             return product!;
         }
+
+        
     }
 }
