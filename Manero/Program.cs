@@ -18,6 +18,14 @@ namespace Manero
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<AddressService>();
             builder.Services.AddScoped<CreditCardService>();
+
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+            builder.Services.AddHttpContextAccessor();
             //Add repositories 
 
             builder.Services.AddScoped<AddressRepository>();
@@ -26,7 +34,7 @@ namespace Manero
             builder.Services.AddScoped<UserRepository>();
 
             builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
-
+            
             //test i localdb
             //builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer(builder.Configuration.GetConnectionString("sql")));
             builder.Services.AddIdentity<AppIdentityUser, IdentityRole>()
@@ -36,10 +44,12 @@ namespace Manero
             //Repositories
             builder.Services.AddScoped<ProductListRepo>();
             builder.Services.AddScoped<ReviewProductListRepo>();
+            builder.Services.AddScoped<CartRepo>();
 
 
             //Services
             builder.Services.AddScoped<ProductListService>();
+            builder.Services.AddScoped<CartService>();
 
             var app = builder.Build();
 
@@ -49,7 +59,7 @@ namespace Manero
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseSession();   
             app.UseAuthorization();
 
             app.MapControllerRoute(
