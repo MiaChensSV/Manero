@@ -15,7 +15,7 @@ namespace Manero.Repository
 
       
 
-        public override async Task<IEnumerable<ReviewEntity>> GetAllAsync()
+        public  async Task<IEnumerable<ReviewEntity>> GetAllAsync()
         {
             var reviews = await _dataContext.Reviews.ToListAsync();
 
