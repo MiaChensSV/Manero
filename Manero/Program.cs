@@ -33,6 +33,13 @@ namespace Manero
                 .AddEntityFrameworkStores<DataContext>()
                 .AddDefaultTokenProviders();
 
+            //Repositories
+            builder.Services.AddScoped<ProductListRepo>();
+            builder.Services.AddScoped<ReviewProductListRepo>();
+
+
+            //Services
+            builder.Services.AddScoped<ProductListService>();
 
             var app = builder.Build();
 

@@ -15,7 +15,7 @@ namespace Manero.Repository
 
         public virtual async Task<TEntity> AddAsync(TEntity entity)
         {
-            _context.Set<TEntity>().Add(entity);
+            await _context.Set<TEntity>().AddAsync(entity);
             await _context.SaveChangesAsync();
             return entity;
         }
@@ -25,6 +25,7 @@ namespace Manero.Repository
             var _entity = await _context.Set<TEntity>().FirstOrDefaultAsync();
             return _entity!;
         }
+
         public virtual async Task<TEntity> GetAsync(Expression<Func<TEntity, bool>> expression)
         {
             var _entity = await _context.Set<TEntity>().FirstOrDefaultAsync(expression);
