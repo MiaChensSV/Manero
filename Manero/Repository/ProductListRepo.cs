@@ -14,7 +14,7 @@ namespace Manero.Repository
             _dataContext= dataContext;
         }
 
-        public override async Task<IEnumerable<ProductDetailEntity>> GetAllAsync()
+        public async Task<IEnumerable<ProductDetailEntity>> GetAllAsync()
         {
             var products = await _dataContext.ProductDetail
                 .Include(b => b.ProductModel)
