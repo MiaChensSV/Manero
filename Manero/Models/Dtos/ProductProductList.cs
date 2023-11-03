@@ -9,8 +9,8 @@
         public string? VendorName { get; set; }
         public string? Image { get; set; }
         public decimal? Price { get; set; }
-        public string? AverageReviewRating { get; set; }
-        public List<string> ProductWishList { get; set; } = new List<string>();
+        public string? Rating { get; set; }
+        
 
     }
 }

@@ -10,7 +10,7 @@ namespace Manero.Services
     {
         private readonly ProductListRepo _productRepo;
         private readonly ReviewProductListRepo _reviewRepo;
-
+       
         public ProductListService(ProductListRepo productRepo, ReviewProductListRepo reviewRepo)
         {
             _productRepo = productRepo;
@@ -32,12 +32,12 @@ namespace Manero.Services
                     ProductName = product.ProductTitle,
                     Price = product.Price,
                     Image = product.ProductImageUrl,
-                    AverageReviewRating = product.ProductModel.Reviews.ToString()
+                  //Rating = product.ProductModel.Reviews
 
 
 
 
-                });  
+                });
             }
             return productList;
         }
@@ -59,48 +59,8 @@ namespace Manero.Services
             }
             return reviewList;
         }
+      
 
-        public async Task<IEnumerable<WishListItem>> AddProductToWishList(string articleNumber)
-        {
-            var product = await _productRepo.GetAsync(p => p.ArticleNumber == articleNumber);
-
-            var wishList = new List<WishListItem>();
-            foreach (var item in wishList)
-            {
-
-               
-                wishList.Add(new WishListItem
-                {
-                    ArticleNumber = item.ArticleNumber,
-                    ProductName = item.ProductName,
-                    Price = item.Price,
-                    Image = item.Image,
-                    AverageReviewRating = item.AverageReviewRating
-
-                });
-                wishList.Add(item);
-            }
-            return wishList;
-        }
-
-        //Funkar inte, eller bara get som är kass
-        public async Task<ProductProductList> GetProductByArticleNumberAsync(string articleNumber)
-        {
-            var product = await _productRepo.GetAsync();
-
-
-
-            var productDetails = new ProductProductList
-            {
-                ArticleNumber = product.ArticleNumber,
-                ProductName = product.ProductTitle,
-              
-                Price = product.Price,
-                Image = product.ProductImageUrl
-
-            };
-            return productDetails!;
-        }
     }
    
 

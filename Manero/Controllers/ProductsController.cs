@@ -2,6 +2,7 @@
 using Manero.Services;
 using Manero.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Runtime.CompilerServices;
 
 namespace Manero.Controllers
 {
@@ -12,6 +13,7 @@ namespace Manero.Controllers
         public ProductsController(ProductListService productService)
         {
             _productService = productService;
+            
         }
 
         public async Task <IActionResult> Index()
@@ -43,5 +45,8 @@ namespace Manero.Controllers
         {
             return View();
         }
+
+
+        }
     }
-}
+

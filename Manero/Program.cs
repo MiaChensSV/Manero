@@ -1,9 +1,9 @@
 using Manero.Context;
 using Manero.Models.Entities;
+using Manero.Models.Repository;
 using Manero.Repository;
 using Manero.Services;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace Manero
@@ -16,6 +16,8 @@ namespace Manero
 
             // Add services to the container.
             builder.Services.AddControllersWithViews();
+            builder.Services.AddScoped<AddressService>();
+            builder.Services.AddScoped<CreditCardService>();
 
             builder.Services.AddSession(options =>
             {
@@ -25,6 +27,11 @@ namespace Manero
             });
             builder.Services.AddHttpContextAccessor();
             //Add repositories 
+
+            builder.Services.AddScoped<AddressRepository>();
+            builder.Services.AddScoped<UserAddressRepository>();
+            builder.Services.AddScoped<CreditCardRepository>();
+            builder.Services.AddScoped<UserRepository>();
 
             builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
             
@@ -38,6 +45,7 @@ namespace Manero
             builder.Services.AddScoped<ProductListRepo>();
             builder.Services.AddScoped<ReviewProductListRepo>();
             builder.Services.AddScoped<CartRepo>();
+
 
             //Services
             builder.Services.AddScoped<ProductListService>();
