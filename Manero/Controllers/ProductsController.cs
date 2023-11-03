@@ -46,18 +46,7 @@ namespace Manero.Controllers
             return View();
         }
 
-        public async Task<IActionResult> AddToWishlist(string articleNumber)
-        {
-
-
-            //var product = await _wishlistService.GetProductByArticleNumberAsync(articleNumber);
-            var product = await _productService.GetProductByArticleNumberAsync(articleNumber);
-            
-
-
-            return View(product);
-
 
         }
     }
-}
+

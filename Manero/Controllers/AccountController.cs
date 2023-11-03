@@ -43,16 +43,11 @@ public class AccountController : Controller
         return View();
     }
 
-    public async Task <IActionResult> Wishlist(string articleNumber)
+    public IActionResult Wishlist()
     {
 
-            
-            var product = await _productListService.GetProductByArticleNumberAsync(articleNumber);
+        return View();
 
-       
-        return View(product);
-
-       
     }
 
     public IActionResult AddToWishlist()

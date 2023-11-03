@@ -17,26 +17,14 @@ namespace Manero.Repository
         public override async Task<IEnumerable<ProductDetailEntity>> GetAllAsync()
         {
             var products = await _dataContext.ProductDetail
-                .Include(p => p.ProductModel)
+                .Include(b => b.ProductModel)
                 .ThenInclude(p => p.Reviews)
-                 
-
                 .ToListAsync();
 
             return products;
 
         }
 
-       //Denna funkar ej, null!
-        public async override Task<ProductDetailEntity> GetAsync(Expression<Func<ProductDetailEntity, bool>> expression)
-        {
-            var product = await _dataContext.ProductDetail
-                .Include(p => p.ProductModel)
-                .ThenInclude(p => p.Reviews)
-                .FirstOrDefaultAsync(expression);
-
-            return product!;
-        }
 
         public async override Task<ProductDetailEntity> GetAsync()
         {
