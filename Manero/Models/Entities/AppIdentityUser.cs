@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Runtime.InteropServices;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.SignalR;
+
 
 namespace Manero.Models.Entities;
 

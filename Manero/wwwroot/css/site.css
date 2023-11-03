@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 @import "../scss/Components/_shippingDetails.css";
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
@@ -790,7 +790,8 @@ div.col-6 a {
   font-weight: 700;
 }
 .add-payment .container .newcard-info form input {
-  border: none;
+  border: 1px solid black;
+  border-radius: 5px;
   vertical-align: middle;
   margin-right: 15px;
 }
@@ -1247,7 +1248,8 @@ h2 {
 }
 .filtersContainer input[type=range] {
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   height: 2px;
   width: 100%;
   position: absolute;
@@ -1275,7 +1277,6 @@ h2 {
   margin: auto;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .sizesFilter .containerSizes input {
@@ -1334,7 +1335,6 @@ h2 {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   margin: 1rem 0.5rem 1rem 0.5rem;
 }
@@ -1442,7 +1442,6 @@ h2 {
   margin: 0.25rem;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .tagsContainer .containerSizes input {
@@ -1482,6 +1481,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
 }
 .promoCodeEmptyContainer .promo-code-h2 {
   display: flex;
@@ -1504,92 +1504,21 @@ h2 {
   position: absolute;
   z-index: 2;
   left: 5%;
-  top: -10%;
+  top: -12%;
   background-color: white;
   padding: 0 10px 0 10px;
   font-size: small;
-  color: #111111;
+  color: #626262;
 }
 .promoCodeEmptyContainer .promocodeContainer .promocodeInput {
   position: absolute;
   z-index: 3;
   width: 18rem;
-  top: 100%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1rem;
   border: none;
-}
-
-.promoCodeCurrentContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.promocode-btn-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-  height: 5rem;
-  width: 100%;
-  margin-top: 1rem;
-  border-bottom: 1px solid #dbe3f5;
-}
-
-.promocode-btn {
-  display: block;
-  height: 1.75rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
-  background-color: #dbe3f5;
-  border: none;
-  border-radius: 25px;
-  color: #111111;
-  font-family: "Mulish", sans-serif;
-}
-
-#promocode-btn-active {
-  background-color: #111111;
-  color: #ffffff;
-}
-
-.promocode-card-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.promocode-card {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 5rem;
-  border-bottom: 1px solid #dbe3f5;
-}
-
-.promocode-card-text {
-  position: relative;
-  right: 2rem;
-  z-index: 2;
-}
-
-.promocode-discount-text-25 {
-  color: #e9d928;
-}
-
-.promocode-copy-btn {
-  background-color: #ffffff;
-  border: none;
-  position: absolute;
-  right: 2rem;
-  z-index: 1;
 }
 
 ::-webkit-scrollbar {
@@ -1603,6 +1532,7 @@ h2 {
 }
 
 ::-webkit-scrollbar-thumb {
+  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   background: rgb(180, 180, 180);
   border-radius: 10px;
@@ -1610,4 +1540,4 @@ h2 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #626262;
-}
+}/*# sourceMappingURL=site.css.map */
