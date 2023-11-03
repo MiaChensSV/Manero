@@ -45,7 +45,13 @@ public class AccountController : Controller
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-            var newUser = await _userManger.FindByIdAsync(userId);
+            if (userId != null)
+            {
+                var newUser = await _userRepository.GetUserAsync(userId);
+                {
+
+                }
+            }
 
 
         }
