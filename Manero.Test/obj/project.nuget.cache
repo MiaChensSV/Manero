@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "WY9TNskW99NxumakwFOZK4osvm32Bqbp7UlvjFC38q3Qi0n/vIcQrZ0RTynY1haykEJV+qRNJBG2TTR9uERoYg==",
+  "dgSpecHash": "rNczj2cjPx+FEkXpzjQjgfwOxWQtz1CefL1lziJ06QJF81DOFOJ3RjGNiebALQat18QakdP9EXRwT/7ajyTbFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\thoma\\Source\\Repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj",
+  "projectFilePath": "C:\\Users\\thoma\\source\\repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\thoma\\.nuget\\packages\\coverlet.collector\\3.2.0\\coverlet.collector.3.2.0.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\microsoft.codecoverage\\17.6.0\\microsoft.codecoverage.17.6.0.nupkg.sha512",
@@ -94,5 +94,12 @@
     "C:\\Users\\thoma\\.nuget\\packages\\xunit.extensibility.execution\\2.4.2\\xunit.extensibility.execution.2.4.2.nupkg.sha512",
     "C:\\Users\\thoma\\.nuget\\packages\\xunit.runner.visualstudio\\2.4.5\\xunit.runner.visualstudio.2.4.5.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\thoma\\source\\repos\\MiaChensSV\\Manero\\Manero.Test\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
