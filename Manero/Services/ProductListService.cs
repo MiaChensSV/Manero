@@ -10,11 +10,13 @@ namespace Manero.Services
     {
         private readonly ProductListRepo _productRepo;
         private readonly ReviewProductListRepo _reviewRepo;
-       
-        public ProductListService(ProductListRepo productRepo, ReviewProductListRepo reviewRepo)
+        private readonly ShopByTagsRepo _shopByTagsRepo;
+
+        public ProductListService(ProductListRepo productRepo, ReviewProductListRepo reviewRepo, ShopByTagsRepo shopByTagsRepo)
         {
             _productRepo = productRepo;
             _reviewRepo = reviewRepo;
+            _shopByTagsRepo = shopByTagsRepo;
         }
 
         public async Task<IEnumerable<ProductProductList>> GetAllProductsAsync()
@@ -59,12 +61,38 @@ namespace Manero.Services
             }
             return reviewList;
         }
-      
+
+        public async Task<IEnumerable<ProductProductList>> GetAllByTagNameAsync(string tagName)
+        {
+            var products = await _shopByTagsRepo.GetAllAsync(tagName);
+
+            var productList = new List<ProductProductList>();
+            foreach (var product in products)
+            {
+                var tagList = new List<string>();
+
+                foreach (var tag in product.ProductModel.Tags)
+                    tagList.Add(tag.Tag.TagName);
+
+                productList.Add(new ProductProductList
+                {
+                    ArticleNumber = product.ArticleNumber,
+                    ProductName = product.ProductTitle,
+                   
+                    Tags = tagList,
+                   
+                    Price = product.Price,
+                    Image = product.ProductImageUrl
+                });
+            }
+            return productList;
+
+        }
 
     }
-   
 
-    
+
+
 
 
 }
