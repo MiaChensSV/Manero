@@ -1,6 +1,7 @@
 using Manero.Context;
 using Manero.Models.Entities;
 using Manero.Models.Repository;
+using Manero.Repository;
 using Manero.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
