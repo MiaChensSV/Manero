@@ -363,3 +363,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Manero.Test/obj/Debug/net7.0/Manero.Test.assets.cache
+/Manero.Test/obj/Debug/net7.0/Manero.Test.GeneratedMSBuildEditorConfig.editorconfig
+/Manero.Test/obj/Manero.Test.csproj.nuget.dgspec.json
+/Manero.Test/obj/Manero.Test.csproj.nuget.g.props
+/Manero.Test/obj/project.assets.json
+/Manero.Test/obj/project.nuget.cache
