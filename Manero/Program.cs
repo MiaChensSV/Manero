@@ -1,6 +1,7 @@
 using Manero.Context;
 using Manero.Models.Entities;
 using Manero.Models.Repository;
+using Manero.Repository;
 using Manero.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -31,6 +32,13 @@ namespace Manero
                 .AddEntityFrameworkStores<DataContext>()
                 .AddDefaultTokenProviders();
 
+            //Repositories
+            builder.Services.AddScoped<ProductListRepo>();
+            builder.Services.AddScoped<ReviewProductListRepo>();
+
+
+            //Services
+            builder.Services.AddScoped<ProductListService>();
 
             var app = builder.Build();
 

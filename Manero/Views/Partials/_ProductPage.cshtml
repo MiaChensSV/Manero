@@ -1,0 +1,49 @@
+﻿
+@model AllProductsViewModel
+
+<section class="container">
+    <div class="bestseller-product-list">
+         <a asp-controller="Home" asp-action="Index"><i class="fa-solid fa-chevron-left"></i></a>
+        <h1 class="bestseller-title">@Model.Title</h1>
+        <i class="fa-solid fa-bag-shopping"></i>
+    </div>
+
+    
+
+    <div class="filter-sort-wrapper-product-list">
+        <div class="filter-product-list">
+            <a asp-controller="Products" asp-action="FilterProduct"> <i class="fa-solid fa-filter"></i></a>
+            <span>Filters</span>
+        </div>
+
+        <div class="sort-product-list">
+            <span>Sorting by</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+    </div>
+
+    @foreach (var product in @Model.AllProducts)  
+    {
+
+        <div class="product-list-wrapper">
+        <div class="card card-product-list">
+            <img class="card-img-top img-noradius"
+                 src="@product.Image"
+                 alt="Card image cap" />
+            <p class="text-start">
+                    @foreach(var review in @Model.AllReviews)
+                    {
+                    <p class="text-start">@review.Rating / @Model.AllReviews.Count();</p>
+                        
+                    }
+
+               
+            <p class="text-start">@product.ProductName</p>
+            <p class="text-start">@product.Price</p>
+                <i class="fa-regular top-right fa-heart product-list-heart" id="fa-heart"></i>
+            <i class="fa-solid top-right-under fa-bag-shopping product-list-bag" id="fa-bag"></i>
+        </div>
+        </div>
+    }
+   
+</section>
