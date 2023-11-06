@@ -1,4 +1,6 @@
-﻿@{
+﻿@model EditUserViewModel
+
+@{
     ViewData["Title"] = "Account";
 }
 
@@ -9,11 +11,11 @@
     <div class="container">
         <div class="profile-person">
             <div class="image">
-                <img src="/images/placeholder-profile-img.png" alt="profile-image" />
-                <div class="icon"><i class="fa-light fa-pen"></i></div>
+                <img src=@Model.ProfileImageUrl alt="profile-image" />        
+                <a asp-controller="Account" asp-action="Edit"><div class="icon"><i class="fa-light fa-pen"></i></div></a>
             </div>
-            <div class="user-name"> Kristin Watson</div>
-            <div class="email">kristin.watson@mail.com</div>
+            <div class="user-name">@Model.FirstName @Model.LastName</div>
+            <div class="email">@Model.Email</div>
         </div>
         <div class="profile-info">
             <a asp-controller="Account" asp-action="Orders"> <div class="info"><i class="fa-light fa-calendar"></i>Order History<i class="fa-regular fa-chevron-right"></i></div></a>
