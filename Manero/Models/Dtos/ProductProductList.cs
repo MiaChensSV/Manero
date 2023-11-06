@@ -1,4 +1,6 @@
-﻿namespace Manero.Models.Dtos
+﻿using Manero.Models.Entities;
+
+namespace Manero.Models.Dtos
 {
     public class ProductProductList
     {
@@ -11,6 +13,7 @@
         public decimal? Price { get; set; }
         public string? Rating { get; set; }
         public List<string> Tags { get; set; } = new List<string>();
+        public ICollection<ReviewEntity> Reviews { get; set; } = new HashSet<ReviewEntity>();
 
 
     }

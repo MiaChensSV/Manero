@@ -123,7 +123,7 @@ namespace Manero.Controllers
 
             return View(viewModel);
         }
-        public async Task<IActionResult> ProductListByTagNameTShirt()
+        public async Task<IActionResult> ProductListByTagNameTShirts()
         {
             var viewModel = new ProductsByTagsViewModel
             {
