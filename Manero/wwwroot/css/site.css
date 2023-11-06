@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 @import "../scss/Components/_shippingDetails.css";
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
@@ -504,10 +504,10 @@ div.col-6 a {
 }
 .profile .container .profile-person .image img {
   width: 120px;
-  height: auto;
+  height: 120px;
   margin: 20px;
   border: 5px solid #DBE3F5;
-  border-radius: 60px;
+  border-radius: 50%;
 }
 .profile .container .profile-person .icon {
   position: absolute;
@@ -671,7 +671,7 @@ div.col-6 a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 20px;
+  margin: 0px;
 }
 .payment-method .container .cards .menu h4 {
   flex: 1;
@@ -691,6 +691,10 @@ div.col-6 a {
   font-size: 0.9rem;
   padding-left: 30px;
   color: #111111;
+}
+.payment-method .container .card-image {
+  padding: 0;
+  margin: 0;
 }
 .payment-method .container .card-image .visa {
   position: relative;
@@ -752,14 +756,11 @@ div.col-6 a {
   margin-top: 30px;
 }
 .add-payment .container .card-image .card-info {
-  margin-top: 15px;
-  margin-left: 20px;
+  margin-top: 0px;
+  margin-left: 0px;
   width: 238px;
   position: absolute;
   z-index: 2;
-}
-.add-payment .container .card-image .card-info .card-number {
-  padding-top: 15px;
 }
 .add-payment .container .card-image .card-info .name {
   display: flex;
@@ -820,11 +821,14 @@ div.col-6 a {
 }
 .my-address .container .addresses .box {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   margin: 15px;
   border-bottom: 1px solid #DBE3F5;
   padding-top: 10px;
+}
+.my-address .container .addresses .box p {
+  margin: 0;
 }
 .my-address .container .addresses .box .icon {
   margin-left: 10px;
@@ -1257,7 +1261,8 @@ h2 {
 }
 .filtersContainer input[type=range] {
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   height: 2px;
   width: 100%;
   position: absolute;
@@ -1285,7 +1290,6 @@ h2 {
   margin: auto;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .sizesFilter .containerSizes input {
@@ -1344,7 +1348,6 @@ h2 {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   margin: 1rem 0.5rem 1rem 0.5rem;
 }
@@ -1452,7 +1455,6 @@ h2 {
   margin: 0.25rem;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .tagsContainer .containerSizes input {
@@ -1543,6 +1545,7 @@ h2 {
 }
 
 ::-webkit-scrollbar-thumb {
+  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   background: rgb(180, 180, 180);
   border-radius: 10px;
@@ -1550,4 +1553,4 @@ h2 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #626262;
-}
+}/*# sourceMappingURL=site.css.map */
