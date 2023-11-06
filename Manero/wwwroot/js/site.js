@@ -160,3 +160,17 @@ try {
 } catch (error) {
     console.error(error);
 }
+
+async function copyPromoCodeToClipboard(buttonElement) {
+    var promoCodeElement = buttonElement.parentElement.querySelector(".promoCodeCopy");
+    var copyCode = promoCodeElement.innerText;
+
+    try {
+        await navigator.clipboard.writeText(copyCode);
+        alert("Promocode copied:" + copyCode);
+    }
+    catch (err) {
+        alert("Copy code failed");
+    }
+
+}

@@ -27,6 +27,7 @@ namespace Manero
             });
             builder.Services.AddHttpContextAccessor();
             //Add repositories 
+            builder.Services.AddScoped<PromoCodeRepo>();
 
             builder.Services.AddScoped<AddressRepository>();
             builder.Services.AddScoped<UserAddressRepository>();

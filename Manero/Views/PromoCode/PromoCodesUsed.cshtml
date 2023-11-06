@@ -1,0 +1,19 @@
+<div class="promoCodeEmptyContainer">
+    <div class="goBackNav">
+        <a asp-controller="Account" asp-action="MyAccount">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
+                <path d="M7 13.833L1 7.83301L7 1.83301" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" />
+            </svg>
+        </a>
+        <p class="goBackNavText">My Promocodes</p>
+        <p class="hiddenElement"></p>
+    </div>
+    <div class="promocode-btn-section">
+        <a asp-controller="PromoCode" asp-action="PromoCodesCurrent"><input type="button" value="Current"
+                class="promocode-btn" /></a>
+
+        <a asp-controller="PromoCode" asp-action="PromoCodesUsed"><input type="button" value="Used"
+                class="promocode-btn" id="promocode-btn-active" /></a>
+    </div>
+</div>
