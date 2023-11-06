@@ -35,9 +35,19 @@ public class AccountController : Controller
         return View();
     }
 
-    public IActionResult Edit()
+    public async Task<IActionResult> Edit()
     {
-        return View();
+        AppIdentityUser user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+        var userViewModel = new EditUserViewModel {
+            
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            Email = user.Email,
+            PhoneNumber = user.PhoneNumber,
+        };
+
+        return View(userViewModel);
     }
     
     [HttpPost]
