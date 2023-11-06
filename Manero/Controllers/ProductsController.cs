@@ -23,7 +23,7 @@ namespace Manero.Controllers
 
                 Title = "Bestsellers",
                 AllProducts = await _productService.GetAllProductsAsync(),
-                AllReviews = await _productService.GetAllReviewssAsync()
+              
  
 
             };
