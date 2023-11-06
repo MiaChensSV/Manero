@@ -18,6 +18,7 @@ namespace Manero
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<AddressService>();
             builder.Services.AddScoped<CreditCardService>();
+            builder.Services.AddScoped<ShoppingCartService>();
 
             builder.Services.AddSession(options =>
             {
@@ -33,6 +34,7 @@ namespace Manero
             builder.Services.AddScoped<UserAddressRepository>();
             builder.Services.AddScoped<CreditCardRepository>();
             builder.Services.AddScoped<UserRepository>();
+            builder.Services.AddScoped<ShoppingCartRepository>();
 
             builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
             

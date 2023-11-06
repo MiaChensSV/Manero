@@ -15,10 +15,33 @@ namespace Manero.Repository
 			_context = context;
 		}
 
+		public async Task CreateCartItemByUser(string userId, string artNum)
+		{
+			var product = _context.ProductDetail							
+							.Where(row => row.ArticleNumber == artNum).FirstOrDefault();
+			int _orderId = await GetOrderIdByUser(userId);
+			OrderDetailEntity newCartItem = new OrderDetailEntity()
+			{
+				OrderId = _orderId,
+				ArticleNumber = artNum,
+				Quantity = 1,
+				Price = product.Price,
+				DiscountedPrice=product.DiscountedPrice,			
+				
+			};
+
+			await _context.OrderDetail.AddAsync(newCartItem);
+			await _context.SaveChangesAsync();
+		}
+
 		public async Task<IEnumerable<OrderDetailEntity>> GetCartByUser(string userId)
 		{
 			int _orderId = GetOrderIdByUser(userId).Result;
 			var _orderDetailList = await _context.OrderDetail
+				.Include(row => row.Product)
+				.ThenInclude(row => row.Size)
+				.Include(row => row.Product)
+				.ThenInclude(row => row.Color)
 				.Where(row => row.OrderId == _orderId)
 				.ToListAsync();
 			return _orderDetailList;
@@ -45,7 +68,19 @@ namespace Manero.Repository
 			if (_orderDetails != null)
 				return _orderDetails.OrderId;
 			else
-				return -1;
+			{
+				OrderEntity _orderEntity = new OrderEntity();
+				_orderEntity.UserId = userId;
+				_orderEntity.StatusId = 1;
+				_orderEntity.ShippingAddress = "";
+				_orderEntity.TrackingNumber = "";
+				_orderEntity.DeliveryFee = 0;
+				_orderEntity.TotalCost = 0;
+				_orderEntity.PromocodeId = 1;
+				var orderId = await _context.OrderDetails.AddAsync(_orderEntity);
+				await _context.SaveChangesAsync();
+                return _orderEntity.OrderId;
+            }	
 		}
 	}
 }

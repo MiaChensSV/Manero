@@ -12,6 +12,11 @@ public class ShoppingCartService
 		_cartRepo = cartRepo;
 	}
 
+	public async Task CreateCartItemByUserAsync(string userId, string artNum)
+	{
+		await _cartRepo.CreateCartItemByUser(userId, artNum);
+	}
+
 	public async Task<IEnumerable<OrderDetailEntity>> GetCartByUserAsync(string userId)
 	{
 		return await _cartRepo.GetCartByUser(userId);
