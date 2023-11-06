@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Manero.Models.Entities;
+using System.ComponentModel.DataAnnotations;
 
 namespace Manero.ViewModels
 {
@@ -11,5 +12,6 @@ namespace Manero.ViewModels
         [EmailAddress(ErrorMessage = "Please enter a valid Email address")]
         public string? Email { get; set; }
         public string? PhoneNumber { get; set; }
+        public string? ProfileImageUrl { get; set; }
     }
 }

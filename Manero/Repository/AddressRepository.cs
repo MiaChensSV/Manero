@@ -8,6 +8,7 @@ namespace Manero.Models.Repository
     {
         public AddressRepository(DataContext context) : base(context)
         {
+
         }
     }
 }

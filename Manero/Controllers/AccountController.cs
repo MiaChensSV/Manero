@@ -30,14 +30,45 @@ public class AccountController : Controller
         _userRepository = userRepository;
     }
 
-    public IActionResult Index()
+    public async Task<IActionResult> Index()
     {
-        return View();
+
+        AppIdentityUser user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+        var userViewModel = new EditUserViewModel
+        {
+
+            FirstName = user.FirstName,
+            LastName = user.LastName,
+            Email = user.Email,
+            PhoneNumber = user.PhoneNumber,
+            ProfileImageUrl = user.ProfileImageUrl, 
+        };
+
+        return View(userViewModel);
     }
 
-    public IActionResult Edit()
+    public async Task<IActionResult> Edit()
     {
+        AppIdentityUser user = await _userManager.FindByIdAsync(User.FindFirstValue(ClaimTypes.NameIdentifier));
+
+        if(user != null)
+        {
+            var userViewModel = new EditUserViewModel
+            {
+
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Email = user.Email,
+                PhoneNumber = user.PhoneNumber,
+                ProfileImageUrl = user.ProfileImageUrl,
+            };
+
+            return View(userViewModel);
+        }
+
         return View();
+       
     }
     
     [HttpPost]
@@ -52,6 +83,7 @@ public class AccountController : Controller
                 user.PhoneNumber = model.PhoneNumber;
                 user.FirstName = model.FirstName;
                 user.LastName = model.LastName;
+                user.ProfileImageUrl = model.ProfileImageUrl;
             }
             else 
             {
@@ -72,13 +104,6 @@ public class AccountController : Controller
         }
         return View(user);
     }
-
-   
-
-
-
-
-
 
 
 
