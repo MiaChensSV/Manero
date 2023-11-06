@@ -1,42 +1,34 @@
-<div class="container text-center mb-3" id="cart-order-container">
-	<div class="cart-section">
-		<div class="col-3" id="cart-img-container">
-			<img class="card-img-top"
-				 src="https://junkyard.imgix.net/globalassets/productimages/7360239_280_f_f_adidas_adihq8718ornggazelleindoor2309_q2_junkyard.jpg?auto=format&fit=fill&fill-color=F2F2F2&h=466.25&w=373&q=60"
-				 alt="Card image cap">
-		</div>
-		<div class="col-3 text-start" id="cart-product-info">
-			<p class="mb-1 text-nowrap" id="cart-product-text">Summer dress</p>
-			<p class="mb-1" id="cart-product-text">$36.95 </p>
-			<p class="mb-1" id="cart-product-text">Size:</p>
-			<p class="mb-1" id="cart-product-text">Color:</p>
-		</div>
-		<div class="cart-product-stock">
-			<input class="cart-product-stock-btn" type="button" value="+" />
-			<input class="cart-stock-input" type="text" value="1" />
-			<input class="cart-product-stock-btn" type="button" value="-" />
-		</div>
-	</div>
+@model List<CartViewModel>
 
-	<div class="cart-section">
-		<div class="col-3" id="cart-img-container">
-			<img class="card-img-top"
-				 src="https://junkyard.imgix.net/globalassets/productimages/7360239_280_f_f_adidas_adihq8718ornggazelleindoor2309_q2_junkyard.jpg?auto=format&fit=fill&fill-color=F2F2F2&h=466.25&w=373&q=60"
-				 alt="Card image cap">
+<div class="container text-center mb-3" id="cart-order-container">
+@foreach(var item in Model)
+{
+	
+		<div class="cart-section">
+			@if(!string.IsNullOrEmpty(item.Image)){
+			<div class="col-3" id="cart-img-container">
+				<img class="card-img-top"
+					 src="@item.Image"
+					 alt="@item.ProductName">
+			</div>
+			}
+			<div class="col-3 text-start" id="cart-product-info">
+				<p class="mb-1 text-nowrap" id="cart-product-text">@item.ProductName</p>
+				<p class="mb-1" id="cart-product-text">@String.Format("{0:C}", item.Price) </p>
+				<p class="mb-1" id="cart-product-text">Size: @item.Size</p>
+				<p class="mb-1" id="cart-product-text">Color: @item.Color</p>
+			</div>
+			<div class="cart-product-stock">
+				<input class="cart-product-stock-btn" type="button" value="+" />
+				<input class="cart-stock-input" type="text" value="1" />
+				<input class="cart-product-stock-btn" type="button" value="-" />
+			</div>
 		</div>
-		<div class="col-3 text-start" id="cart-product-info">
-			<p class="mb-1 text-nowrap" id="cart-product-text">Summer dress</p>
-			<p class="mb-1" id="cart-product-text">$36.95 </p>
-			<p class="mb-1" id="cart-product-text">Size:</p>
-			<p class="mb-1" id="cart-product-text">Color:</p>
-		</div>
-		<div class="cart-product-stock">
-			<input class="cart-product-stock-btn" type="button" value="+" />
-			<input class="cart-stock-input" type="text" value="1" />
-			<input class="cart-product-stock-btn" type="button" value="-" />
-		</div>
-	</div>
+	
+}
 </div>
+
+
 <div class="container text-center mb-3" id="cart-total-cost-section">
 	<div class="col-3 text-start" id="cart-subtotal-section">
 		<p class="mb-1 text-nowrap" id="cart-subtotal-text">Subtotal</p>
@@ -62,4 +54,6 @@
 <div class="order-container">
 	<input type="button" value="Shop Now" class="btn" />
 </div>
+
+
 <partial name="../Shared/_BottomNav.cshtml" />

@@ -147,19 +147,20 @@ namespace Manero.Migrations
 
             modelBuilder.Entity("Manero.Models.Entities.CreditCardsEntity", b =>
                 {
-                    b.Property<int>("CardNumber")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                    b.Property<string>("CardNumber")
+                        .HasColumnType("varchar(255)");
 
-                    b.Property<int>("CVV")
-                        .HasColumnType("int");
+                    b.Property<string>("CVV")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("CreditCardName")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<DateTime>("ExpireDate")
-                        .HasColumnType("datetime(6)");
+                    b.Property<string>("ExpireDate")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("UserId")
                         .IsRequired()
@@ -496,6 +497,9 @@ namespace Manero.Migrations
 
                     b.Property<string>("AppIdentityUserId")
                         .HasColumnType("varchar(255)");
+
+                    b.Property<string>("LocationName")
+                        .HasColumnType("longtext");
 
                     b.HasKey("UserId", "AddressId");
 
