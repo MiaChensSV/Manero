@@ -14,10 +14,12 @@ namespace Manero.Controllers;
 public class ShopingCartController : Controller
 {
 	private readonly ShoppingCartService _cartService;
+	private readonly UserService _userService;
 
-	public ShopingCartController(ShoppingCartService cartService)
+	public ShopingCartController(ShoppingCartService cartService, UserService userService)
 	{
 		_cartService = cartService;
+		_userService = userService;
 	}
 
 	public IActionResult Index()
@@ -31,7 +33,7 @@ public class ShopingCartController : Controller
 		{
 			_subtotal= _subtotal+_cartList[i].Price * _cartList[i].Quantity;
 		}
-		CartViewModel cartViewModel = new CartViewModel() 
+		CartViewModel cartViewModel = new ()
 		{ 
 			OrderDetails=_cartList,
 			Subtotal=_subtotal,
@@ -100,8 +102,45 @@ public class ShopingCartController : Controller
 			return userId;
     }
 
-	public IActionResult CheckOut()
+	public async Task<IActionResult> CheckOut()
 	{
-		return View();
+		string userId = GetUserId();
+		List<OrderDetailEntity> _cartList = _cartService.GetCartByUserAsync(userId).Result.ToList<OrderDetailEntity>();
+		decimal _subtotal = 0;
+		decimal _discount = 0;
+		
+		for (int i = 0; i < _cartList.Count; i++)
+		{
+			_subtotal = _subtotal + _cartList[i].Price * _cartList[i].Quantity;
+		}
+
+		var _creditcard = await _userService.GetDefaultCardAsync(userId);
+		var _address = await _userService.GetDefaultAddressAsync(userId);
+		if (_creditcard != null) 
+		{
+			CheckOutViewModel checkoutViewModel = new ()
+			{
+				OrderDetails = _cartList,
+				Subtotal = _subtotal,
+				Discount = _discount,
+				Total = _subtotal + _discount,
+				PaymentMethod = _creditcard.CardNumber,
+				ShippingAddress = _address.Address.StreetName + _address.Address.City + _address.Address.PostalCode + _address.Address.Country,
+			};
+			return View(checkoutViewModel);
+		}
+		else
+		{
+			CheckOutViewModel checkoutViewModel = new ()
+			{
+				OrderDetails = _cartList,
+				Subtotal = _subtotal,
+				Discount = _discount,
+				Total = _subtotal + _discount,
+				PaymentMethod = "",
+				ShippingAddress = _address.Address.StreetName + " " + _address.Address.City + " " + _address.Address.PostalCode + " " + _address.Address.Country,
+			};
+			return View(checkoutViewModel);
+		}				
 	}
 }

@@ -20,7 +20,7 @@ namespace Manero.Repository
 			var product = _context.ProductDetail							
 							.Where(row => row.ArticleNumber == artNum).FirstOrDefault();
 			int _orderId = await GetOrderIdByUser(userId);
-			OrderDetailEntity newCartItem = new OrderDetailEntity()
+			OrderDetailEntity newCartItem = new ()
 			{
 				OrderId = _orderId,
 				ArticleNumber = artNum,
@@ -69,14 +69,16 @@ namespace Manero.Repository
 				return _orderDetails.OrderId;
 			else
 			{
-				OrderEntity _orderEntity = new OrderEntity();
-				_orderEntity.UserId = userId;
-				_orderEntity.StatusId = 1;
-				_orderEntity.ShippingAddress = "";
-				_orderEntity.TrackingNumber = "";
-				_orderEntity.DeliveryFee = 0;
-				_orderEntity.TotalCost = 0;
-				_orderEntity.PromocodeId = 1;
+				OrderEntity _orderEntity = new() 
+				{
+					UserId = userId,
+					StatusId = 1,
+					ShippingAddress = "",
+					TrackingNumber = "",
+					DeliveryFee = 0,
+					TotalCost = 0,
+					PromocodeId = 1,
+				};
 				var orderId = await _context.OrderDetails.AddAsync(_orderEntity);
 				await _context.SaveChangesAsync();
                 return _orderEntity.OrderId;

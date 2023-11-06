@@ -55,12 +55,11 @@
 
 
 		<div class="order-container">
-			<input type="button" value="Shop Now" class="btn" />
+			<a asp-action="checkout" asp-controller="shopingcart" class="btn" type="button">Shop Now</a>
 		</div>
-}else
-	{
-		<div>You do not have anything in the shopping cart</div>
-	}
+}else{
+	<partial name="../Partials/_CartEmpty.cshtml" />
+}
 
 
 
