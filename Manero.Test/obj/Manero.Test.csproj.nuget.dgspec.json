@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\thoma\\source\\repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj": {}
+    "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\Manero.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\thoma\\source\\repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj": {
+    "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\Manero.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\thoma\\source\\repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj",
+        "projectUniqueName": "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\Manero.Test.csproj",
         "projectName": "Manero.Test",
-        "projectPath": "C:\\Users\\thoma\\source\\repos\\MiaChensSV\\Manero\\Manero.Test\\Manero.Test.csproj",
-        "packagesPath": "C:\\Users\\thoma\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\thoma\\source\\repos\\MiaChensSV\\Manero\\Manero.Test\\obj\\",
+        "projectPath": "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\Manero.Test.csproj",
+        "packagesPath": "C:\\Users\\yihon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\thoma\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\yihon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -77,7 +82,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }
