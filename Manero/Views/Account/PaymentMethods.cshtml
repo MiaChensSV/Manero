@@ -16,24 +16,22 @@
                 </div>
             </div>
 
-          
+        <div class="scrollmenu">
         @foreach(var item in Model.CreditCards)
         {
             <div class="card-image">
-                <div class="card-info">
-                    <img src="/images/visa.png" alt="visa card" />
+                <div>
+                    <img src="/images/purple-card.png" alt="purple-card" />
+                    <img class="visa" src="/images/visa.png" alt="visa card" />
                     <p class="card-number">@item.CardNumber</p>
                     <div class="name">
-                        <p>@item.CreditCardName</p>
                         <P>@item.ExpireDate</P>
+                        <p>@item.CreditCardName</p>
                     </div>
-                </div>
-                <div class="card-background">
-                    <img src="/images/purple-card.png" alt="purple-card" />
-
                 </div>
             </div>
         }
+        </div>
       
 
         <div class="payment-info">

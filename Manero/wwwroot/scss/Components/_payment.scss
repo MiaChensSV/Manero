@@ -37,29 +37,22 @@
         }
 
         .card-image {
-            height: 170px;
-            color: white;
-
-            .card-info {
-                margin-top: 15px;
-                margin-left: 20px;
-                width: 238px;
-                position: absolute;
-                z-index: 2;
-
-                .card-number {
-                    padding-top: 15px;
-                }
-
-                .name {
-                    display: flex;
-                    justify-content: space-between;
-                }
+            .visa {
+                position: relative;
+                top: -60px;
+                right: 70px;
             }
 
-            .card-background {
-                position: absolute;
-                z-index: 1;
+            .card-number {
+                position: relative;
+                top: -100px;
+                right: 70px;
+            }
+
+            .name {
+                position: relative;
+                top: -105px;
+                right: 50px;
             }
         }
 

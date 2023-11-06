@@ -1,8 +1,7 @@
 ﻿using Manero.Context;
 using Manero.Models.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
-using System.Linq.Expressions;
+
 
 namespace Manero.Repository
 {

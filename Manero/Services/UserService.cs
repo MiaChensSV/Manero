@@ -19,9 +19,7 @@ namespace Manero.Services
 
             if (getUser != null)
             {
-                await _userRepository.UpdateAsync(AppIdentityUser user) {
-
-                }
+               
             }
 
             return null!;
