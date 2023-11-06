@@ -39,6 +39,7 @@
         .card-image {
             padding: 0;
             margin: 0;
+
             .visa {
                 position: relative;
                 top: -60px;
@@ -47,14 +48,21 @@
 
             .card-number {
                 position: relative;
-                top: -100px;
+                top: -83px;
                 right: 70px;
             }
 
-            .name {
+            .exp-date {
                 position: relative;
                 top: -105px;
-                right: 50px;
+                right: 193px;
+            }
+
+
+            .name {
+                position: relative;
+                top: -85px;
+                right: 38px;
             }
         }
 
@@ -153,6 +161,7 @@
                 .validation {
                     display: flex;
                     flex-direction: row;
+
                 }
 
                 label {
