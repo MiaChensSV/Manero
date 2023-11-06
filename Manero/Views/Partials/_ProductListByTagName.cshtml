@@ -3,7 +3,7 @@
 
 <section class="container">
     <div class="bestseller-product-list">
-        <a asp-controller="Home" asp-action="Index"><i class="fa-solid fa-chevron-left"></i></a>
+        <a asp-controller="ShopByTags" asp-action="Index"><i class="fa-solid fa-chevron-left"></i></a>
         <h1 class="bestseller-title">@Model.Title</h1>
         <i class="fa-solid fa-bag-shopping"></i>
     </div>
@@ -32,7 +32,29 @@
                  alt="Card image cap" />
                 <p class="text-start">
 
-                <p class="text-start">review</p>
+                <p class="text-start">
+                        @foreach (var review in product.Reviews)
+                        {
+
+                    <p class="text-start">
+
+                                @{
+                                    var aggregatedReview = @review.Rating / @product.Reviews.Count;
+                                }
+
+
+
+                                @for (decimal i = 0; i < aggregatedReview; i++)
+                                {
+                                     <i class="fa-solid fa-star"></i>
+                                }
+
+
+
+
+                                     (@aggregatedReview)
+                    </p>
+                        }
 
 
 

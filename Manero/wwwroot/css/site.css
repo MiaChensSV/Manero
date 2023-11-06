@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+﻿@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 @import "../scss/Components/_shippingDetails.css";
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
@@ -388,6 +388,21 @@ div.col-6 a {
   position: absolute;
   top: 50px;
   right: 10px;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.icon-button:focus {
+  outline: none;
+}
+
+.icon-button:active {
+  outline: none;
 }
 
 .onboardingContainer {
@@ -1248,8 +1263,7 @@ h2 {
 }
 .filtersContainer input[type=range] {
   -webkit-appearance: none;
-  -moz-appearance: none;
-       appearance: none;
+  appearance: none;
   height: 2px;
   width: 100%;
   position: absolute;
@@ -1277,6 +1291,7 @@ h2 {
   margin: auto;
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 .sizesFilter .containerSizes input {
@@ -1335,6 +1350,7 @@ h2 {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   margin: 1rem 0.5rem 1rem 0.5rem;
 }
@@ -1442,6 +1458,7 @@ h2 {
   margin: 0.25rem;
   -webkit-user-select: none;
   -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
 }
 .tagsContainer .containerSizes input {
@@ -1481,7 +1498,6 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
 }
 .promoCodeEmptyContainer .promo-code-h2 {
   display: flex;
@@ -1514,7 +1530,7 @@ h2 {
   position: absolute;
   z-index: 3;
   width: 18rem;
-  top: 50%;
+  top: 100%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 1rem;
@@ -1603,7 +1619,6 @@ h2 {
 }
 
 ::-webkit-scrollbar-thumb {
-  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   background: rgb(180, 180, 180);
   border-radius: 10px;
@@ -1611,4 +1626,4 @@ h2 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #626262;
-}/*# sourceMappingURL=site.css.map */
+}

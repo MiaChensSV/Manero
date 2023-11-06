@@ -22,7 +22,7 @@ namespace Manero.Services
         public async Task<IEnumerable<ProductProductList>> GetAllProductsAsync()
         {
             var products = await _productRepo.GetAllAsync();
-            
+            var productReviews = await _reviewRepo.GetAllAsync();
 
             var productList = new List<ProductProductList>();
             foreach (var product in products)
@@ -34,37 +34,19 @@ namespace Manero.Services
                     ProductName = product.ProductTitle,
                     Price = product.Price,
                     Image = product.ProductImageUrl,
-                  //Rating = product.ProductModel.Reviews
-
-
-
+                    Reviews = product.ProductModel.Reviews
 
                 });
             }
             return productList;
         }
 
-        public async Task<IEnumerable<ReviewProductList>> GetAllReviewssAsync()
-        {
-           var products = await _reviewRepo.GetAllAsync();
-
-
-            var reviewList = new List<ReviewProductList>();
-            foreach (var review in reviewList)
-            {
-
-                reviewList.Add(new ReviewProductList
-                {
-                   Rating = review.Rating
-
-                });
-            }
-            return reviewList;
-        }
+       
 
         public async Task<IEnumerable<ProductProductList>> GetAllByTagNameAsync(string tagName)
         {
             var products = await _shopByTagsRepo.GetAllAsync(tagName);
+            var productReviews = await _reviewRepo.GetAllAsync();
 
             var productList = new List<ProductProductList>();
             foreach (var product in products)
@@ -82,7 +64,8 @@ namespace Manero.Services
                     Tags = tagList,
                    
                     Price = product.Price,
-                    Image = product.ProductImageUrl
+                    Image = product.ProductImageUrl,
+                    Reviews = product.ProductModel.Reviews
                 });
             }
             return productList;
