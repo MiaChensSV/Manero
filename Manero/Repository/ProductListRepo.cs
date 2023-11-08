@@ -1,4 +1,5 @@
 ﻿using Manero.Context;
+using Manero.Models.Dtos;
 using Manero.Models.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
@@ -6,6 +7,11 @@ using System.Linq.Expressions;
 
 namespace Manero.Repository
 {
+    public interface IProductListRepo
+    {
+        Task<IEnumerable<ProductDetailEntity>> GetAllAsync();
+        Task<ProductDetailEntity> GetAsync();
+    }
     public class ProductListRepo : GeneralRepo<ProductDetailEntity>
     {
         private readonly DataContext _dataContext;
