@@ -1,7 +1,8 @@
 ﻿using Manero.Context;
-using Manero.Models.Entities;
+using Manero.Models.Dtos;
+
 using Manero.Repository;
-using System.Linq.Expressions;
+
 
 namespace Manero.Services
 {
@@ -16,9 +17,11 @@ namespace Manero.Services
             _productDetailsRepo = productDetailsRepo;
         }
 
-        public async Task<ProductDetailEntity> GetProductDetailAsync(Expression<Func<ProductDetailEntity, bool>> expression)
+        public async Task<ProductProductDetail> GetProductDetailAsync(ProductProductDetail product)
         {
-            return await _productDetailsRepo.GetAsync(expression);
+            var _entity = await _productDetailsRepo.GetAsync(x =>
+                x.ArticleNumber == product.ArticleNumber);
+            return _entity;
         }
     }
 }

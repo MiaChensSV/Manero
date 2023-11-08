@@ -24,7 +24,7 @@
 
     @foreach (var product in @Model.AllProducts)  
     {
-
+        <a asp-action="Details" asp-controller="Products" asp-route-id="@product.ArticleNumber">
         <div class="product-list-wrapper">
         <div class="card card-product-list">
             <img class="card-img-top img-noradius"
@@ -50,6 +50,7 @@
                     
             </div>
         </div>
+        </a>
     }
    
 </section>

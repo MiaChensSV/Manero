@@ -18,7 +18,7 @@ namespace Manero
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<AddressService>();
             builder.Services.AddScoped<CreditCardService>();
-
+            builder.Services.AddScoped<ProductDetailsService>();
             builder.Services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -28,7 +28,7 @@ namespace Manero
             builder.Services.AddHttpContextAccessor();
             //Add repositories 
             builder.Services.AddScoped<PromoCodeRepo>();
-
+            builder.Services.AddScoped<ProductDetailsRepo>();
             builder.Services.AddScoped<AddressRepository>();
             builder.Services.AddScoped<UserAddressRepository>();
             builder.Services.AddScoped<CreditCardRepository>();

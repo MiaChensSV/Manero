@@ -13,9 +13,6 @@ namespace Manero.Repository
             _context = context;
         }
 
-        public override Task<ProductDetailEntity> GetAsync(Expression<Func<ProductDetailEntity, bool>> expression)
-        {
-            return base.GetAsync(expression);
-        }
+       
     }
 }
