@@ -52,6 +52,10 @@ namespace Manero.Controllers
                 return View("OrderFailed");
             }
         }
+        public IActionResult OrderFailed()
+        {
+            return View();
+        }
 
 
     }
