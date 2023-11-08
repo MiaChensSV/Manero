@@ -8,9 +8,10 @@ namespace Manero.Controllers
 {
     public class ProductsController : Controller
     {
-        private readonly ProductListService _productService;
+        private readonly IProductListService _productService;
 
-        public ProductsController(ProductListService productService)
+
+        public ProductsController(IProductListService productService)
         {
             _productService = productService;
             
