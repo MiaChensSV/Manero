@@ -4,8 +4,15 @@ namespace Manero.Controllers
 {
     public class CheckOutController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Order()
         {
+            return View();
+        }
+
+
+        public IActionResult OrderFailed()
+        {
+
             return View();
         }
 
