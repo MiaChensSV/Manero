@@ -17,6 +17,8 @@ namespace Manero.Controllers
         public IActionResult Order()
         {
             return View(new CheckOutViewModel());
+
+            //Vänta på Mia
         }
 
 
