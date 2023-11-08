@@ -44,13 +44,12 @@ namespace Manero
 
             //Repositories
             builder.Services.AddScoped<ProductListRepo>();
-            builder.Services.AddScoped<ReviewProductListRepo>();
             builder.Services.AddScoped<CartRepo>();
             builder.Services.AddScoped<ShopByTagsRepo>();
 
 
             //Services
-            builder.Services.AddScoped<ProductListService>();
+            builder.Services.AddScoped<IProductListService, ProductListService>();
             builder.Services.AddScoped<CartService>();
 
             var app = builder.Build();
