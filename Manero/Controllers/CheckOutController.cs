@@ -1,21 +1,56 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Manero.Services;
+using Manero.ViewModels;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Manero.Controllers
 {
     public class CheckOutController : Controller
     {
+        private readonly CheckOutService _checkOutService;
+
+        public CheckOutController(CheckOutService checkOutService)
+        {
+            _checkOutService = checkOutService;
+        }
+
+
         public IActionResult Order()
         {
-            return View();
+            return View(new CheckOutViewModel());
         }
 
 
-        public IActionResult OrderFailed()
+        [HttpPost]
+        public async Task<IActionResult> PlaceOrder(CheckOutViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
 
-            return View();
+                return View("Order", viewModel);
+            }
+
+            try
+            {
+                var order = await _checkOutService.RegisterAsync(viewModel);
+
+                if (order != null)
+                {
+
+                    return View("OrderSuccess", order);
+                }
+                else
+                {
+
+                    return View("OrderFailed");
+                }
+            }
+            catch
+            {
+
+                return View("OrderFailed");
+            }
         }
+
 
     }
-
 }
