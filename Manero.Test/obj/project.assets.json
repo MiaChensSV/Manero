@@ -8830,23 +8830,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Erlan\\.nuget\\packages\\": {},
+    "C:\\Users\\emmav\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj",
+      "projectUniqueName": "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero.Test\\Manero.Test.csproj",
       "projectName": "Manero.Test",
-      "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj",
-      "packagesPath": "C:\\Users\\Erlan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\obj\\",
+      "projectPath": "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero.Test\\Manero.Test.csproj",
+      "packagesPath": "C:\\Users\\emmav\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero.Test\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Erlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\emmav\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8862,8 +8862,8 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj": {
-              "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj"
+            "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero\\Manero.csproj": {
+              "projectPath": "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero\\Manero.csproj"
             }
           }
         }
@@ -8923,7 +8923,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
