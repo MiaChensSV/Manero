@@ -20,6 +20,7 @@ namespace Manero.Repository
             return entity;
         }
 
+
         public virtual async Task<TEntity> GetAsync()
         {
             var _entity = await _context.Set<TEntity>().FirstOrDefaultAsync();

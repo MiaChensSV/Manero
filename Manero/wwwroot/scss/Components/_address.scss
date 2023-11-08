@@ -7,11 +7,14 @@
         .addresses {
             .box {
                 display: flex;
-                flex-direction: row;
+                flex-direction: column;
                 align-items: center;
                 margin: 15px;
                 border-bottom: 1px solid $color-blue;
                 padding-top: 10px;
+                p{
+                    margin: 0;
+                }
 
                 .icon {
                     margin-left: 10px;
@@ -37,9 +40,6 @@
     font-weight: $font-weight-regular;
 
     .container {
-        .address-map {
-        }
-
         .newaddress-info {
             align-items: center;
             text-align: center;
