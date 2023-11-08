@@ -1,18 +1,35 @@
 ﻿using Manero.Context;
 using Manero.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace Manero.Repository
 {
     public class ProductDetailsRepo : GeneralRepo<ProductDetailEntity>
     {
-        private readonly DataContext _context;
-
-        public ProductDetailsRepo(DataContext context) : base(context) 
+        private readonly DataContext _dataContext;
+        public ProductDetailsRepo(DataContext dataContext) : base(dataContext)
         {
-            _context = context;
+            _dataContext = dataContext;
         }
 
-       
+
+        public override async Task<ProductDetailEntity> GetAsync(Expression<Func<ProductDetailEntity, bool>> expression)
+        {
+            try
+            {
+                var product = await _dataContext.ProductDetail
+                  .Include(b => b.ProductModel)
+                  .ThenInclude(p => p.Reviews)
+                  .FirstOrDefaultAsync(expression);
+
+                return product;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

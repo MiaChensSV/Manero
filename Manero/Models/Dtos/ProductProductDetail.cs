@@ -11,7 +11,15 @@ namespace Manero.Models.Dtos
        
         public string? Image { get; set; }
         public decimal Price { get; set; }
+        public decimal DiscountedPrice { get; set; }    
         public string? Rating { get; set; }
+
+        public IEnumerable<ReviewEntity>? Reviews { get; set; } = new List<ReviewEntity>();
+
+        
+
+        //make a function to get reviews from productmodel
+
 
         //Konverterar från ProductDetailEntity till ProductProductDetail
         public static implicit operator ProductProductDetail(ProductDetailEntity entity)
@@ -22,7 +30,9 @@ namespace Manero.Models.Dtos
                 ProductTitle = entity.ProductTitle,
                 Description = entity.ProductDetailDescription,
                 Price = entity.Price,
+                DiscountedPrice = entity.DiscountedPrice,
                 Image = entity.ProductImageUrl,
+                Reviews = entity.ProductModel.Reviews,
               
             };
             return productDetail;

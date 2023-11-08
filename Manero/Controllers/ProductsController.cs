@@ -10,12 +10,12 @@ namespace Manero.Controllers
     public class ProductsController : Controller
     {
         private readonly ProductListService _productService;
-        private readonly ProductDetailsService _productDetailService;
+        private readonly ProductDetailsRepo _productDetailrepo;
 
-        public ProductsController(ProductListService productService, ProductDetailsService productDetailService)
+        public ProductsController(ProductListService productService, ProductDetailsRepo productDetailsRepo)
         {
             _productService = productService;
-            _productDetailService = productDetailService;
+            _productDetailrepo = productDetailsRepo;
         }
 
         public async Task <IActionResult> Index()
@@ -34,31 +34,13 @@ namespace Manero.Controllers
         }
 
         [HttpGet("product/{id}")]
-        public async Task<IActionResult> Details(int articlenumber)
+        public async Task<IActionResult> Details(int id)
         {
-            
-            // Fetch the product detail entity
-            var productDetailEntity = await _productDetailService.GetProductDetailAsync(articlenumber);
+            ProductProductDetail product = await _productDetailrepo.GetAsync(x => x.ProductId == id);
 
-            if (productDetailEntity != null)
-            {
-                // Convert the entity to a DTO using the implicit operator
-                var productDetailDto = (ProductProductDetail)productDetailEntity;
-
-                // Create a view model and populate it with the DTO
-                var viewModel = new ProductDetailsViewModel
-                {
-                    Product = productDetailDto
-                };
-
-                return View(viewModel);
-            }
-            else
-            {
-                // Handle the case where the product with the given id is not found
-                return NotFound();
-            }
+            return View(product);
         }
+
 
 
         public IActionResult Reviews() 
