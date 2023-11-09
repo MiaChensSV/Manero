@@ -12,6 +12,9 @@ namespace Manero.Models.Dtos
         public decimal Price { get; set; }
         public decimal DiscountedPrice { get; set; }    
         public string? Rating { get; set; }
+        public int? Color { get; set; }  
+        public int? Size { get; set; }
+        public int Quantity { get; set; }
 
         public IEnumerable<ReviewEntity>? Reviews { get; set; } = new List<ReviewEntity>();
 
@@ -28,6 +31,9 @@ namespace Manero.Models.Dtos
                 DiscountedPrice = entity.DiscountedPrice,
                 Image = entity.ProductImageUrl,
                 Reviews = entity.ProductModel.Reviews,
+                Color = entity.Color.ColorId,
+                Size = entity.Size.SizeId,
+                Quantity = entity.Quantity,
               
             };
             return productDetail;

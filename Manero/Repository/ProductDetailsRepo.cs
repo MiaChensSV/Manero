@@ -21,6 +21,8 @@ namespace Manero.Repository
                 var product = await _dataContext.ProductDetail
                   .Include(b => b.ProductModel)
                   .ThenInclude(p => p.Reviews)
+                  .Include(p => p.Size)
+                  .Include(p => p.Color)
                   .FirstOrDefaultAsync(expression);
 
                 return product;

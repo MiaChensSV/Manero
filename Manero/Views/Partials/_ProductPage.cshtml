@@ -26,9 +26,10 @@
     <div class="product-list-wrapper">
     @foreach (var product in @Model.AllProducts)  
     {
-        <a asp-action="Details" asp-controller="Products" asp-route-id="@product.ArticleNumber">
+      
         
         <div class="card card-product-list">
+              <a asp-action="Details" asp-controller="Products" asp-route-id="@product.ArticleNumber">
             <img class="card-img-top img-noradius"
                  src="@product.Image"
                  alt="Card image cap" />
@@ -66,10 +67,9 @@
                         <i class="fa-solid top-right-under fa-bag-shopping product-list-bag" id="fa-bag"></i>
                     </button>
                 </form>
-                    
+                </a>
             </div>
-        
-        </a>
+       
     }
     </div>
 </section>

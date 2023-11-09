@@ -10,34 +10,8 @@
       <div id="carouselExampleIndicators" class="carousel slide col-xl-6 justify-content-xl-center">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="@Model.Image" class="d-block w-100" alt="..." />
+            <img src="@Model.Image" class="d-block w-100" alt="@Model.ProductTitle" />
           </div>
-        </div>
-        <div
-          class="d-flex justify-content-center align-items-center border-bottom border-2 border-secondary-emphasis py-4"
-        >
-          <button
-            type="button"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="0"
-            class="activeImg active mx-1"
-            aria-current="true"
-            aria-label="Slide 1"
-          ></button>
-          <button
-            type="button"
-            class="carousel-btn mx-1"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="1"
-            aria-label="Slide 2"
-          ></button>
-          <button
-            type="button"
-            class="carousel-btn mx-1"
-            data-bs-target="#carouselExampleIndicators"
-            data-bs-slide-to="2"
-            aria-label="Slide 3"
-          ></button>
         </div>
       </div>
 
@@ -49,8 +23,8 @@
             <h2>@Model.ProductTitle</h2>
           </div>
           <div class="col-2 text-center">
-            <i class="fa-regular top-right fa-heart" id="fa-heart"></i>
-          </div>
+            <a asp-controller="Account" asp-action="Wishlist"><i class="fa-regular top-right fa-heart product-list-heart" id="fa-heart"></i></a>
+            </div>
         </div>
 
         <!-- Product Rating -->
@@ -82,13 +56,15 @@
           <div class="col-6 d-flex align-items-center gap-1">
                 @if (Model.DiscountedPrice != Model.Price)
                 {
-                    <h3 class="text-decoration-line-through fs-6">@Model.DiscountedPrice</h3>
-                    <h4 class="text-danger">@Model.Price</h4>
+                    <h3 class="text-decoration-line-through fs-6">@String.Format("{0:C}", Model.DiscountedPrice)</h3>
+                    <h4 class="text-danger">  @String.Format("{0:C}", Model.Price)</h4>
                 }
                 else{
-                <h4 class="text-danger">@Model.Price</h4>
+                    <h4 class="text-danger">@String.Format("{0:C}", Model.Price)</h4>
                 }
           </div>
+
+          <!-- Product Quantity Måste fixas...-->
           <div class="col-6 justify-content-end text-end">
             <button class="btn-product-amount align-content-center">
               <i class="fas fa-minus"></i>
@@ -96,8 +72,7 @@
             <span class="px-2">1</span>
             <button class="btn-product-amount">
               <i class="fas fa-plus"></i>
-            </button>
-          </div>
+            </button>        
         </div>
         <!-- Product Size -->
         <div class="row">
@@ -105,12 +80,28 @@
             <h6>Size</h6>
           </div>
           <div class="col-12 d-flex justify-content-between pt-sm-2 justify-content-xl-start">
-            <button class="product-size">XS</button>
-            <button class="product-size">S</button>
-            <button class="product-size">M</button>
-            <button class="product-size">L</button>
-            <button class="product-size">XL</button>
-            <button class="product-size">XXL</button>
+                @switch (Model.Size)
+                {
+                   
+                    case 1:
+                        <button class="product-size">S</button>
+                        break;
+                    case 2:
+                        <button class="product-size">M</button>
+                        break;
+                    case 3:
+                        <button class="product-size">L</button>
+                        break;
+                    case 4:
+                        <button class="product-size">XL</button>
+                        break;
+                    case 5:
+                        <button class="product-size">XXL</button>
+                        break;
+                    default:
+                    <p> Cannot show available sizes right now</p>
+                        break;
+                }
           </div>
         </div>
 
@@ -120,11 +111,33 @@
             <h6>Color</h6>
           </div>
           <div class="d-flex col-10 gap-4 align-items-center">
-            <button class="product-color" style="background-color: #ff6262"></button>
-            <button class="product-color" style="background-color: #63c7ff"></button>
-            <button class="product-color" style="background-color: #f8e7cd"></button>
-            <button class="product-color" style="background-color: #323858"></button>
-            <button class="product-color" style="background-color: #111111"></button>
+                @switch (Model.Color)
+                {
+
+                    case 1:
+                        <button class="product-color" style="background-color: #111111"></button>
+                        break;
+                    case 2:
+                        <button class="product-color" style="background-color: #63c7ff"></button>
+                        break;
+                    case 3:
+                        <button class="product-color" style="background-color: #ff6262"></button>
+                        break;
+                    case 4:
+                        <button class="product-color" style="background-color: forestgreen"></button>
+                        break;
+                    case 5:
+
+                        <button class="product-color" style="background-color: yellow"></button>
+                        break;
+                    default:
+                        <p> Cannot show available color right now</p>
+                        break;
+                }
+           
+            
+           
+           
           </div>
         </div>
 
@@ -141,13 +154,13 @@
         </div>
         <div class="row">
           <div class="col-12">
-                <form asp-controller="Cart" asp-action="AddToCart" method="post">
+                <form asp-controller="ShopingCart" asp-action="Add" method="post">
                     <div class="row">
                         <div class="col-12">
                             <input type="hidden" name="articleNumber" value="@Model.ArticleNumber" />
                             <button type="submit" class="btn-add-cart p-3">Add to cart</button>
                         </div>
-                    </div>   
+                    </div>
                 </form>
           </div>
         </div>
