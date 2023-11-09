@@ -1,0 +1,61 @@
+﻿
+    <div class="categories-top">
+        <button type="button" >
+            <span><i id="burger" class="fa-solid fa-bars"></i></span>
+        </button>
+
+        <div class="searchbox-categories">
+            <i class="fas fa-search" id="search-categories"></i>
+            <input class="search-category" placeholder="Search" />
+        </div>
+
+        <i class="fa-solid fa-bag-shopping" id="shoppingbag-categories"></i>
+    </div>
+
+    <div class="container">
+        <div class="categories-choose-wrapper">
+        <a asp-controller="ShopByTags" asp-action="ProductListByTagNameMen" class="view-category">Men</a>
+        <a asp-controller="ShopByTags" asp-action="ProductListByTagNameWomen" class="view-category">Women</a>
+            <a asp-controller="ShopByTags" asp-action="ProductListByTagNameKids" class="view-category">kids</a>
+        <a asp-controller="ShopByTags" asp-action="ProductListByTagNameAccessories" class="view-category">accessories</a>
+        </div>
+    
+
+    <div class="category-boxes-wrapper">
+        <div class="category-boxes-pair">
+
+            <a asp-controller="ShopByTags" asp-action="ProductListByTagNameDresses">
+                <div class="category-box margin-category-box">
+                    <span class="category-name">Dresses</span>
+                </div>
+            </a>
+
+            <a asp-controller="ShopByTags" asp-action="ProductListByTagNamePants">
+                <div class="category-box margin-category-box">
+                     <span class="category-name">Pants</span>
+                </div>
+            </a>
+
+        </div>
+
+        <a asp-controller="ShopByTags" asp-action="ProductListByTagNameAccessories">
+            <div class="category-box-wide">
+                 <span class="category-name">Accessories</span>
+            </div>
+        </a>
+
+        <div class="category-boxes-pair">
+            <a asp-controller="ShopByTags" asp-action="ProductListByTagNameShoes">
+                <div class="category-box margin-category-box">
+                    <span class="category-name">Shoes</span>
+                </div>
+            </a>
+
+            <a asp-controller="ShopByTags" asp-action="ProductListByTagNameTShirts">
+                <div class="category-box">
+                    <span class="category-name">T-Shirts</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

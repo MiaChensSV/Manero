@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "CreditCards";
+}
+
+@model CreditCardViewModel
+
+<div class="payment-method">
+    <div class="container">
+        <div class="goBackNav mb-5">
+            <a asp-controller="Account" asp-action="Index">
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
+                    <path d="M7 13.833L1 7.83301L7 1.83301" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
+            <div class="cards">
+                <div class="menu">
+                    <h4>Cards</h4>
+                    <div class="new-card">
+                        <a asp-controller="account" asp-action="addcreditcard"><p>Add a new card</p>
+                        </a><i class="fa-light fa-plus"></i>
+                    </div>
+                </div>
+            </div>
+
+        <div class="scrollmenu">
+        @foreach(var item in Model.CreditCards)
+        {
+            <div class="card-image">
+                <div>
+                    <img src="/images/purple-card.png" alt="purple-card" />
+                    <img class="visa" src="/images/visa.png" alt="visa card" />
+                    <p class="card-number">@item.CardNumber</p>
+                    <div class="name">
+                        <p>@item.CreditCardName</p>
+                    </div>
+                    <div class="exp-date">
+                        <P>@item.ExpireDate</P>
+                    </div>
+                </div>
+            </div>
+        }
+        </div>
+      
+
+        <div class="payment-info">
+            <div class="info">
+                <p>Apple Pay</p>
+                <div class="verify"><i class="fa-regular fa-check green"></i><i class="fa-light fa-pen"></i></div>
+            </div>
+            <div class="info">
+                <p>Pay Pal</p>
+                <div class="verify"><i class="fa-regular fa-check green"></i><i class="fa-light fa-pen"></i></div>
+            </div>
+            <div class="info">
+                <p>Paynoeer</p>
+                <div class="not-verify"><i class="fa-light fa-plus"></i></div>
+            </div>
+        </div>
+    </div>
+</div>
+<partial name="../Shared/_BottomNav.cshtml" />

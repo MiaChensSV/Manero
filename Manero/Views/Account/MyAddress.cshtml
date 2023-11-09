@@ -1,0 +1,35 @@
+﻿@model UserAddressesViewModel
+<div class="my-address">
+    <div class="container">
+            <div class="goBackNav">
+        <a asp-controller="Account" asp-action="Index">
+            <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
+                <path d="M7 13.833L1 7.83301L7 1.83301" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round" />
+            </svg>
+        </a>
+    </div>
+
+        <div class="addresses">
+            @foreach(var item in Model.UserAddresses)
+            {
+                <div class="box py-3">
+                    <div class="icon"><i class="fa-regular fa-house mb-3"></i></div>
+                    <div class="info">
+                        <h3 class="lead">@item.LocationName</h3>
+                        <h5>@item.Address.StreetName</h5>
+                        <p>@item.Address.PostalCode</p>
+                        <p>@item.Address.City</p>
+                        <p>@item.Address.Country</p>
+                    </div>
+                </div>
+            }
+            <a asp-controller="Account" asp-action="AddAddress">
+            <div class="add">
+                <i class="fa-regular fa-plus"></i>
+                <p>Add a new address</p>
+            </div>
+        </a>
+        </div>
+    </div>
+</div>

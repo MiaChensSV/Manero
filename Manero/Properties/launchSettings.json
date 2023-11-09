@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Manero": {
+      "commandName": "Project",
+      "commandLineArgs": "dotnet watch",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:57626;http://localhost:57627"
+    }
+  }
+}

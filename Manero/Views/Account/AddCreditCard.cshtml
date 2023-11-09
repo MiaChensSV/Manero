@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "New CreditCard";
+}
+
+@model AddCreditCardViewModel
+<div class="add-payment">
+    <div class="container">
+        <div class="goBackNav">
+            <a asp-controller="Account" asp-action="Index">
+                <svg xmlns="http://www.w3.org/2000/svg" width="8" height="15" viewBox="0 0 8 15" fill="none">
+                    <path d="M7 13.833L1 7.83301L7 1.83301" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                </svg>
+            </a>
+        </div>
+            <div class="card-image">
+                <div class="card-info">
+                    <img src="/images/visa.png" alt="visa card" />
+                    <p class="card-number"></p>
+                    <div class="name">
+                        <p>Kristin</p>
+                        <P>EXP.END</P>
+                    </div>
+                </div>
+                <div class="card-background">
+                    <img src="/images/blue-card.png" alt="blue-card" />
+                </div>
+            </div>
+        
+
+        <div class="newcard-info">
+            <form method="post"> 
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="CreditCardName"></label>
+                    <input asp-for="CreditCardName" />
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="CardNumber">CARD NUMBER</label>
+                    <input asp-for="CardNumber" />
+
+                </div>
+                <div class="form-group validation">
+                    <div>
+                        <label asp-for="ExpireDate">MM/YY</label>
+                        <input asp-for="ExpireDate" />
+                    </div>
+                    <div class="validate-cvv">
+                        <label asp-for="CVV">CVV</label>
+                        <input asp-for="CVV" />
+                    </div>
+                </div>
+
+                <button type="submit" class="form-group save-btn">Save Card</button>
+            </form>
+        </div>
+    </div>
+</div>
