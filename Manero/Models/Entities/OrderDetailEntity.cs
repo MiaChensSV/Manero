@@ -18,9 +18,10 @@ public class OrderDetailEntity
     [ForeignKey("OrderId")]
     public OrderEntity Order { get; set; } = null!;
 
+    public string ArticleNumber { get; set; } = null!; 
     [ForeignKey("ArticleNumber")]
-    public string ArticleNumber { get; set; } = null!;
-    public ProductDetailEntity Product { get; set; }=null!;
+
+	public ProductDetailEntity Product { get; set; }=null!;
     public int Quantity { get; set; }
     [Column(TypeName = "decimal(7,2)")]
     public decimal Price { get; set; }

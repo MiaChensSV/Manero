@@ -38,9 +38,11 @@ public class ProductDetailEntity
     public int Quantity { get;set; }
 
     public ICollection<ProductWishListEntity> Wishlists { get; set; } = new HashSet<ProductWishListEntity>();
+	public ICollection<OrderDetailEntity> OrderDetails { get; set; } = new HashSet<OrderDetailEntity>();
 
 
-    public DateTime Created_Date{ get; set; }
+
+	public DateTime Created_Date{ get; set; }
     public DateTime Modified_Date { get; set; }
     public DateTime Deleted_Date { get; set; }
 }

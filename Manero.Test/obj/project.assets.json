@@ -8830,23 +8830,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
+    "C:\\Users\\yihon\\.nuget\\packages\\": {},
+=======
     "C:\\Users\\Erlan\\.nuget\\packages\\": {},
+>>>>>>> 4585aa13a926d8843ceca9bdb7e39622d10dd3f5
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
+      "projectUniqueName": "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\Manero.Test.csproj",
+      "projectName": "Manero.Test",
+      "projectPath": "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\Manero.Test.csproj",
+      "packagesPath": "C:\\Users\\yihon\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\obj\\",
+=======
       "projectUniqueName": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj",
       "projectName": "Manero.Test",
       "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj",
       "packagesPath": "C:\\Users\\Erlan\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\obj\\",
+>>>>>>> 4585aa13a926d8843ceca9bdb7e39622d10dd3f5
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
+        "C:\\Users\\yihon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
         "C:\\Users\\Erlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 4585aa13a926d8843ceca9bdb7e39622d10dd3f5
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8923,7 +8939,11 @@
             "privateAssets": "all"
           }
         },
+<<<<<<< HEAD
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+=======
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+>>>>>>> 4585aa13a926d8843ceca9bdb7e39622d10dd3f5
       }
     }
   }

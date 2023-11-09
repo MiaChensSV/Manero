@@ -25,6 +25,6 @@ namespace Manero.Models.Repository
             return useraddresses;
         }
 
-
+        
     }
 }
