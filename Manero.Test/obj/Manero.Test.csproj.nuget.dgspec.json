@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj": {}
+    "C:\\Users\\ellio\\Documents\\GitHub\\Manero\\Manero.Test\\Manero.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj": {
+    "C:\\Users\\ellio\\Documents\\GitHub\\Manero\\Manero.Test\\Manero.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj",
+        "projectUniqueName": "C:\\Users\\ellio\\Documents\\GitHub\\Manero\\Manero.Test\\Manero.Test.csproj",
         "projectName": "Manero.Test",
-        "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj",
-        "packagesPath": "C:\\Users\\Erlan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\obj\\",
+        "projectPath": "C:\\Users\\ellio\\Documents\\GitHub\\Manero\\Manero.Test\\Manero.Test.csproj",
+        "packagesPath": "C:\\Users\\ellio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ellio\\Documents\\GitHub\\Manero\\Manero.Test\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Erlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ellio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,15 +22,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj": {
-                "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj"
+              "C:\\Users\\ellio\\Documents\\GitHub\\Manero\\Manero\\Manero.csproj": {
+                "projectPath": "C:\\Users\\ellio\\Documents\\GitHub\\Manero\\Manero\\Manero.csproj"
               }
             }
           }
@@ -94,25 +89,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj": {
+    "C:\\Users\\ellio\\Documents\\GitHub\\Manero\\Manero\\Manero.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj",
+        "projectUniqueName": "C:\\Users\\ellio\\Documents\\GitHub\\Manero\\Manero\\Manero.csproj",
         "projectName": "Manero",
-        "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj",
-        "packagesPath": "C:\\Users\\Erlan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\obj\\",
+        "projectPath": "C:\\Users\\ellio\\Documents\\GitHub\\Manero\\Manero\\Manero.csproj",
+        "packagesPath": "C:\\Users\\ellio\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ellio\\Documents\\GitHub\\Manero\\Manero\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Erlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\ellio\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -120,7 +111,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -195,7 +185,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

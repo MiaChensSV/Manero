@@ -7,7 +7,6 @@ namespace Manero.Controllers
 {
     public class LoginController : Controller
     {
-
         private readonly UserManager<AppIdentityUser> _userManager;
         private readonly SignInManager<AppIdentityUser> _signInManager;
 
@@ -18,10 +17,8 @@ namespace Manero.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index([Bind("Email,Password,RememberMe")] LoginViewModel model, string returnUrl = null)
+        public async Task<IActionResult> Index(LoginViewModel model)
         {
-            model.ReturnUrl = returnUrl;
-
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -34,7 +31,6 @@ namespace Manero.Controllers
                 return View(model);
             }
 
-
             var result = await _signInManager.PasswordSignInAsync(user, model.Password, model.RememberMe, lockoutOnFailure: false);
             if (!result.Succeeded)
             {
@@ -42,19 +38,15 @@ namespace Manero.Controllers
                 return View(model);
             }
 
-            if (!string.IsNullOrEmpty(model.ReturnUrl) && Url.IsLocalUrl(model.ReturnUrl))
-            {
-                return Redirect(model.ReturnUrl);
-            }
-
+            // Since returnUrl is not used, simply redirect to the home page
             return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
-        public IActionResult Index(string returnUrl = null)
+        public IActionResult Index()
         {
-            return View(new LoginViewModel { ReturnUrl = returnUrl });
+            // No need to pass a returnUrl to the view model
+            return View(new LoginViewModel());
         }
-
     }
 }
