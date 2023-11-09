@@ -1,6 +1,7 @@
 ﻿
 @model AllProductsViewModel
 
+
 <section class="container">
     <div class="bestseller-product-list">
          <a asp-controller="Home" asp-action="Index"><i class="fa-solid fa-chevron-left"></i></a>
@@ -22,20 +23,45 @@
         </div>
     </div>
 
+    <div class="product-list-wrapper">
     @foreach (var product in @Model.AllProducts)  
     {
 
-        <div class="product-list-wrapper">
+       
         <div class="card card-product-list">
             <img class="card-img-top img-noradius"
                  src="@product.Image"
                  alt="Card image cap" />
             <p class="text-start">
-                    @foreach(var review in @Model.AllReviews)
+                    @foreach(var review in product.Reviews)
                     {
-                    <p class="text-start">@review.Rating / @Model.AllReviews.Count();</p>
+
+                        <p class="text-start">
+
+                         @{
+                             var aggregatedReview =   @review.Rating / @product.Reviews.Count;
+                         }   
+
+                      
+
+                            @for (decimal i = 0; i < aggregatedReview; i++)
+                        {
+                            <i class="fa-solid fa-star"></i>
+                        }
                         
+                           
+                                    
+                            
+                       (@aggregatedReview)
+                        </p>
                     }
+
+                 
+                   
+                    
+                 
+                        
+                    
 
                
             <p class="text-start">@product.ProductName</p>
@@ -49,7 +75,7 @@
                 </form>
                     
             </div>
-        </div>
+        
     }
-   
+    </div>
 </section>

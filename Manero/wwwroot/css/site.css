@@ -504,10 +504,10 @@ div.col-6 a {
 }
 .profile .container .profile-person .image img {
   width: 120px;
-  height: auto;
+  height: 120px;
   margin: 20px;
   border: 5px solid #DBE3F5;
-  border-radius: 60px;
+  border-radius: 50%;
 }
 .profile .container .profile-person .icon {
   position: absolute;
@@ -565,10 +565,11 @@ div.col-6 a {
 }
 .edit .container .profile-person .image img {
   width: 120px;
+  max-width: 120px;
   height: auto;
   margin: 20px;
   border: 5px solid #DBE3F5;
-  border-radius: 60px;
+  border-radius: 50%;
 }
 .edit .container .profile-person .icon {
   position: absolute;
@@ -670,7 +671,7 @@ div.col-6 a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 20px;
+  margin: 0px;
 }
 .payment-method .container .cards .menu h4 {
   flex: 1;
@@ -692,26 +693,28 @@ div.col-6 a {
   color: #111111;
 }
 .payment-method .container .card-image {
-  height: 170px;
-  color: white;
+  padding: 0;
+  margin: 0;
 }
-.payment-method .container .card-image .card-info {
-  margin-top: 15px;
-  margin-left: 20px;
-  width: 238px;
-  position: absolute;
-  z-index: 2;
+.payment-method .container .card-image .visa {
+  position: relative;
+  top: -60px;
+  right: 70px;
 }
-.payment-method .container .card-image .card-info .card-number {
-  padding-top: 15px;
+.payment-method .container .card-image .card-number {
+  position: relative;
+  top: -83px;
+  right: 70px;
 }
-.payment-method .container .card-image .card-info .name {
-  display: flex;
-  justify-content: space-between;
+.payment-method .container .card-image .exp-date {
+  position: relative;
+  top: -105px;
+  right: 193px;
 }
-.payment-method .container .card-image .card-background {
-  position: absolute;
-  z-index: 1;
+.payment-method .container .card-image .name {
+  position: relative;
+  top: -85px;
+  right: 38px;
 }
 .payment-method .container .payment-info {
   margin-top: 30px;
@@ -758,14 +761,11 @@ div.col-6 a {
   margin-top: 30px;
 }
 .add-payment .container .card-image .card-info {
-  margin-top: 15px;
-  margin-left: 20px;
+  margin-top: 0px;
+  margin-left: 0px;
   width: 238px;
   position: absolute;
   z-index: 2;
-}
-.add-payment .container .card-image .card-info .card-number {
-  padding-top: 15px;
 }
 .add-payment .container .card-image .card-info .name {
   display: flex;
@@ -848,11 +848,14 @@ a {
 }
 .my-address .container .addresses .box {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   margin: 15px;
   border-bottom: 1px solid #DBE3F5;
   padding-top: 10px;
+}
+.my-address .container .addresses .box p {
+  margin: 0;
 }
 .my-address .container .addresses .box .icon {
   margin-left: 10px;

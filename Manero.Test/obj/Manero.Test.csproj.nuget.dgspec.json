@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\Manero.Test.csproj": {}
   },
   "projects": {
@@ -12,12 +13,29 @@
         "projectPath": "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\Manero.Test.csproj",
         "packagesPath": "C:\\Users\\yihon\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\obj\\",
+=======
+    "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj",
+        "projectName": "Manero.Test",
+        "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj",
+        "packagesPath": "C:\\Users\\Erlan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\obj\\",
+>>>>>>> 4585aa13a926d8843ceca9bdb7e39622d10dd3f5
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
+<<<<<<< HEAD
           "C:\\Users\\yihon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Erlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 4585aa13a926d8843ceca9bdb7e39622d10dd3f5
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -32,7 +50,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj": {
+                "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -45,9 +67,17 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
+            "FakeItEasy": {
+              "target": "Package",
+              "version": "[7.4.0, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.6.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.69, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -82,7 +112,112 @@
               "privateAssets": "all"
             }
           },
+<<<<<<< HEAD
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj",
+        "projectName": "Manero",
+        "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj",
+        "packagesPath": "C:\\Users\\Erlan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Erlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "FakeItEasy": {
+              "target": "Package",
+              "version": "[7.4.0, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.Aspnetcore.Identity.UI": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Microsoft.EntityframeworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.13, )"
+            },
+            "Mysql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+>>>>>>> 4585aa13a926d8843ceca9bdb7e39622d10dd3f5
         }
       }
     }

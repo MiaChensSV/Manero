@@ -1,7 +1,5 @@
 using Manero.Repository;
 using Microsoft.AspNetCore.Mvc;
-using MySqlX.XDevAPI.Common;
-using Org.BouncyCastle.Crypto;
 using System.Security.Claims;
 
 namespace Manero.Controllers
