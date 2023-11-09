@@ -4,6 +4,7 @@ namespace Manero.ViewModels;
 
 public class CheckOutViewModel
 {
+    public string? UserId { get; set; }
     public string? ArticleNumber { get; set; }
     public string? ProductName { get; set; }
     public decimal Price { get; set; }
@@ -23,13 +24,15 @@ public class CheckOutViewModel
     {
         var entity = new OrderEntity()
         {
+            UserId = viewmodel.UserId,
             StatusId = 2,
+            PromocodeId = 1,
             ShippingAddress = viewmodel.ShippingAddress,
             OrderDetailItems = viewmodel.OrderDetails,
             DeliveryFee = viewmodel.DeliveryFee,
             TotalCost = viewmodel.Total,
-            Created_Date = DateTime.Now,
+
         };
-        return viewmodel;
+        return entity;
     }
 }

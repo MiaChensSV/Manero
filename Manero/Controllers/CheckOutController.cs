@@ -1,6 +1,7 @@
 ﻿using Manero.Services;
 using Manero.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace Manero.Controllers
 {
@@ -14,22 +15,30 @@ namespace Manero.Controllers
         }
 
 
-        public IActionResult Order()
+        public IActionResult OrderSucess()
         {
             return View();
         }
 
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
 
         [HttpPost]
-        public async Task<IActionResult> Order(CheckOutViewModel viewModel)
+        public async Task<IActionResult> Index(CheckOutViewModel viewModel)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-				var order = await _checkOutService.RegisterAsync(viewModel);
-				if (order != null)
-				{
+                var userId = GetUserId();
+                viewModel.UserId = userId;
+                var articleNumber = viewModel.ArticleNumber;
+                var order = await _checkOutService.RegisterAsync(viewModel);
+                if (order != null)
+                {
 
-					return RedirectToAction("Order");
+                    return RedirectToAction("OrderSucess");
                 }
                 else
                 {
@@ -37,17 +46,24 @@ namespace Manero.Controllers
                     return RedirectToAction("OrderFailed");
                 }
 
-			}
+            }
             return View("OrderFailed");
-           
 
-            
+
+
         }
         public IActionResult OrderFailed()
         {
             return View();
         }
 
-
+        private string GetUserId()
+        {
+            string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (userId == null)
+                return "";
+            else
+                return userId;
+        }
     }
 }
