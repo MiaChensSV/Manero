@@ -17,16 +17,14 @@ public class AccountController : Controller
     private readonly UserAddressRepository _userAddressRepository;
     private readonly CreditCardService _creditCardService;
     private readonly CreditCardRepository _creditCardsRepository;
-    private readonly UserRepository _userRepository;
 
-    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManager, UserAddressRepository userAddressRepository, CreditCardService creditCardService, CreditCardRepository creditCardsRepository, UserRepository userRepository)
+    public AccountController(AddressService addressService, UserManager<AppIdentityUser> userManager, UserAddressRepository userAddressRepository, CreditCardService creditCardService, CreditCardRepository creditCardsRepository)
     {
         _addressService = addressService;
         _userManager = userManager;
         _userAddressRepository = userAddressRepository;
         _creditCardService = creditCardService;
         _creditCardsRepository = creditCardsRepository;
-        _userRepository = userRepository;
     }
 
     public async Task<IActionResult> Index()
