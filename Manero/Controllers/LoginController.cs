@@ -38,14 +38,12 @@ namespace Manero.Controllers
                 return View(model);
             }
 
-            // Since returnUrl is not used, simply redirect to the home page
             return RedirectToAction("Index", "Home");
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            // No need to pass a returnUrl to the view model
             return View(new LoginViewModel());
         }
     }
