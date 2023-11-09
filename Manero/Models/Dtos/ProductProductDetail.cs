@@ -8,17 +8,12 @@ namespace Manero.Models.Dtos
         public string ArticleNumber { get; set; } = null!;
         public string ProductTitle { get; set; } = null!;
         public string? Description { get; set; }
-       
         public string? Image { get; set; }
         public decimal Price { get; set; }
         public decimal DiscountedPrice { get; set; }    
         public string? Rating { get; set; }
 
         public IEnumerable<ReviewEntity>? Reviews { get; set; } = new List<ReviewEntity>();
-
-        
-
-        //make a function to get reviews from productmodel
 
 
         //Konverterar från ProductDetailEntity till ProductProductDetail

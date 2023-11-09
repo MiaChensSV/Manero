@@ -32,7 +32,7 @@
             <img class="card-img-top img-noradius"
                  src="@product.Image"
                  alt="Card image cap" />
-            <p class="text-start">
+            
                     @foreach(var review in product.Reviews)
                     {
 
@@ -56,14 +56,7 @@
                         </p>
                     }
 
-                 
-                   
-                    
-                 
-                        
-                    
-
-               
+  
             <p class="text-start">@product.ProductName</p>
             <p class="text-start">@product.Price</p>
                 <a asp-controller="Account" asp-action="Wishlist"><i class="fa-regular top-right fa-heart product-list-heart" id="fa-heart"></i></a>
@@ -75,7 +68,7 @@
             </form>
                     
             </div>
-        </div>
+        
         </a>
     }
     </div>
