@@ -5,7 +5,6 @@ using Manero.Services;
 using Manero.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using System.Runtime.ConstrainedExecution;
 using System.Security.Claims;
 
 namespace Manero.Controllers;
