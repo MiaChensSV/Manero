@@ -1,11 +1,3 @@
-using Manero.Context;
-using Manero.Models.Entities;
-using Manero.Models.Repository;
-using Manero.Repository;
-using Manero.Services;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-
 namespace Manero
 {
     public class Program
@@ -18,6 +10,9 @@ namespace Manero
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<AddressService>();
             builder.Services.AddScoped<CreditCardService>();
+            builder.Services.AddScoped<ShoppingCartService>();
+            builder.Services.AddScoped<UserService>();
+
             builder.Services.AddScoped<CheckOutService>();
             builder.Services.AddSession(options =>
             {
@@ -32,7 +27,7 @@ namespace Manero
             builder.Services.AddScoped<AddressRepository>();
             builder.Services.AddScoped<UserAddressRepository>();
             builder.Services.AddScoped<CreditCardRepository>();
-            builder.Services.AddScoped<UserRepository>();
+            builder.Services.AddScoped<ShoppingCartRepository>();
 
             builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
 
@@ -44,14 +39,11 @@ namespace Manero
 
             //Repositories
             builder.Services.AddScoped<ProductListRepo>();
-            builder.Services.AddScoped<ReviewProductListRepo>();
-            builder.Services.AddScoped<CartRepo>();
             builder.Services.AddScoped<ShopByTagsRepo>();
 
 
             //Services
-            builder.Services.AddScoped<ProductListService>();
-            builder.Services.AddScoped<CartService>();
+            builder.Services.AddScoped<IProductListService, ProductListService>();
 
             var app = builder.Build();
 

@@ -8,10 +8,10 @@ namespace Manero.Controllers
 {
     public class ShopByTagsController : Controller
     {
-        private readonly ProductListService _service;
+        private readonly IProductListService _service;
 
 
-        public ShopByTagsController(ShopByTagsRepo repo, ProductListService service)
+        public ShopByTagsController(IProductListService service)
         {
            
             _service = service;
@@ -129,7 +129,7 @@ namespace Manero.Controllers
             {
 
                 Title = "Shop By Tags",
-                TagTitle = "T-Shirt",
+                TagTitle = "T-Shirts",
                 ProductByTagName = await _service.GetAllByTagNameAsync("T-Shirt")
 
 
