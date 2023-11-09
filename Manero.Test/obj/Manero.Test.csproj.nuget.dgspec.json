@@ -1,23 +1,41 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero.Test\\Manero.Test.csproj": {}
+<<<<<<< HEAD
+    "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\Manero.Test.csproj": {}
   },
   "projects": {
-    "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero.Test\\Manero.Test.csproj": {
+    "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\Manero.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero.Test\\Manero.Test.csproj",
+        "projectUniqueName": "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\Manero.Test.csproj",
         "projectName": "Manero.Test",
-        "projectPath": "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero.Test\\Manero.Test.csproj",
-        "packagesPath": "C:\\Users\\emmav\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero.Test\\obj\\",
+        "projectPath": "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\Manero.Test.csproj",
+        "packagesPath": "C:\\Users\\yihon\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\yihon\\source\\repos\\Manero\\Manero.Test\\obj\\",
+=======
+    "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj",
+        "projectName": "Manero.Test",
+        "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\Manero.Test.csproj",
+        "packagesPath": "C:\\Users\\Erlan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero.Test\\obj\\",
+>>>>>>> 4585aa13a926d8843ceca9bdb7e39622d10dd3f5
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\emmav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+<<<<<<< HEAD
+          "C:\\Users\\yihon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+          "C:\\Users\\Erlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 4585aa13a926d8843ceca9bdb7e39622d10dd3f5
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -33,8 +51,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero\\Manero.csproj": {
-                "projectPath": "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero\\Manero.csproj"
+              "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj": {
+                "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj"
               }
             }
           }
@@ -94,24 +112,27 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+<<<<<<< HEAD
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
+=======
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero\\Manero.csproj": {
+    "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero\\Manero.csproj",
+        "projectUniqueName": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj",
         "projectName": "Manero",
-        "projectPath": "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero\\Manero.csproj",
-        "packagesPath": "C:\\Users\\emmav\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\emmav\\OneDrive\\Skrivbord\\ManeroGruppv2\\Manero\\Manero\\obj\\",
+        "projectPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\Manero.csproj",
+        "packagesPath": "C:\\Users\\Erlan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Erlan\\OneDrive\\Skrivbord\\ManeroProjekt\\Manero\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\emmav\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Erlan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -195,7 +216,8 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.102\\RuntimeIdentifierGraph.json"
+>>>>>>> 4585aa13a926d8843ceca9bdb7e39622d10dd3f5
         }
       }
     }
