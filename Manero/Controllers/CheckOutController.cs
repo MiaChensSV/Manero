@@ -16,41 +16,32 @@ namespace Manero.Controllers
 
         public IActionResult Order()
         {
-            return View(new CheckOutViewModel());
-
-            //Vänta på Mia
+            return View();
         }
 
 
         [HttpPost]
-        public async Task<IActionResult> PlaceOrder(CheckOutViewModel viewModel)
+        public async Task<IActionResult> Order(CheckOutViewModel viewModel)
         {
-            if (!ModelState.IsValid)
+            if(ModelState.IsValid)
             {
+				var order = await _checkOutService.RegisterAsync(viewModel);
+				if (order != null)
+				{
 
-                return View("Order", viewModel);
-            }
-
-            try
-            {
-                var order = await _checkOutService.RegisterAsync(viewModel);
-
-                if (order != null)
-                {
-
-                    return View("OrderSuccess", order);
+					return RedirectToAction("Order");
                 }
                 else
                 {
-
-                    return View("OrderFailed");
+                    ModelState.AddModelError("", ModelState.ValidationState.ToString());
+                    return RedirectToAction("OrderFailed");
                 }
-            }
-            catch
-            {
 
-                return View("OrderFailed");
-            }
+			}
+            return View("OrderFailed");
+           
+
+            
         }
         public IActionResult OrderFailed()
         {
