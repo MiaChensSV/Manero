@@ -1,4 +1,6 @@
-﻿namespace Manero.ViewModels;
+﻿using Manero.Models.Entities;
+
+namespace Manero.ViewModels;
 
 public class CheckOutViewModel
 {
