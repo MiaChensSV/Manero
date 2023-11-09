@@ -18,6 +18,8 @@ namespace Manero
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<AddressService>();
             builder.Services.AddScoped<CreditCardService>();
+            builder.Services.AddScoped<ShoppingCartService>();
+            builder.Services.AddScoped<UserService>();
 
             builder.Services.AddSession(options =>
             {
@@ -28,11 +30,10 @@ namespace Manero
             builder.Services.AddHttpContextAccessor();
             //Add repositories 
             builder.Services.AddScoped<PromoCodeRepo>();
-
             builder.Services.AddScoped<AddressRepository>();
             builder.Services.AddScoped<UserAddressRepository>();
             builder.Services.AddScoped<CreditCardRepository>();
-            builder.Services.AddScoped<UserRepository>();
+            builder.Services.AddScoped<ShoppingCartRepository>();
 
             builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
             
@@ -44,13 +45,11 @@ namespace Manero
 
             //Repositories
             builder.Services.AddScoped<ProductListRepo>();
-            builder.Services.AddScoped<CartRepo>();
             builder.Services.AddScoped<ShopByTagsRepo>();
 
 
             //Services
             builder.Services.AddScoped<IProductListService, ProductListService>();
-            builder.Services.AddScoped<CartService>();
 
             var app = builder.Build();
 
