@@ -17,8 +17,11 @@ namespace Manero.Services
             var order = await _checkOutRepository.AddAsync(viewmodel);
             return order!;
 
-
         }
-
+        public async Task<OrderEntity> GetCheckoutAsync(int orderId)
+        {
+            var order = await _checkOutRepository.GetAsync(x => x.OrderId == orderId);
+            return order!;
+        }
     }
 }

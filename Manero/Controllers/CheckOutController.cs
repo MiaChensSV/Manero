@@ -21,10 +21,10 @@ namespace Manero.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-
-            return View();
+            // await _checkOutService.GetCheckoutAsync();
+            return RedirectToAction("Checkout", "ShopingCart");
         }
 
         [HttpPost]

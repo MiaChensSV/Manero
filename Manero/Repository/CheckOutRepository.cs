@@ -7,6 +7,7 @@ namespace Manero.Repository
     {
 
         private readonly DataContext _dataContext;
+
         public CheckOutRepository(DataContext context, DataContext dataContext) : base(context)
         {
             _dataContext = dataContext;
@@ -22,5 +23,10 @@ namespace Manero.Repository
 
             } 
             */
+        /*
+        public async Task<OrderEntity> GetCheckoutAsync(int orderId)
+        {
+            return _dataContext.(x => x.OrderId == orderId);
+        */
     }
 }
