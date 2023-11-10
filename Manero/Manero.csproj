@@ -23,7 +23,6 @@
     <Folder Include="Migrations\" />
     <Folder Include="Models\Schemas\" />
     <Folder Include="Services\" />
-    <Folder Include="Repository\" />
   </ItemGroup>
 
   <ItemGroup>
