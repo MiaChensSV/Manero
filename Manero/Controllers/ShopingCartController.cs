@@ -65,6 +65,22 @@ public class ShopingCartController : Controller
 		
 	}
 
+	public async Task<IActionResult> DeleteAsync(string articleNumber)
+	{
+		string userId = GetUserId();
+		var _cartList = _cartService.GetCartByUserAsync(userId).Result.ToList<OrderDetailEntity>();
+		var item = _cartList.Find(el => el.ArticleNumber == articleNumber);
+		if (item != null)
+		{
+			
+				await _cartService.DeleteCartItemByUserAsync(item);
+			
+				await _cartService.UpdateCartByUserAsnyc(item);
+			
+		}
+		return RedirectToAction("Index");
+	}
+
 	[Route("shopingcart/increase/{articleNumber}")]
 	public async Task<IActionResult> IncreaseAsync(string articleNumber)
 	{
