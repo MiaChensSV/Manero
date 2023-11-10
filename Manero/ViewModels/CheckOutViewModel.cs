@@ -11,9 +11,9 @@ public class CheckOutViewModel
     public string? Image { get; set; }
     public string? Size { get; set; }
     public string? Color { get; set; }
-    public decimal Subtotal { get; set; }
+    public decimal? Subtotal { get; set; }
     public decimal Total { get; set; }
-    public decimal Discount { get; set; }
+    public decimal? Discount { get; set; }
     public List<OrderDetailEntity> OrderDetails { get; set; } = new List<OrderDetailEntity>();
     public string? ShippingAddress { get; set; }
     public string? PaymentMethod { get; set; }

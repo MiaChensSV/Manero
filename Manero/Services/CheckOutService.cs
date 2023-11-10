@@ -15,7 +15,7 @@ namespace Manero.Services
         public async Task<OrderEntity> RegisterAsync(CheckOutViewModel viewmodel)
         {
             var order = await _checkOutRepository.AddAsync(viewmodel);
-            return order;
+            return order!;
 
 
         }
