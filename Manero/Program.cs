@@ -1,11 +1,3 @@
-using Manero.Context;
-using Manero.Models.Entities;
-using Manero.Models.Repository;
-using Manero.Repository;
-using Manero.Services;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-
 namespace Manero
 {
     public class Program
@@ -22,6 +14,7 @@ namespace Manero
             builder.Services.AddScoped<UserService>();
 
             builder.Services.AddScoped<CheckOutService>();
+            builder.Services.AddScoped<ProductDetailsService>();
             builder.Services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -32,6 +25,7 @@ namespace Manero
             //Add repositories 
             builder.Services.AddScoped<PromoCodeRepo>();
             builder.Services.AddScoped<CheckOutRepository>();
+            builder.Services.AddScoped<ProductDetailsRepo>();
             builder.Services.AddScoped<AddressRepository>();
             builder.Services.AddScoped<UserAddressRepository>();
             builder.Services.AddScoped<CreditCardRepository>();

@@ -46,17 +46,23 @@ public class ShopingCartController : Controller
 	public async Task<IActionResult> AddAsync(string articleNumber)
 	{
 		string userId = GetUserId();
-		var _cartList = _cartService.GetCartByUserAsync(userId).Result.ToList<OrderDetailEntity>();
-		var item = _cartList.Find(el => el.ArticleNumber == articleNumber);
-		if(item == null)
+		if(userId !=null)
 		{
-			await _cartService.CreateCartItemByUserAsync(userId, articleNumber);
-		} else
-		{
-			item.Quantity++;
-			await _cartService.UpdateCartByUserAsnyc(item);
+			var _cartList = _cartService.GetCartByUserAsync(userId).Result.ToList<OrderDetailEntity>();
+			var item = _cartList.Find(el => el.ArticleNumber == articleNumber);
+			if (item == null)
+			{
+				await _cartService.CreateCartItemByUserAsync(userId, articleNumber);
+			}
+			else
+			{
+				item.Quantity++;
+				await _cartService.UpdateCartByUserAsnyc(item);
+			}
+			return RedirectToAction("Index");
 		}
-		return RedirectToAction("Index");
+		else { return RedirectToAction("Denied"); }
+		
 	}
 
 	[Route("shopingcart/increase/{articleNumber}")]
@@ -97,7 +103,7 @@ public class ShopingCartController : Controller
 	{
 		string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 		if (userId == null)
-			return "";
+			return null!;
 		else
 			return userId;
     }
@@ -142,5 +148,11 @@ public class ShopingCartController : Controller
 			};
 			return View(checkoutViewModel);
 		}				
+	}
+
+	[Route("shopingcart/AccessDenied")]
+	public IActionResult Denied()
+	{
+		return View();
 	}
 }

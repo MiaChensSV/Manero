@@ -1746,6 +1746,7 @@ h2 {
 .order-container {
   display: flex;
   justify-content: center;
+  padding-bottom: 100px;
 }
 .order-container a {
   color: white;
