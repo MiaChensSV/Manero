@@ -1,45 +1,24 @@
-﻿using System.Drawing;
-using Manero.Context;
+﻿using Manero.Context;
 using Manero.Models.Entities;
 using Manero.Repository;
 using Manero.Services;
 using Microsoft.EntityFrameworkCore;
-using MySqlX.XDevAPI.Relational;
 
-namespace Manero.Test;
+namespace Manero.Test.Mia;
 
-public class ShopingCartService_Test
+public class SaveToDbWhenCreatedCartItembyUser_Test
 {
     private readonly DataContext _context;
-    private readonly ShoppingCartService _shopingCartService;
     private readonly ShoppingCartRepository _shopingCartRepository;
-    private readonly CheckOutRepository _checkoutRepository;
 
-    public ShopingCartService_Test()
+    public SaveToDbWhenCreatedCartItembyUser_Test()
     {
         var _options = new DbContextOptionsBuilder<DataContext>()
             .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
             .Options;
         _context = new DataContext(_options);
         _shopingCartRepository = new ShoppingCartRepository(_context);
-        _checkoutRepository = new CheckOutRepository(_context);
-        _shopingCartService = new ShoppingCartService(_shopingCartRepository, _checkoutRepository);
     }
-
-    
-    [Fact]
-    public async Task GetCartItemWhenUserNotExist()
-    {
-        var _user = _context.OrderDetails.Where(row => row.UserId == "do not exist");
-        _context.RemoveRange(_user);
-        _context.SaveChanges();
-
-        string _userId = "do not exist";
-        IEnumerable<OrderDetailEntity> _orderedItemList = await _shopingCartRepository.GetCartByUser(_userId);
-        Assert.Empty(_orderedItemList);
-    }
-
-
 
     [Fact]
     public async Task SaveToDbWhenCreatedCartItembyUser()

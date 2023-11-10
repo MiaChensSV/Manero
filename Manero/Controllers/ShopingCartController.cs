@@ -1,13 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Reflection.Metadata.Ecma335;
-using Manero.Models.Entities;
+﻿using Manero.Models.Entities;
 using Manero.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Identity;
-using Org.BouncyCastle.Bcpg;
 using System.Security.Claims;
 using Manero.ViewModels;
-using ZstdSharp.Unsafe;
 
 namespace Manero.Controllers;
 
@@ -24,8 +19,8 @@ public class ShopingCartController : Controller
 
 	public IActionResult Index()
 	{
-		string userId = GetUserId();
-		List<OrderDetailEntity> _cartList = _cartService.GetCartByUserAsync(userId).Result.ToList<OrderDetailEntity>();
+		string _userId = GetUserId();
+		List<OrderDetailEntity> _cartList = _cartService.GetCartByUserAsync(_userId).Result.ToList<OrderDetailEntity>();
 		decimal _subtotal = 0;
 		decimal _discount = 0;
 
@@ -33,31 +28,31 @@ public class ShopingCartController : Controller
 		{
 			_subtotal += _cartList[i].Price * _cartList[i].Quantity;
 		}
-		CartViewModel cartViewModel = new ()
+		CartViewModel _cartViewModel = new ()
 		{ 
 			OrderDetails=_cartList,
 			Subtotal=_subtotal,
 			Discount=_discount,
 			Total=_subtotal+_discount
 		};
-		return View(cartViewModel);
+		return View(_cartViewModel);
 	}
 
 	public async Task<IActionResult> AddAsync(string articleNumber)
 	{
-		string userId = GetUserId();
-		if(userId !=null)
+		string _userId = GetUserId();
+		if(_userId != null)
 		{
-			var _cartList = _cartService.GetCartByUserAsync(userId).Result.ToList<OrderDetailEntity>();
-			var item = _cartList.Find(el => el.ArticleNumber == articleNumber);
-			if (item == null)
+			var _cartList = _cartService.GetCartByUserAsync(_userId).Result.ToList<OrderDetailEntity>();
+			var _item = _cartList.Find(el => el.ArticleNumber == articleNumber);
+			if (_item == null)
 			{
-				await _cartService.CreateCartItemByUserAsync(userId, articleNumber);
+				await _cartService.CreateCartItemByUserAsync(_userId, articleNumber);
 			}
 			else
 			{
-				item.Quantity++;
-				await _cartService.UpdateCartByUserAsnyc(item);
+				_item.Quantity++;
+				await _cartService.UpdateCartByUserAsnyc(_item);
 			}
 			return RedirectToAction("Index");
 		}
@@ -67,15 +62,15 @@ public class ShopingCartController : Controller
 
 	public async Task<IActionResult> DeleteAsync(string articleNumber)
 	{
-		string userId = GetUserId();
-		var _cartList = _cartService.GetCartByUserAsync(userId).Result.ToList<OrderDetailEntity>();
-		var item = _cartList.Find(el => el.ArticleNumber == articleNumber);
-		if (item != null)
+		string _userId = GetUserId();
+		var _cartList = _cartService.GetCartByUserAsync(_userId).Result.ToList<OrderDetailEntity>();
+		var _item = _cartList.Find(el => el.ArticleNumber == articleNumber);
+		if (_item != null)
 		{
 			
-				await _cartService.DeleteCartItemByUserAsync(item);
+				await _cartService.DeleteCartItemByUserAsync(_item);
 			
-				await _cartService.UpdateCartByUserAsnyc(item);
+				await _cartService.UpdateCartByUserAsnyc(_item);
 			
 		}
 		return RedirectToAction("Index");
@@ -84,32 +79,32 @@ public class ShopingCartController : Controller
 	[Route("shopingcart/increase/{articleNumber}")]
 	public async Task<IActionResult> IncreaseAsync(string articleNumber)
 	{
-        string userId = GetUserId();
-        var _cartList = _cartService.GetCartByUserAsync(userId).Result.ToList<OrderDetailEntity>();
-		var item = _cartList.Find(el => el.ArticleNumber == articleNumber);
-		if (item != null)
+        string _userId = GetUserId();
+        var _cartList = _cartService.GetCartByUserAsync(_userId).Result.ToList<OrderDetailEntity>();
+		var _item = _cartList.Find(el => el.ArticleNumber == articleNumber);
+		if (_item != null)
 		{
-			item.Quantity++;
-			await _cartService.UpdateCartByUserAsnyc(item);
+			_item.Quantity++;
+			await _cartService.UpdateCartByUserAsnyc(_item);
 		}
 		return RedirectToAction("Index");
 	}
 	[Route("shopingcart/decrease/{articleNumber}")]
 	public async Task<IActionResult> DecreaseAsync(string articleNumber)
 	{
-        string userId = GetUserId();
-        var _cartList = _cartService.GetCartByUserAsync(userId).Result.ToList<OrderDetailEntity>();
-		var item = _cartList.Find(el => el.ArticleNumber == articleNumber);
-		if (item != null)
+        string _userId = GetUserId();
+        var _cartList = _cartService.GetCartByUserAsync(_userId).Result.ToList<OrderDetailEntity>();
+		var _item = _cartList.Find(el => el.ArticleNumber == articleNumber);
+		if (_item != null)
 		{
-			item.Quantity--;
-			if (item.Quantity <= 0)
+			_item.Quantity--;
+			if (_item.Quantity <= 0)
 			{
-				await _cartService.DeleteCartItemByUserAsync(item);
+				await _cartService.DeleteCartItemByUserAsync(_item);
 			}
 			else
 			{
-				await _cartService.UpdateCartByUserAsnyc(item);
+				await _cartService.UpdateCartByUserAsnyc(_item);
 			}
 		}
 		return RedirectToAction("Index");
@@ -117,17 +112,17 @@ public class ShopingCartController : Controller
 	
 	private string GetUserId()
 	{
-		string? userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-		if (userId == null)
+		string? _userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+		if (_userId == null)
 			return null!;
 		else
-			return userId;
+			return _userId;
     }
 
 	public async Task<IActionResult> CheckOut()
 	{
-		string userId = GetUserId();
-		List<OrderDetailEntity> _cartList = _cartService.GetCartByUserAsync(userId).Result.ToList<OrderDetailEntity>();
+		string _userId = GetUserId();
+		List<OrderDetailEntity> _cartList = _cartService.GetCartByUserAsync(_userId).Result.ToList<OrderDetailEntity>();
 		decimal _subtotal = 0;
 		decimal _discount = 0;
 		
@@ -136,13 +131,13 @@ public class ShopingCartController : Controller
 			_subtotal  += _cartList[i].Price * _cartList[i].Quantity;
 		}
 
-		var _creditcard = await _userService.GetDefaultCardAsync(userId);
-		var _address = await _userService.GetDefaultAddressAsync(userId);
+		var _creditcard = await _userService.GetDefaultCardAsync(_userId);
+		var _address = await _userService.GetDefaultAddressAsync(_userId);
 		if (_creditcard != null) 
 		{
-			CheckOutViewModel checkoutViewModel = new()
+			CheckOutViewModel _checkoutViewModel = new()
 			{
-				UserId = userId,
+				UserId = _userId,
 				OrderDetails = _cartList,
 				Subtotal = _subtotal,
 				Discount = _discount,
@@ -151,14 +146,14 @@ public class ShopingCartController : Controller
 				ShippingAddress = _address.Address.StreetName + _address.Address.City + _address.Address.PostalCode + _address.Address.Country,
 				DeliveryFee = 0,
 			};
-			await _cartService.SaveToDb(checkoutViewModel);
-			return View(checkoutViewModel);
+			await _cartService.SaveToDb(_checkoutViewModel);
+			return View(_checkoutViewModel);
 		}
 		else
 		{
-			CheckOutViewModel checkoutViewModel = new ()
+			CheckOutViewModel _checkoutViewModel = new ()
 			{
-                UserId = userId,
+                UserId = _userId,
                 DeliveryFee = 0,
                 OrderDetails = _cartList,
 				Subtotal = _subtotal,
@@ -167,8 +162,8 @@ public class ShopingCartController : Controller
 				PaymentMethod = "",
 				ShippingAddress = _address.Address.StreetName + " " + _address.Address.City + " " + _address.Address.PostalCode + " " + _address.Address.Country,
 			};
-            await _cartService.SaveToDb(checkoutViewModel);
-            return View(checkoutViewModel);
+            await _cartService.SaveToDb(_checkoutViewModel);
+            return View(_checkoutViewModel);
 		}				
 	}
 
