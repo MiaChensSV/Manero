@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="FakeItEasy" Version="7.4.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.13" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.0" />
     <PackageReference Include="Moq" Version="4.20.69" />
     <PackageReference Include="Moq" Version="4.20.69" />

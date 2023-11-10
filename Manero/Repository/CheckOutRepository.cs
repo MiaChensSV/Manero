@@ -7,7 +7,12 @@ namespace Manero.Repository
     {
 
         private readonly DataContext _dataContext;
-        public CheckOutRepository(DataContext context, DataContext dataContext) : base(context)
+
+		public CheckOutRepository(DataContext context) : base(context)
+		{
+		}
+
+		public CheckOutRepository(DataContext context, DataContext dataContext) : base(context)
         {
             _dataContext = dataContext;
         }
