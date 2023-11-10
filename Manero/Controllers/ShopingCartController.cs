@@ -133,7 +133,7 @@ public class ShopingCartController : Controller
 				PaymentMethod = _creditcard.CardNumber,
 				ShippingAddress = _address.Address.StreetName + _address.Address.City + _address.Address.PostalCode + _address.Address.Country,
 			};
-			return View(checkoutViewModel);
+			return RedirectToAction("Index","CheckOut");
 		}
 		else
 		{
@@ -146,7 +146,7 @@ public class ShopingCartController : Controller
 				PaymentMethod = "",
 				ShippingAddress = _address.Address.StreetName + " " + _address.Address.City + " " + _address.Address.PostalCode + " " + _address.Address.Country,
 			};
-			return View(checkoutViewModel);
+			return RedirectToAction("Index", "CheckOut");
 		}				
 	}
 
