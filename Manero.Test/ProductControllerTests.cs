@@ -8,17 +8,18 @@ using Moq;
 
 namespace Manero.Test
 {
-    /*
+    
     public class ProductController_Tests
     {
        
         private readonly Mock<IProductListService> _productListService;
         private readonly ProductsController _productsController;
+        private readonly ProductDetailsRepo _productDetailsRepo;
 
         public ProductController_Tests()
         {
             _productListService = new Mock<IProductListService>();
-            _productsController = new ProductsController(_productListService.Object);
+            _productsController = new ProductsController(_productListService.Object, _productDetailsRepo);
 
            
         }
@@ -30,18 +31,16 @@ namespace Manero.Test
             // Arrange
             _productListService.Setup(service => service.GetAllProductsAsync()).ReturnsAsync(new List<ProductProductList>
 
-        {
-            new ProductProductList
             {
-                ArticleNumber = "123",
-                ProductName = "En Produkt",
-                Price = 999,
-                Image = "bild.jpg",
+                new ProductProductList
+                {
+                    ArticleNumber = "123",
+                    ProductName = "En Produkt",
+                    Price = 999,
+                    Image = "bild.jpg",
                
-            }
-        });
-
-            
+                }
+            });
 
             // Act
             var result = await _productsController.Index() as ViewResult;
@@ -55,8 +54,7 @@ namespace Manero.Test
             Assert.NotNull(viewModel.AllProducts);
             
 
-        }
-        
-       
-    }*/
+        }       
+    }
+    
 }

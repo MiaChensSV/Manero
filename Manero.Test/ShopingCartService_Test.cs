@@ -17,10 +17,10 @@ public class ShopingCartService_Test
 
     public ShopingCartService_Test()
     {
-        var options = new DbContextOptionsBuilder<DataContext>()
+        var _options = new DbContextOptionsBuilder<DataContext>()
             .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
             .Options;
-        _context = new DataContext(options);
+        _context = new DataContext(_options);
         _shopingCartRepository = new ShoppingCartRepository(_context);
         _checkoutRepository = new CheckOutRepository(_context);
         _shopingCartService = new ShoppingCartService(_shopingCartRepository, _checkoutRepository);
@@ -30,12 +30,12 @@ public class ShopingCartService_Test
     [Fact]
     public async Task GetCartItemWhenUserNotExist()
     {
-        var user = _context.OrderDetails.Where(row => row.UserId == "do not exist");
-        _context.RemoveRange(user);
+        var _user = _context.OrderDetails.Where(row => row.UserId == "do not exist");
+        _context.RemoveRange(_user);
         _context.SaveChanges();
 
-        string userId = "do not exist";
-        IEnumerable<OrderDetailEntity> _orderedItemList = await _shopingCartRepository.GetCartByUser(userId);
+        string _userId = "do not exist";
+        IEnumerable<OrderDetailEntity> _orderedItemList = await _shopingCartRepository.GetCartByUser(_userId);
         Assert.Empty(_orderedItemList);
     }
 

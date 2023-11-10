@@ -14,25 +14,16 @@ public class ShoppingCartController_Test
 	private readonly ShoppingCartService _shopingCartService;
 	private readonly ShoppingCartRepository _shopingCartRepository;
 	private readonly CheckOutRepository _checkoutRepository;
-	private readonly ShopingCartController _controller;
-	private readonly UserService _userService;
-	private readonly ShoppingCartService _shopCartService;
-	private readonly CreditCardRepository _creditCardRepository;
-	private readonly UserAddressRepository _userAddressRepository;
 
 	public ShoppingCartController_Test()
 	{
-		var options = new DbContextOptionsBuilder<DataContext>()
+		var _options = new DbContextOptionsBuilder<DataContext>()
 			.UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
 			.Options;
-		_context = new DataContext(options);
+		_context = new DataContext(_options);
 		_shopingCartRepository = new ShoppingCartRepository(_context);
 		_checkoutRepository = new CheckOutRepository(_context);
 		_shopingCartService = new ShoppingCartService(_shopingCartRepository, _checkoutRepository);
-		_userAddressRepository=new UserAddressRepository(_context);
-		_creditCardRepository=new CreditCardRepository(_context);
-		_userService = new UserService(_userAddressRepository, _creditCardRepository);
-		_controller = new ShopingCartController(_shopingCartService, _userService);
 	}
 	[Fact]
 	public async Task IncreaseOrDecreaseQuantityWhenButton()
@@ -61,14 +52,14 @@ public class ShoppingCartController_Test
 
 		await _shopingCartRepository.CreateCartItemByUser("do not exist", _product.ArticleNumber);
 		List<OrderDetailEntity> _cartList = _shopingCartRepository.GetCartByUser("do not exist").Result.ToList();
-		var quantity = _cartList[0].Quantity;
-		var AssumedQuantity = 4;
-		var IncreasedResult = AssumedQuantity + 1;
-		var decreaseResult = AssumedQuantity - 1;
+		var _quantity = _cartList[0].Quantity;
+		var _assumedQuantity = 4;
+		var _increasedResult = _assumedQuantity + 1;
+		var _decreaseResult = _assumedQuantity - 1;
 
-		Assert.Equal(5, IncreasedResult);
-		Assert.Equal(3, decreaseResult);
-		Assert.Equal(1, quantity);
+		Assert.Equal(5, _increasedResult);
+		Assert.Equal(3, _decreaseResult);
+		Assert.Equal(1, _quantity);
 	}
 
 	[Fact]
@@ -80,13 +71,13 @@ public class ShoppingCartController_Test
 		var _productModel = new ProductModelEntity { ModelNumber = "TestCreatedModel", ProductDescription = "TestDes" };
 		var _color = new ProductColorEntity { ColorName = "testColor" };
 		var _size = new ProductSizeEntity { SizeName = "testsize" };
-		var _user = new AppIdentityUser { UserName = "TestUserName" };
+		var _user = new AppIdentityUser { UserName = "TestUserName", FirstName="TestFirstName", LastName="TestLastName" };
 		_context.OrderStatus.Add(_status);
 		_context.Promocodes.Add(_promocode);
 		_context.ProductModels.Add(_productModel);
 		_context.ProductColor.Add(_color);
 		_context.ProductSize.Add(_size);
-		_context.user
+		_context.Users.Add(_user);
 		await _context.SaveChangesAsync();
 		
 		var _product = new ProductDetailEntity()
@@ -103,26 +94,30 @@ public class ShoppingCartController_Test
 		_context.ProductDetail.Add(_product);
 		await _context.SaveChangesAsync();
 
-		var item = new OrderDetailEntity() { ArticleNumber = "1", OrderId = 3, Quantity = 17, Price = 102, DiscountedPrice = 99 };
-		_context.OrderDetail.Add(item); 
-		await _context.SaveChangesAsync();
-		var order = new OrderEntity()
+		var _order = new OrderEntity()
 		{
-			UserId = "do not exist",
+			UserId = _user.Id,
 			StatusId = _status.StatusId,
 			PromocodeId = _promocode.PromocodeId,
 			ShippingAddress = "TestAdd",
 			DeliveryFee = 0,
-			TotalCost = 50
+			TotalCost = 50,
 		};
-		_context.OrderDetails.Add(order);
+		_context.OrderDetails.Add(_order);
+
+		await _context.SaveChangesAsync();
+		var _item = new OrderDetailEntity() { ArticleNumber = "1", OrderId = _order.OrderId, Quantity = 17, Price = 102, DiscountedPrice = 99 };
+
+		_context.OrderDetail.Add(_item);
 		await _context.SaveChangesAsync();
 
-		List<OrderDetailEntity> _cartList = _shopingCartRepository.GetCartByUser(order.UserId).Result.ToList();
-		var shopcartItem = _cartList[0];
-		await _shopCartService.DeleteCartItemByUserAsync(shopcartItem);
-		await _shopCartService.UpdateCartByUserAsnyc(shopcartItem);
+		List<OrderDetailEntity> _cartList = _shopingCartRepository.GetCartByUser(_user.Id).Result.ToList();
 
-		Assert.Empty(_cartList);
+		var _shopcartItem = _cartList[0];
+		await _shopingCartService.DeleteCartItemByUserAsync(_shopcartItem);
+
+		List<OrderDetailEntity> _deletedCartList = _shopingCartRepository.GetCartByUser(_user.Id).Result.ToList();
+
+		Assert.Empty(_deletedCartList);
 	}
 }
