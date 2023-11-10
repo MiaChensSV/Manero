@@ -25,7 +25,7 @@ namespace Manero.Repository
 				OrderId = _orderId,
 				ArticleNumber = artNum,
 				Quantity = 1,
-				Price = product.Price,
+				Price = product!.Price,
 				DiscountedPrice=product.DiscountedPrice,			
 				
 			};

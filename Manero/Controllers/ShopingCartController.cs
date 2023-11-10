@@ -31,7 +31,7 @@ public class ShopingCartController : Controller
 
 		for(int i=0;i<_cartList.Count;i++)
 		{
-			_subtotal= _subtotal+_cartList[i].Price * _cartList[i].Quantity;
+			_subtotal += _cartList[i].Price * _cartList[i].Quantity;
 		}
 		CartViewModel cartViewModel = new ()
 		{ 
@@ -133,7 +133,7 @@ public class ShopingCartController : Controller
 		
 		for (int i = 0; i < _cartList.Count; i++)
 		{
-			_subtotal = _subtotal + _cartList[i].Price * _cartList[i].Quantity;
+			_subtotal  += _cartList[i].Price * _cartList[i].Quantity;
 		}
 
 		var _creditcard = await _userService.GetDefaultCardAsync(userId);
