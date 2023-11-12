@@ -8,7 +8,6 @@ public class AmountChangeInShoppingCart_Test
 {
 	private readonly DataContext _context;
 	private readonly ShoppingCartRepository _shopingCartRepository;
-	private readonly CheckOutRepository _checkoutRepository;
 
 	public AmountChangeInShoppingCart_Test()
 	{
@@ -17,7 +16,6 @@ public class AmountChangeInShoppingCart_Test
 			.Options;
 		_context = new DataContext(_options);
 		_shopingCartRepository = new ShoppingCartRepository(_context);
-		_checkoutRepository = new CheckOutRepository(_context);
 	}
 	[Fact]
 	public async Task IncreaseOrDecreaseQuantityWhenButton()
