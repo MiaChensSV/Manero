@@ -27,6 +27,7 @@
 				<label> @item.Quantity </label>
 				<a asp-route-articleNumber="@item.ArticleNumber" asp-action="increase" asp-controller="shopingcart" class="cart-product-stock-btn">+</a>
 			</div>
+			<a asp-route-articleNumber="@item.ArticleNumber" asp-action="delete" asp-controller="shopingcart" class="cart-product-stock-btn">Remove</a>
 		</div>
 	}
 </div>

@@ -22,9 +22,11 @@
   <ItemGroup>
     <Folder Include="Migrations\" />
     <Folder Include="Models\Schemas\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="FakeItEasy" Version="7.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="7.0.13" />
     <PackageReference Include="Microsoft.Aspnetcore.Identity.UI" Version="7.0.13" />
     <PackageReference Include="Microsoft.EntityframeworkCore.Design" Version="7.0.13">

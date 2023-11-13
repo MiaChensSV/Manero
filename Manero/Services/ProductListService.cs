@@ -1,4 +1,5 @@
-﻿using Manero.Models.Dtos;
+﻿using Manero.Context;
+using Manero.Models.Dtos;
 using Manero.Models.Entities;
 using Manero.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -6,23 +7,28 @@ using System.Diagnostics;
 
 namespace Manero.Services
 {
-    public class ProductListService
+
+    public interface IProductListService
+    {
+        Task<IEnumerable<ProductProductList>> GetAllProductsAsync();
+        Task<IEnumerable<ProductProductList>> GetAllByTagNameAsync(string tagName);
+    }
+    public class ProductListService : IProductListService
     {
         private readonly ProductListRepo _productRepo;
-        private readonly ReviewProductListRepo _reviewRepo;
         private readonly ShopByTagsRepo _shopByTagsRepo;
+       
 
-        public ProductListService(ProductListRepo productRepo, ReviewProductListRepo reviewRepo, ShopByTagsRepo shopByTagsRepo)
+        public ProductListService(ProductListRepo productRepo, ShopByTagsRepo shopByTagsRepo)
         {
             _productRepo = productRepo;
-            _reviewRepo = reviewRepo;
             _shopByTagsRepo = shopByTagsRepo;
+            
         }
 
         public async Task<IEnumerable<ProductProductList>> GetAllProductsAsync()
         {
             var products = await _productRepo.GetAllAsync();
-            var productReviews = await _reviewRepo.GetAllAsync();
 
             var productList = new List<ProductProductList>();
             foreach (var product in products)
@@ -46,7 +52,7 @@ namespace Manero.Services
         public async Task<IEnumerable<ProductProductList>> GetAllByTagNameAsync(string tagName)
         {
             var products = await _shopByTagsRepo.GetAllAsync(tagName);
-            var productReviews = await _reviewRepo.GetAllAsync();
+           
 
             var productList = new List<ProductProductList>();
             foreach (var product in products)
