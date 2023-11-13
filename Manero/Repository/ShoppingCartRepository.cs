@@ -1,4 +1,8 @@
-﻿namespace Manero.Repository
+﻿using Manero.Context;
+using Manero.Models.Entities;
+using Microsoft.EntityFrameworkCore;
+
+namespace Manero.Repository
 {
 	public class ShoppingCartRepository : GeneralRepo<OrderDetailEntity>
 	{

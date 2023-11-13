@@ -1,9 +1,16 @@
-﻿namespace Manero.Repository
+﻿using Manero.Context;
+using Manero.Models.Entities;
+
+namespace Manero.Repository
 {
 	public class CheckOutRepository : GeneralRepo<OrderEntity>
 	{
 
 		private readonly DataContext _dataContext;
+
+		public CheckOutRepository(DataContext context) : base(context)
+		{
+		}
 
 		public CheckOutRepository(DataContext context, DataContext dataContext) : base(context)
 		{

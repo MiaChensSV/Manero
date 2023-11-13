@@ -23,7 +23,7 @@ public class DeleteCartItemIfExist_Test
 		_checkoutRepository = new CheckOutRepository(_context);
 		_shopingCartService = new ShoppingCartService(_shopingCartRepository, _checkoutRepository);
 	}
-	
+
 
 	[Fact]
 	public async Task DeleteCartItemIfExist()
@@ -34,7 +34,7 @@ public class DeleteCartItemIfExist_Test
 		var _productModel = new ProductModelEntity { ModelNumber = "TestCreatedModel", ProductDescription = "TestDes" };
 		var _color = new ProductColorEntity { ColorName = "testColor" };
 		var _size = new ProductSizeEntity { SizeName = "testsize" };
-		var _user = new AppIdentityUser { UserName = "TestUserName", FirstName="TestFirstName", LastName="TestLastName" };
+		var _user = new AppIdentityUser { UserName = "TestUserName", FirstName = "TestFirstName", LastName = "TestLastName" };
 		_context.OrderStatus.Add(_status);
 		_context.Promocodes.Add(_promocode);
 		_context.ProductModels.Add(_productModel);
@@ -42,7 +42,7 @@ public class DeleteCartItemIfExist_Test
 		_context.ProductSize.Add(_size);
 		_context.Users.Add(_user);
 		await _context.SaveChangesAsync();
-		
+
 		var _product = new ProductDetailEntity()
 		{
 			ArticleNumber = "1",

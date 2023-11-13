@@ -1,4 +1,10 @@
-﻿namespace Manero.Controllers;
+﻿using Manero.Models.Entities;
+using Manero.Services;
+using Manero.ViewModels;
+using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
+
+namespace Manero.Controllers;
 
 public class ShopingCartController : Controller
 {

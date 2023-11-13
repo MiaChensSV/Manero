@@ -52,13 +52,10 @@
               "target": "Package",
               "version": "[3.1.1, )"
             },
-<<<<<<< HEAD
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
               "version": "[7.0.13, )"
             },
-=======
->>>>>>> 92f883489c88322e96e57c1f1cff641aa9430171
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[17.6.0, )"
