@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "EIwIzohOudB/IJ0N4r8ZOvpcn/h16H8Ls0LYH3to/YEeHUGtDiIt2yiRSxopvshtJaNLFtnc6XVK3IxujXmTFA==",
+=======
+  "dgSpecHash": "yyuDk3EJ57JAAyD/tCskuoZrhsJTwCKORECtJnNhsPvRhPMtRxlOLo9g7AJMDm/r3zYOyCP5XHplzLQgSjouMA==",
+>>>>>>> 92f883489c88322e96e57c1f1cff641aa9430171
   "success": true,
   "projectFilePath": "C:\\Users\\nikol\\OneDrive\\Skrivebord\\Manero\\Manero.Test\\Manero.Test.csproj",
   "expectedPackageFiles": [
@@ -25,7 +29,10 @@
     "C:\\Users\\nikol\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.13\\microsoft.entityframeworkcore.7.0.13.nupkg.sha512",
     "C:\\Users\\nikol\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.13\\microsoft.entityframeworkcore.abstractions.7.0.13.nupkg.sha512",
     "C:\\Users\\nikol\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\7.0.13\\microsoft.entityframeworkcore.analyzers.7.0.13.nupkg.sha512",
+<<<<<<< HEAD
     "C:\\Users\\nikol\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\7.0.13\\microsoft.entityframeworkcore.inmemory.7.0.13.nupkg.sha512",
+=======
+>>>>>>> 92f883489c88322e96e57c1f1cff641aa9430171
     "C:\\Users\\nikol\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\7.0.13\\microsoft.entityframeworkcore.relational.7.0.13.nupkg.sha512",
     "C:\\Users\\nikol\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\7.0.13\\microsoft.entityframeworkcore.sqlserver.7.0.13.nupkg.sha512",
     "C:\\Users\\nikol\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",

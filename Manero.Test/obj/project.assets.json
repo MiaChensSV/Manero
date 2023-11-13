@@ -350,6 +350,7 @@
           "lib/netstandard2.0/_._": {}
         }
       },
+<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore.InMemory/7.0.13": {
         "type": "package",
         "dependencies": {
@@ -366,6 +367,8 @@
           }
         }
       },
+=======
+>>>>>>> 92f883489c88322e96e57c1f1cff641aa9430171
       "Microsoft.EntityFrameworkCore.Relational/7.0.13": {
         "type": "package",
         "dependencies": {
@@ -3725,6 +3728,7 @@
         "microsoft.entityframeworkcore.analyzers.nuspec"
       ]
     },
+<<<<<<< HEAD
     "Microsoft.EntityFrameworkCore.InMemory/7.0.13": {
       "sha512": "HFSMOeNNfCQ16Moy6Rv99/xhVOzW27ND9YcoDJrQ9KocJP8ZONuz5OtTJg9pfKFKblBPj6LWNI496VrAWkECyg==",
       "type": "package",
@@ -3739,6 +3743,8 @@
         "microsoft.entityframeworkcore.inmemory.nuspec"
       ]
     },
+=======
+>>>>>>> 92f883489c88322e96e57c1f1cff641aa9430171
     "Microsoft.EntityFrameworkCore.Relational/7.0.13": {
       "sha512": "lIms3oaIW7XiQy3bLUB2+hcSZ4ISmdh3HKKuNSnewS3wurYaopqBEhYaQdhZeW6itl3skWyqybPGGxIlJrKqFA==",
       "type": "package",
@@ -9010,7 +9016,10 @@
       "FakeItEasy >= 7.4.0",
       "MSTest.TestFramework >= 3.1.1",
       "Manero >= 1.0.0",
+<<<<<<< HEAD
       "Microsoft.EntityFrameworkCore.InMemory >= 7.0.13",
+=======
+>>>>>>> 92f883489c88322e96e57c1f1cff641aa9430171
       "Microsoft.NET.Test.Sdk >= 17.6.0",
       "Moq >= 4.20.69",
       "coverlet.collector >= 3.2.0",
@@ -9069,10 +9078,13 @@
             "target": "Package",
             "version": "[3.1.1, )"
           },
+<<<<<<< HEAD
           "Microsoft.EntityFrameworkCore.InMemory": {
             "target": "Package",
             "version": "[7.0.13, )"
           },
+=======
+>>>>>>> 92f883489c88322e96e57c1f1cff641aa9430171
           "Microsoft.NET.Test.Sdk": {
             "target": "Package",
             "version": "[17.6.0, )"
