@@ -1,0 +1,67 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@using Manero.Models.Entities;
+@model CartViewModel
+
+<div class="container text-center mb-3" id="cart-order-container">
+	<h1>Order</h1>
+	@foreach (var item in Model.OrderDetails)
+	{
+		<div class="cart-section">
+			<div class="col-3" id="cart-img-container">
+				<img class="card-img-top"
+					 src="@item.Product.ProductImageUrl"
+					 alt="@item.Product.ProductTitle">
+			</div>
+			<div class="col-3 text-start" id="cart-product-info">
+				<p class="mb-1 text-nowrap" id="cart-product-text">@item.Product.ProductTitle </p>
+				<p class="mb-1" id="cart-product-text">Price: $@item.Price </p>
+				<p class="mb-1" id="cart-product-text">Size: @item.Product.Size.SizeName </p>
+				<p class="mb-1" id="cart-product-text">Color: @item.Product.Color.ColorName</p>
+			</div>
+			<div class="cart-product-stock">
+				<a asp-route-articleNumber="@item.ArticleNumber" asp-action="decrease" asp-controller="shopingcart" class="cart-product-stock-btn">-</a>
+				<label> @item.Quantity </label>
+				<a asp-route-articleNumber="@item.ArticleNumber" asp-action="increase" asp-controller="shopingcart" class="cart-product-stock-btn">+</a>
+			</div>
+			<a asp-route-articleNumber="@item.ArticleNumber" asp-action="delete" asp-controller="shopingcart" class="cart-product-stock-btn">Remove</a>
+		</div>
+	}
+</div>
+@if (Model.Subtotal>0)
+{
+	<div class="container text-center mb-3" id="cart-total-cost-section">
+		<div class="col-3 text-start" id="cart-subtotal-section">
+			<p class="mb-1 text-nowrap" id="cart-subtotal-text">Subtotal</p>
+			<p class="mb-1" id="cart-subtotal-text">Discount</p>
+			<p class="mb-1" id="cart-subtotal-text">Delivery</p>
+		</div>
+		<div class="cart-price">
+			<p class="cart-subtotal-price">$ @Model.Subtotal</p>
+			<p class="cart-subtotal-discount">$ @Model.Discount</p>
+			<p class="cart-delivery-text">Free</p>
+		</div>
+	</div>
+	<div class="container text-center mb-3" id="cart-total-price-section">
+		<div class="col-3 text-start" id="cart-total-text-section">
+			<p class="mb-1 text-nowrap" id="cart-total-text">Total</p>
+		</div>
+		<div class="cart-total-price">
+			<p id="cart-total-price">$ @Model.Total</p>
+		</div>
+	</div>
+
+
+		<div class="order-container">
+			<a asp-action="checkout" asp-controller="shopingcart" class="btn" type="button">Shop Now</a>
+		</div>
+}else{
+	<partial name="../Partials/_CartEmpty.cshtml" />
+}
+
+
+
+<partial name="../Shared/_BottomNav.cshtml" />

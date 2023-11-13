@@ -181,7 +181,7 @@ namespace Manero.Migrations
 
                     b.Property<string>("ArticleNumber")
                         .IsRequired()
-                        .HasColumnType("longtext");
+                        .HasColumnType("varchar(255)");
 
                     b.Property<DateTime>("Created_Date")
                         .HasColumnType("datetime(6)");
@@ -201,17 +201,14 @@ namespace Manero.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(7,2)");
 
-                    b.Property<string>("ProductArticleNumber")
-                        .HasColumnType("varchar(255)");
-
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
                     b.HasKey("OrderItemId");
 
-                    b.HasIndex("OrderId");
+                    b.HasIndex("ArticleNumber");
 
-                    b.HasIndex("ProductArticleNumber");
+                    b.HasIndex("OrderId");
 
                     b.ToTable("OrderDetail");
                 });
@@ -684,15 +681,17 @@ namespace Manero.Migrations
 
             modelBuilder.Entity("Manero.Models.Entities.OrderDetailEntity", b =>
                 {
+                    b.HasOne("Manero.Models.Entities.ProductDetailEntity", "Product")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("ArticleNumber")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("Manero.Models.Entities.OrderEntity", "Order")
                         .WithMany("OrderDetailItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("Manero.Models.Entities.ProductDetailEntity", "Product")
-                        .WithMany()
-                        .HasForeignKey("ProductArticleNumber");
 
                     b.Navigation("Order");
 
@@ -966,6 +965,8 @@ namespace Manero.Migrations
 
             modelBuilder.Entity("Manero.Models.Entities.ProductDetailEntity", b =>
                 {
+                    b.Navigation("OrderDetails");
+
                     b.Navigation("Wishlists");
                 });
 

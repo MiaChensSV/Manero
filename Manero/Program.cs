@@ -18,7 +18,10 @@ namespace Manero
             builder.Services.AddControllersWithViews();
             builder.Services.AddScoped<AddressService>();
             builder.Services.AddScoped<CreditCardService>();
+            builder.Services.AddScoped<ShoppingCartService>();
+            builder.Services.AddScoped<UserService>();
 
+            builder.Services.AddScoped<ProductDetailsService>();
             builder.Services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromMinutes(30);
@@ -27,11 +30,13 @@ namespace Manero
             });
             builder.Services.AddHttpContextAccessor();
             //Add repositories 
-
+            builder.Services.AddScoped<PromoCodeRepo>();
+            builder.Services.AddScoped<ProductDetailsRepo>();
             builder.Services.AddScoped<AddressRepository>();
             builder.Services.AddScoped<UserAddressRepository>();
             builder.Services.AddScoped<CreditCardRepository>();
-            builder.Services.AddScoped<UserRepository>();
+            builder.Services.AddScoped<ShoppingCartRepository>();
+            builder.Services.AddScoped<CheckOutRepository>();
 
             builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
             
@@ -43,14 +48,11 @@ namespace Manero
 
             //Repositories
             builder.Services.AddScoped<ProductListRepo>();
-            builder.Services.AddScoped<ReviewProductListRepo>();
-            builder.Services.AddScoped<CartRepo>();
             builder.Services.AddScoped<ShopByTagsRepo>();
 
 
             //Services
-            builder.Services.AddScoped<ProductListService>();
-            builder.Services.AddScoped<CartService>();
+            builder.Services.AddScoped<IProductListService, ProductListService>();
 
             var app = builder.Build();
 
