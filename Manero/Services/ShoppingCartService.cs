@@ -6,10 +6,12 @@ namespace Manero.Services;
 public class ShoppingCartService
 {
 	private readonly ShoppingCartRepository _cartRepo;
+	private readonly CheckOutRepository _checkoutRepo;
 
-	public ShoppingCartService(ShoppingCartRepository cartRepo)
+	public ShoppingCartService(ShoppingCartRepository cartRepo, CheckOutRepository checkOutRepository)
 	{
 		_cartRepo = cartRepo;
+		_checkoutRepo = checkOutRepository;
 	}
 
 	public async Task CreateCartItemByUserAsync(string userId, string artNum)
@@ -30,5 +32,9 @@ public class ShoppingCartService
 	public async Task DeleteCartItemByUserAsync(OrderDetailEntity item)
 	{
 		await _cartRepo.DeleteCartItemByUser(item);
+	}
+	public async Task SaveToDb(OrderEntity entity)
+	{
+		await _checkoutRepo.AddAsync(entity);
 	}
 }

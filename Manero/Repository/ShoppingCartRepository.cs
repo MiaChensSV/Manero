@@ -17,20 +17,20 @@ namespace Manero.Repository
 
 		public async Task CreateCartItemByUser(string userId, string artNum)
 		{
-			var product = _context.ProductDetail							
+			var _product = _context.ProductDetail							
 							.Where(row => row.ArticleNumber == artNum).FirstOrDefault();
 			int _orderId = await GetOrderIdByUser(userId);
-			OrderDetailEntity newCartItem = new ()
+			OrderDetailEntity _newCartItem = new ()
 			{
 				OrderId = _orderId,
 				ArticleNumber = artNum,
 				Quantity = 1,
-				Price = product.Price,
-				DiscountedPrice=product.DiscountedPrice,			
+				Price = _product!.Price,
+				DiscountedPrice= _product.DiscountedPrice,			
 				
 			};
 
-			await _context.OrderDetail.AddAsync(newCartItem);
+			await _context.OrderDetail.AddAsync(_newCartItem);
 			await _context.SaveChangesAsync();
 		}
 
@@ -79,7 +79,7 @@ namespace Manero.Repository
 					TotalCost = 0,
 					PromocodeId = 1,
 				};
-				var orderId = await _context.OrderDetails.AddAsync(_orderEntity);
+				var _orderId = await _context.OrderDetails.AddAsync(_orderEntity);
 				await _context.SaveChangesAsync();
                 return _orderEntity.OrderId;
             }	
