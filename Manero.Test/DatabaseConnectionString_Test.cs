@@ -3,7 +3,7 @@
 namespace Manero.Test.Niko;
 
 
-public class DatabaseTest
+public class DatabaseConnectionString_Test
 {
 	[Fact]
 	public void ConnectionString_In_Our_Database()
