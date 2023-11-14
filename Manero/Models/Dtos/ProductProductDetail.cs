@@ -38,6 +38,7 @@ namespace Manero.Models.Dtos
                     Quantity = entity.Quantity,
 
 
+
                 };
                 return productDetail;
             }
