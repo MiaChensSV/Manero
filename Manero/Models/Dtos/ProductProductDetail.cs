@@ -22,21 +22,28 @@ namespace Manero.Models.Dtos
         //Konverterar från ProductDetailEntity till ProductProductDetail
         public static implicit operator ProductProductDetail(ProductDetailEntity entity)
         {
-            var productDetail = new ProductProductDetail
+            if (entity != null)
             {
-                ArticleNumber = entity.ArticleNumber,
-                ProductTitle = entity.ProductTitle,
-                Description = entity.ProductDetailDescription,
-                Price = entity.Price,
-                DiscountedPrice = entity.DiscountedPrice,
-                Image = entity.ProductImageUrl,
-                Reviews = entity.ProductModel.Reviews,
-                Color = entity.Color.ColorId,
-                Size = entity.Size.SizeId,
-                Quantity = entity.Quantity,
-              
-            };
-            return productDetail;
+                var productDetail = new ProductProductDetail
+                {
+                    ArticleNumber = entity.ArticleNumber,
+                    ProductTitle = entity.ProductTitle,
+                    Description = entity.ProductDetailDescription,
+                    Price = entity.Price,
+                    DiscountedPrice = entity.DiscountedPrice,
+                    Image = entity.ProductImageUrl,
+                    Reviews = entity.ProductModel.Reviews,
+                    Color = entity.Color.ColorId,
+                    Size = entity.Size.SizeId,
+                    Quantity = entity.Quantity,
+
+
+
+                };
+                return productDetail;
+            }
+            else
+                return null!;
         }
         public static implicit operator ProductDetailEntity(ProductProductDetail product)
         {
@@ -48,6 +55,8 @@ namespace Manero.Models.Dtos
                 ProductDetailDescription = product.Description,
                 Price = product.Price,
                 ProductImageUrl = product.Image,
+                DiscountedPrice = product.DiscountedPrice,
+                
             };
             return entity;
         }
