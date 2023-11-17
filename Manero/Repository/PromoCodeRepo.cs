@@ -40,47 +40,34 @@ public class PromoCodeRepo : GeneralRepo<PromocodesEntity>, IPromoCodeRepo
 
     public async Task<bool> AssignPromoCodeToUserAsync(string userId, string promoCodeTitle)
     {
-        using var transaction = await _context.Database.BeginTransactionAsync();
+        var promoCodeEntity = await _context.Promocodes
+            .Where(x => x.PromocodeTitle == promoCodeTitle)
+            .FirstOrDefaultAsync();
 
-        try
+        if (promoCodeEntity == null)
         {
-            var promoCodeEntity = await _context.Promocodes
-                .Where(x => x.PromocodeTitle == promoCodeTitle)
-                .FirstOrDefaultAsync();
-
-            if (promoCodeEntity == null)
-            {
-                return false;
-            }
-
-            var existingUserPromoCode = await _context.UserPromocodes
-                .Where(x => x.UserId == userId && x.PromocodeId == promoCodeEntity.PromocodeId)
-                .FirstOrDefaultAsync();
-
-            if (existingUserPromoCode != null)
-            {
-                return false;
-            }
-
-            var newUserPromoCode = new UserPromocodesEntity
-            {
-                UserId = userId,
-                PromocodeId = promoCodeEntity.PromocodeId
-            };
-
-            _context.UserPromocodes.Add(newUserPromoCode);
-            await _context.SaveChangesAsync();
-
-            await transaction.CommitAsync();
-
-            return true;
+            return false;
         }
-        catch
+
+        var existingUserPromoCode = await _context.UserPromocodes
+            .Where(x => x.UserId == userId && x.PromocodeId == promoCodeEntity.PromocodeId)
+            .FirstOrDefaultAsync();
+
+        if (existingUserPromoCode != null)
         {
-            await transaction.RollbackAsync();
-            throw;
+            return false;
         }
+
+        var newUserPromoCode = new UserPromocodesEntity
+        {
+            UserId = userId,
+            PromocodeId = promoCodeEntity.PromocodeId
+        };
+
+        _context.UserPromocodes.Add(newUserPromoCode);
+        await _context.SaveChangesAsync();
+
+        return true;
     }
-
 }
 

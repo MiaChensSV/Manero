@@ -1,9 +1,11 @@
 ﻿using System.Security.Claims;
+using Manero.Context;
 using Manero.Controllers;
 using Manero.Models.Entities;
 using Manero.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Moq;
 
 namespace Manero.Test
@@ -68,6 +70,66 @@ namespace Manero.Test
             {
                 HttpContext = new DefaultHttpContext { User = user }
             };
+        }
+
+
+        [Fact]
+        public async Task AssignPromoCodeToUserAsync_ValidPromoCode_AssignsCode()
+        {
+            // Arrange
+            var options = new DbContextOptionsBuilder<DataContext>()
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString()) 
+                .Options;
+
+            using (var context = new DataContext(options))
+            {
+                // Fyll databasen med testdata
+                var promoCode = new PromocodesEntity
+                {
+                    PromocodeTitle = "ValidPromoCode",
+                    PromocodeDescription = "Example50",
+                    PromocodePercentage = 50,
+                    
+                };
+                context.Promocodes.Add(promoCode);
+                context.SaveChanges();
+            }
+
+            using (var context = new DataContext(options))
+            {
+                var promoCodeRepo = new PromoCodeRepo(context);
+
+                // Act
+                var result = await promoCodeRepo.AssignPromoCodeToUserAsync("testUserId", "ValidPromoCode");
+
+                // Assert
+                Assert.True(result); 
+            }
+        }
+
+        [Fact]
+        public async Task AssignPromoCodeToUserAsync_InvalidPromoCode_ReturnsFalse()
+        {
+            // Arrange
+            var options = new DbContextOptionsBuilder<DataContext>()
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+                .Options;
+
+            using (var context = new DataContext(options))
+            {
+               
+            }
+
+            using (var context = new DataContext(options))
+            {
+                var promoCodeRepo = new PromoCodeRepo(context);
+
+                // Act
+                var result = await promoCodeRepo.AssignPromoCodeToUserAsync("testUserId", "InvalidPromoCode");
+
+                // Assert
+                Assert.False(result); 
+            }
         }
     }
 }
