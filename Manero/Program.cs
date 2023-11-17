@@ -30,7 +30,7 @@ namespace Manero
             });
             builder.Services.AddHttpContextAccessor();
             //Add repositories 
-            builder.Services.AddScoped<PromoCodeRepo>();
+            builder.Services.AddScoped<IPromoCodeRepo, PromoCodeRepo>();
             builder.Services.AddScoped<ProductDetailsRepo>();
             builder.Services.AddScoped<AddressRepository>();
             builder.Services.AddScoped<UserAddressRepository>();

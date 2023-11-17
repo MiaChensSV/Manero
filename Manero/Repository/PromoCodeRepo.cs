@@ -6,7 +6,14 @@ using System.Security.Claims;
 
 namespace Manero.Repository;
 
-public class PromoCodeRepo : GeneralRepo<PromocodesEntity>
+public interface IPromoCodeRepo
+{
+    Task<IEnumerable<PromocodesEntity>> GetUserPromocodesAsync(string specificUserId);
+    Task<bool> AssignPromoCodeToUserAsync(string userId, string promoCodeTitle);
+}
+
+
+public class PromoCodeRepo : GeneralRepo<PromocodesEntity>, IPromoCodeRepo
 {
     private readonly DataContext _context;
 
