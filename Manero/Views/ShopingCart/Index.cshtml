@@ -27,6 +27,7 @@
 				<label> @item.Quantity </label>
 				<a asp-route-articleNumber="@item.ArticleNumber" asp-action="increase" asp-controller="shopingcart" class="cart-product-stock-btn">+</a>
 			</div>
+			<a asp-route-articleNumber="@item.ArticleNumber" asp-action="delete" asp-controller="shopingcart" class="cart-product-stock-btn">Remove</a>
 		</div>
 	}
 </div>
@@ -55,7 +56,7 @@
 
 
 		<div class="order-container">
-			<a asp-action="checkout" asp-controller="shopingcart" class="btn" type="button">Shop Now</a>
+		<a asp-action="checkout" asp-controller="Shopingcart" class="btn" type="button">Shop Now</a>
 		</div>
 }else{
 	<partial name="../Partials/_CartEmpty.cshtml" />

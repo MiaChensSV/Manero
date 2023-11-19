@@ -8,7 +8,8 @@
     <hr class="line">
     @foreach (var item in Model.OrderDetails)
     {
-        <p class="d-flex justify-content-between">@item.Product.ProductTitle, @item.Product.Size.SizeName, @item.Product.Color.ColorName (123 @item.ArticleNumber) <span> @item.Quantity x $ @item.Price </span> </p>
+            <p class="d-flex justify-content-between">@item.Product.ProductTitle, @item.Product.Size.SizeName, @item.Product.Color.ColorName (Index @item.ArticleNumber) <span> @item.Quantity x $ @item.Price </span> </p>
+          
     }
 
     <hr class="line" />

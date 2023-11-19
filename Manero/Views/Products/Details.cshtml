@@ -5,7 +5,7 @@
 }
 
 
-    <div class="d-xl-flex container p-xl-5 p-0 gap-5">
+<div class="d-xl-flex container p-xl-5 p-0 gap-5">
       <!-- Product Details -->
       <div id="carouselExampleIndicators" class="carousel slide col-xl-6 justify-content-xl-center">
         <div class="carousel-inner">
@@ -16,8 +16,7 @@
       </div>
 
       <div class="container d-flex flex-column col-xl-6 justify-content-xl-around">
-        <!-- Product Name & Wishlist icon -->
-
+        <!-- Product Name & Wishlist icon --
         <div class="row pb-2 pt-4 align-items-center">
           <div class="col-10">
             <h2>@Model.ProductTitle</h2>
@@ -28,29 +27,22 @@
         </div>
 
         <!-- Product Rating -->
-        <!-- Calculate average rating of all reviews associated with Product and create a loop to display the number of stars -->
         <div class="row align-items-center">
           <div class="col-4 d-flex align-items-center">
-            
-                @foreach(var review in Model.Reviews)
-                {
-                    var aggregatedReview =   review.Rating / Model.Reviews.Count();
 
-                    for(decimal i = 0; i < aggregatedReview; i++)
+                @if (Model.Reviews.Any())
+                {
+                    var aggregatedReview = Model.Reviews.Sum(r => r.Rating) / Model.Reviews.Count();
+                    for (decimal i = 0; i < aggregatedReview; i++)
                     {
                         <i class="fa-solid fa-star"></i>
                     }
+                    <span class="ps-1">@Model.Reviews.Count()</span>
                 }
 
-            <!-- Display total amount of reviews associated with Product -->
-
-            <span class="ps-1">@Model.Reviews.Count()</span>
           </div>
-
           <div class="col-4 bg-primary"></div>
         </div>
-
-        <!-- Price & Quantity -->
 
         <div class="row d-flex justify-content-between py-2">
           <div class="col-6 d-flex align-items-center gap-1">
@@ -64,7 +56,7 @@
                 }
           </div>
 
-          <!-- Product Quantity Måste fixas...-->
+          <!-- Product Quantity-->
           <div class="col-6 justify-content-end text-end">
             <button class="btn-product-amount align-content-center">
               <i class="fas fa-minus"></i>
@@ -99,7 +91,7 @@
                         <button class="product-size">XXL</button>
                         break;
                     default:
-                    <p> Cannot show available sizes right now</p>
+                    <p> Cannot show available size right now</p>
                         break;
                 }
           </div>
@@ -113,7 +105,6 @@
           <div class="d-flex col-10 gap-4 align-items-center">
                 @switch (Model.Color)
                 {
-
                     case 1:
                         <button class="product-color" style="background-color: #111111"></button>
                         break;
@@ -134,10 +125,6 @@
                         <p> Cannot show available color right now</p>
                         break;
                 }
-           
-            
-           
-           
           </div>
         </div>
 
@@ -166,91 +153,39 @@
         </div>
       </div>
     </div>
-<!-- Reviews Section -->
-<div class="container-xl">
-    <div class="row pt-4">
-        <div class="col-12 d-flex justify-content-between align-content-center">
-            <h2>Reviews (23)</h2>
-            <a asp-controller="Products" asp-action="Reviews">View All</a>
-        </div>
-        <!-- Review #1 -->
-        <div class="row border-bottom pt-4">
-            <div class="col-2">
-                <img class="reviews-img" src="https://picsum.photos/id/1/50/50" />
+    <!-- Reviews Section -->
+    <div class="container-xl">
+        <div class="row pt-4">
+            <div class="col-12 d-flex justify-content-between align-content-center">
+                <h2>Reviews @Model.Reviews.Count() </h2>
+                <a asp-controller="Products" asp-action="Reviews">View All</a>
             </div>
-            <div class="col-10">
-                <div class="d-flex justify-content-between align-items-start">
-                    <div>
-                        <h6>Annette Black</h6>
-                        <p class="review-date">23 Jan, 2023</p>
+                @foreach (var review in Model.Reviews)
+                {
+                    <div class="row border-bottom pt-4">
+                    
+                        <div class="col-2">
+                            <img class="reviews-img" src="@(review.User != null ? review.User.ProfileImageUrl : "https://picsum.photos/id/1/50/50")" />
+                        </div>
+                        <div class="col-10">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div>
+                                    <h6>@(review.User != null ? review.User.UserName : "Anonymous")</h6>
+                                
+                                </div>
+                                <div class="col-4 d-flex align-items-center">    
+                                    @for (decimal i = 0; i < review.Rating; i++)
+                                    {
+                                        <i class="fa-solid fa-star"></i>
+                                    }
+                                </div>
+                            </div>
+                            <div>
+                                <p> @review.ReviewText </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-4 d-flex align-items-center">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                </div>
-                <div class="">
-                    <p>
-                        Consequat ut ea dolor aliqua laborum tempor Lorem culpa. Commodo veniam sint est mollit proident
-                        commodo.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row border-bottom pt-4">
-            <div class="col-2">
-                <img class="reviews-img" src="https://picsum.photos/id/1/50/50" />
-            </div>
-            <div class="col-10">
-                <div class="d-flex justify-content-between align-items-start">
-                    <div>
-                        <h6>Jenny Wilson</h6>
-                        <p class="review-date">23 Jan, 2023</p>
-                    </div>
-                    <div class="col-4 d-flex align-items-center">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                </div>
-                <div class="">
-                    <p>
-                        Consequat ut ea dolor aliqua laborum tempor Lorem culpa. Commodo veniam sint est mollit proident
-                        commodo.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="row border-bottom pt-4">
-            <div class="col-2">
-                <img class="reviews-img" src="https://picsum.photos/id/1/50/50" />
-            </div>
-            <div class="col-10">
-                <div class="d-flex justify-content-between align-items-start">
-                    <div>
-                        <h6>Jenny Wilson</h6>
-                        <p class="review-date">23 Jan, 2023</p>
-                    </div>
-                    <div class="col-4 d-flex align-items-center">
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-solid fa-star"></i>
-                        <i class="fa-regular fa-star"></i>
-                    </div>
-                </div>
-                <div class="">
-                    <p>
-                        Consequat ut ea dolor aliqua laborum tempor Lorem culpa. Commodo veniam sint est mollit proident
-                        commodo.
-                    </p>
-                </div>
-            </div>
+                }
         </div>
     </div>
 </div>

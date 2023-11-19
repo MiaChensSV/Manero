@@ -1,4 +1,4 @@
-﻿@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 @import "../scss/Components/_shippingDetails.css";
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap");
 .btn {
@@ -1288,7 +1288,8 @@ h2 {
 }
 .filtersContainer input[type=range] {
   -webkit-appearance: none;
-  appearance: none;
+  -moz-appearance: none;
+       appearance: none;
   height: 2px;
   width: 100%;
   position: absolute;
@@ -1316,7 +1317,6 @@ h2 {
   margin: auto;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .sizesFilter .containerSizes input {
@@ -1375,7 +1375,6 @@ h2 {
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
   margin: 1rem 0.5rem 1rem 0.5rem;
 }
@@ -1483,7 +1482,6 @@ h2 {
   margin: 0.25rem;
   -webkit-user-select: none;
   -moz-user-select: none;
-  -ms-user-select: none;
   user-select: none;
 }
 .tagsContainer .containerSizes input {
@@ -1763,6 +1761,7 @@ h2 {
 }
 
 ::-webkit-scrollbar-thumb {
+  -webkit-transition: ease 0.5s;
   transition: ease 0.5s;
   background: rgb(180, 180, 180);
   border-radius: 10px;
@@ -1770,4 +1769,102 @@ h2 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #626262;
+}
+
+.container-MG3-117 {
+  margin-top: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.container-MG3-117 {
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.circle-MG3-117 {
+  width: 200px;
+  height: 200px;
+  border: 5px solid green;
+  border-radius: 50%;
+  background-image: url("/images/Ellipse_31.jpg");
+  background-color: #DBE3F5;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.check-icon {
+  font-size: 68px;
+  color: green;
+}
+
+.message-MG3-117 {
+  margin-top: 20px;
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+.button--MG3-117 {
+  display: inline-block;
+  padding: 10px 70px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 5px;
+  text-decoration: none;
+}
+
+.view-orders {
+  background-color: #000;
+  color: #fff;
+}
+
+.continue-shopping {
+  background-color: #fff;
+  color: #000;
+  display: inline-block;
+  padding: 10px 40px;
+  border: noe;
+  border-radius: 20px;
+  cursor: pointer;
+  margin: 5px;
+  text-decoration: none;
+}
+
+.fa-pipe-MG3-117 {
+  margin-top: 1rem;
+  font-size: 64px;
+}
+
+.fa-xmark {
+  font-size: 68px;
+  color: red;
+}
+
+.circleFailed-MG3-117 {
+  width: 200px;
+  height: 200px;
+  background-position: center;
+  background-image: url("/images/Ellipse_31.jpg");
+  background-color: #DBE3F5;
+  background-size: cover;
+  border: 5px solid red;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
