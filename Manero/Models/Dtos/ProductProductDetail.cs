@@ -33,8 +33,8 @@ namespace Manero.Models.Dtos
                     DiscountedPrice = entity.DiscountedPrice,
                     Image = entity.ProductImageUrl,
                     Reviews = entity.ProductModel.Reviews,
-                    Color = entity.Color.ColorId, // Handle nullable conversion
-                    Size = entity.Size.SizeId,    // Handle nullable conversion
+                    Color = entity.Color.ColorId, 
+                    Size = entity.Size.SizeId,   
                     Quantity = entity.Quantity
                 };
                 return productDetail;
