@@ -1,19 +1,11 @@
 ﻿using Manero.Models.Dtos;
 using Manero.Models.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Manero.Test.Unit_tests
 {
     public class ProductProductDetailShouldConvertToProductDetailEntity
     {
-     
-
-   
-
         [Fact]
         public void ProductProductDetailDhouldConvertToProductDetailEntity()
         {
