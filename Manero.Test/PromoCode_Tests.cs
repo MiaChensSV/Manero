@@ -83,7 +83,6 @@ namespace Manero.Test
 
             using (var context = new DataContext(options))
             {
-                // Fyll databasen med testdata
                 var promoCode = new PromocodesEntity
                 {
                     PromocodeTitle = "ValidPromoCode",
