@@ -6,14 +6,14 @@ namespace Manero.Controllers
 {
     public class PromoCodeController : Controller
 	{
-		private readonly PromoCodeRepo _repo;
+        private readonly IPromoCodeRepo _repo;
 
-		public PromoCodeController(PromoCodeRepo repo)
-		{
-			_repo = repo;
-		}
+        public PromoCodeController(IPromoCodeRepo repo)
+        {
+            _repo = repo;
+        }
 
-		public async Task<IActionResult> PromoCodesCurrent()
+        public async Task<IActionResult> PromoCodesCurrent()
 		{
 			var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 			if (userId == null)
