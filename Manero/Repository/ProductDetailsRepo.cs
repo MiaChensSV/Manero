@@ -5,7 +5,11 @@ using System.Linq.Expressions;
 
 namespace Manero.Repository
 {
-    public class ProductDetailsRepo : GeneralRepo<ProductDetailEntity>
+    public interface IProductDetailsRepo
+    {
+        Task<ProductDetailEntity> GetAsync(Expression<Func<ProductDetailEntity, bool>> expression);
+    }
+    public class ProductDetailsRepo : GeneralRepo<ProductDetailEntity>, IProductDetailsRepo
     {
         private readonly DataContext _dataContext;
         public ProductDetailsRepo(DataContext dataContext) : base(dataContext)

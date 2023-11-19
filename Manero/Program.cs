@@ -31,11 +31,12 @@ namespace Manero
             builder.Services.AddHttpContextAccessor();
             //Add repositories 
             builder.Services.AddScoped<PromoCodeRepo>();
-            builder.Services.AddScoped<ProductDetailsRepo>();
+            builder.Services.AddScoped<IProductDetailsRepo, ProductDetailsRepo>();
             builder.Services.AddScoped<AddressRepository>();
             builder.Services.AddScoped<UserAddressRepository>();
             builder.Services.AddScoped<CreditCardRepository>();
             builder.Services.AddScoped<ShoppingCartRepository>();
+            builder.Services.AddScoped<CheckOutRepository>();
 
             builder.Services.AddDbContext<DataContext>(x => x.UseMySQL(builder.Configuration.GetConnectionString("DefaultConnection")));
             
