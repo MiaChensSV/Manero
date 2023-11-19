@@ -12,30 +12,30 @@ using System.Linq.Expressions;
 
 namespace Manero.Test
 {
-    
+
     public class ProductController_Tests
     {
-        private readonly DataContext _context;
+       
         private readonly Mock<IProductListService> _productListService;
         private readonly ProductsController _productsController;
-        private readonly ProductDetailsRepo _productDetailsRepo;
+        private readonly IProductDetailsRepo _productDetailsRepo;
+        private readonly ProductDetailsService _productDetailsService;
 
         public ProductController_Tests()
         {
-            //Emmas saker (Mockar inte repot utan kommunicerar direkt med det)
-            var _options = new DbContextOptionsBuilder<DataContext>()
-            .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
-            .Options;
-            _context = new DataContext(_options);
-            //Jacob mockar servicen
+            var options = new DbContextOptionsBuilder<DataContext>()
+             .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
+             .Options;
+            var context = new DataContext(options);
             _productListService = new Mock<IProductListService>();
-            _productDetailsRepo = new ProductDetailsRepo(_context);
-            _productsController = new ProductsController(_productListService.Object, _productDetailsRepo);
-
-           
+            _productDetailsRepo = new ProductDetailsRepo(context);
+            _productDetailsService = new ProductDetailsService(_productDetailsRepo, context);
+            _productsController = new ProductsController(_productListService.Object, _productDetailsService);
         }
-        // ***** JACOBS TEST *****
 
+   
+        // ***** Jacobs TEST *****
+    
         [Fact]
         public async Task ProductsController_Index_ShouldReturnViewModel()
         {
@@ -49,7 +49,7 @@ namespace Manero.Test
                     ProductName = "En Produkt",
                     Price = 999,
                     Image = "bild.jpg",
-               
+
                 }
             });
 
@@ -57,16 +57,18 @@ namespace Manero.Test
             var result = await _productsController.Index() as ViewResult;
 
             // Assert
-            Assert.NotNull( result );
+            Assert.NotNull(result);
 
             var viewModel = result.Model as AllProductsViewModel;
             Assert.NotNull(viewModel);
             Assert.Equal("Bestsellers", viewModel.Title);
             Assert.NotNull(viewModel.AllProducts);
-            
+
 
         }
-        // ***** EMMAS TEST *****
+       
+        // ***** Emmas test *****
+       
         [Fact]
         public async Task ProductsController_Details_ShouldReturnViewWithProduct()
         {
@@ -82,14 +84,15 @@ namespace Manero.Test
 
             var getproducDetails = await _productDetailsRepo.GetAsync(x => x.ProductId == productId);
 
-
             // Act
             var result = await _productsController.Details(productId) as ViewResult;
 
             // Assert
             Assert.NotNull(result);
-      
+
         }
     }
-    
+
+
 }
+

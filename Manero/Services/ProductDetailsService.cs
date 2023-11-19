@@ -9,19 +9,26 @@ namespace Manero.Services
     public class ProductDetailsService
     {
         private readonly DataContext _context;
-        private readonly ProductDetailsRepo _productDetailsRepo;
+        private readonly IProductDetailsRepo _productDetailsRepo;
 
-        public ProductDetailsService(ProductDetailsRepo productDetailsRepo, DataContext context)
+        public ProductDetailsService(IProductDetailsRepo productDetailsRepo, DataContext context)
         {
             _context = context;
             _productDetailsRepo = productDetailsRepo;
         }
 
-        public async Task<ProductProductDetail> GetProductDetailAsync(ProductProductDetail product)
+        public async Task<ProductProductDetail> GetProductDetailByIdAsync(int id)
         {
-            var _entity = await _productDetailsRepo.GetAsync(x =>
-                x.ArticleNumber == product.ArticleNumber);
-            return _entity;
+            var _entity = await _productDetailsRepo.GetAsync(x => x.ProductId == id);
+            if (_entity != null)
+            {
+                return _entity;
+            }
+            else
+            {
+                return null!;
+            }
         }
     }
 }
+
