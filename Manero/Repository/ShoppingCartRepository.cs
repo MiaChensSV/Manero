@@ -1,8 +1,6 @@
-﻿using System.Linq.Expressions;
-using Manero.Context;
+﻿using Manero.Context;
 using Manero.Models.Entities;
 using Microsoft.EntityFrameworkCore;
-using MySqlX.XDevAPI.Relational;
 
 namespace Manero.Repository
 {
@@ -17,20 +15,20 @@ namespace Manero.Repository
 
 		public async Task CreateCartItemByUser(string userId, string artNum)
 		{
-			var _product = _context.ProductDetail							
+			var product = _context.ProductDetail
 							.Where(row => row.ArticleNumber == artNum).FirstOrDefault();
 			int _orderId = await GetOrderIdByUser(userId);
-			OrderDetailEntity _newCartItem = new ()
+			OrderDetailEntity newCartItem = new()
 			{
 				OrderId = _orderId,
 				ArticleNumber = artNum,
 				Quantity = 1,
-				Price = _product!.Price,
-				DiscountedPrice= _product.DiscountedPrice,			
-				
+				Price = product.Price,
+				DiscountedPrice = product.DiscountedPrice,
+
 			};
 
-			await _context.OrderDetail.AddAsync(_newCartItem);
+			await _context.OrderDetail.AddAsync(newCartItem);
 			await _context.SaveChangesAsync();
 		}
 
@@ -69,7 +67,7 @@ namespace Manero.Repository
 				return _orderDetails.OrderId;
 			else
 			{
-				OrderEntity _orderEntity = new() 
+				OrderEntity _orderEntity = new()
 				{
 					UserId = userId,
 					StatusId = 1,
@@ -79,10 +77,10 @@ namespace Manero.Repository
 					TotalCost = 0,
 					PromocodeId = 1,
 				};
-				var _orderId = await _context.OrderDetails.AddAsync(_orderEntity);
+				var orderId = await _context.OrderDetails.AddAsync(_orderEntity);
 				await _context.SaveChangesAsync();
-                return _orderEntity.OrderId;
-            }	
+				return _orderEntity.OrderId;
+			}
 		}
 	}
 }

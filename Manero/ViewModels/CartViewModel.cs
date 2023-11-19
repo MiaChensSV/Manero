@@ -4,7 +4,7 @@ namespace Manero.ViewModels
 {
     public class CartViewModel
     {
-        
+        public string? UserId { get; set; }
         public string? ArticleNumber { get; set; }
         public string? ProductName { get; set; }
         public decimal Price { get; set; }
