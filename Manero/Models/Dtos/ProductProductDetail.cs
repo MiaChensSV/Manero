@@ -5,6 +5,7 @@ namespace Manero.Models.Dtos
 {
     public class ProductProductDetail
     {
+        public int ProductId { get; set; }
         public string ArticleNumber { get; set; } = null!;
         public string ProductTitle { get; set; } = null!;
         public string? Description { get; set; }
@@ -12,20 +13,19 @@ namespace Manero.Models.Dtos
         public decimal Price { get; set; }
         public decimal DiscountedPrice { get; set; }    
         public string? Rating { get; set; }
-        public int? Color { get; set; }  
-        public int? Size { get; set; }
+        public int Color { get; set; }  
+        public int Size { get; set; }
         public int Quantity { get; set; }
 
         public IEnumerable<ReviewEntity>? Reviews { get; set; } = new List<ReviewEntity>();
 
-
-        //Konverterar från ProductDetailEntity till ProductProductDetail
         public static implicit operator ProductProductDetail(ProductDetailEntity entity)
         {
             if (entity != null)
             {
                 var productDetail = new ProductProductDetail
                 {
+                    ProductId = entity.ProductId,
                     ArticleNumber = entity.ArticleNumber,
                     ProductTitle = entity.ProductTitle,
                     Description = entity.ProductDetailDescription,
@@ -33,33 +33,43 @@ namespace Manero.Models.Dtos
                     DiscountedPrice = entity.DiscountedPrice,
                     Image = entity.ProductImageUrl,
                     Reviews = entity.ProductModel.Reviews,
-                    Color = entity.Color.ColorId,
-                    Size = entity.Size.SizeId,
-                    Quantity = entity.Quantity,
-
-
-
+                    Color = entity.Color.ColorId, // Handle nullable conversion
+                    Size = entity.Size.SizeId,    // Handle nullable conversion
+                    Quantity = entity.Quantity
                 };
                 return productDetail;
             }
             else
-                return null!;
+            {
+                return null;
+            }
         }
+
         public static implicit operator ProductDetailEntity(ProductProductDetail product)
         {
-
-            var entity = new ProductDetailEntity
+            if (product != null)
             {
-                ArticleNumber = product.ArticleNumber,
-                ProductTitle = product.ProductTitle,
-                ProductDetailDescription = product.Description,
-                Price = product.Price,
-                ProductImageUrl = product.Image,
-                DiscountedPrice = product.DiscountedPrice,
-                
-            };
-            return entity;
+                var entity = new ProductDetailEntity
+                {
+                    ProductId = product.ProductId,
+                    ArticleNumber = product.ArticleNumber,
+                    ProductTitle = product.ProductTitle,
+                    ProductDetailDescription = product.Description,
+                    Price = product.Price,
+                    ProductImageUrl = product.Image,
+                    DiscountedPrice = product.DiscountedPrice,
+                    Color = new ProductColorEntity { ColorId = product.Color }, 
+                    Size = new ProductSizeEntity { SizeId = product.Size },      
+                    Quantity = product.Quantity
+                };
+                return entity;
+            }
+            else
+            {
+                return null;
+            }
         }
+
 
     }
 }

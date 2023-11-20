@@ -10,12 +10,14 @@ namespace Manero.Controllers
     public class ProductsController : Controller
     {
         private readonly IProductListService _productService;
-        private readonly ProductDetailsRepo _productDetailrepo;
+ 
+        private readonly ProductDetailsService _productDetailsService;
 
-        public ProductsController(IProductListService productService, ProductDetailsRepo productDetailsRepo)
+        public ProductsController(IProductListService productService, ProductDetailsService productDetailsService )
         {
             _productService = productService;
-            _productDetailrepo = productDetailsRepo;
+      
+            _productDetailsService = productDetailsService;
         }
 
         public async Task <IActionResult> Index()
@@ -36,7 +38,7 @@ namespace Manero.Controllers
         [HttpGet("product/{id}")]
         public async Task<IActionResult> Details(int id)
         {
-            ProductProductDetail product = await _productDetailrepo.GetAsync(x => x.ProductId == id);
+            ProductProductDetail product = await _productDetailsService.GetProductDetailByIdAsync(id);
 
             return View(product);
         }
